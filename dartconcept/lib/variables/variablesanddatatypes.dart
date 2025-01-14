@@ -43,7 +43,8 @@
 
 // So, the conclusion is that we can modify the elements of the final variable(Type 2 Modification) but we can't reassign the value of the variable (Type 1 Modification).
 
-//// Example 3: var keyword
+//// Example 3: 
+//! var keyword: In Dart, the var keyword is used to declare a variable with type inference, meaning the type of the variable is determined by the assigned value. You cannot use var together with an explicit type declaration like int. Example: var int x = 10 is invalid.
 //*Here we are doing TYPE 1 modification
 // var address = "Zoo Road, AAlubari, Samakhusi";
 // address = "Kathmandu"; //Output: Kathmandu
