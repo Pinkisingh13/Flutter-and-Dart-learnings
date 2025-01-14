@@ -290,16 +290,64 @@
 
 //! 14/01/25
 //? Q1: 58. Length of Last Word
-void main() {
-  String s = "luffy is still joyboy";
-  String result = "";
+// void main() {
+//   String s = "luffy is still joyboy";
+//   String result = "";
 
-  // print(len);
-  for (var e in s.trim().split(" ")) {
-    if (e.isNotEmpty) {
-      result = e;
-     
-    }
-  }
-  print(result.length);
-}
+ // print(len);
+//   for (var e in s.trim().split(" ")) {
+//     if (e.isNotEmpty) {
+//       result = e;
+
+//     }
+//   }
+//   print(result.length);
+// }
+
+//? Q2: Search Insert Position
+// void main() {
+  //* First Approach
+  // List<int> nums = [1, 3, 5, 6];
+  // int target = 4;
+  // int count = -1;
+
+  // if (nums.contains(target)) {
+  //   print(nums.indexOf(target));
+  //   return;
+  // }
+
+  // for (var i = 0; i < nums.length; i++) {
+  //   if (nums[i] > target) {
+  //     count = i;
+  //     break;
+  //   }
+  // }
+
+  // if (count == -1) {
+  //   count = nums.length;
+  // }
+  // print(count);
+
+//*Second Approach
+//   List<int> nums = [1, 3, 5, 6];
+//   int target = 4;
+//   int right = nums.length - 1;
+//   print(right);
+//   int left = 0;
+
+//   while (right >= left) {
+//     int mid = left + (right - left) ~/ 2;
+
+//     print(mid); // 1 //secon : 2
+
+//     if (nums[mid] == target) {
+//       print(mid);
+//       break;
+//     } else if (nums[mid] < target) {
+//       left = mid + 1; // 1 iteration left = 1+1=2
+//     } else {
+//       right = mid - 1; // 2 iteration right = 2-1 =1
+//     }
+//   }
+//   print(left);
+// }
