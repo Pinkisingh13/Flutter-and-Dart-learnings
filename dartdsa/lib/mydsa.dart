@@ -294,7 +294,7 @@
 //   String s = "luffy is still joyboy";
 //   String result = "";
 
- // print(len);
+// print(len);
 //   for (var e in s.trim().split(" ")) {
 //     if (e.isNotEmpty) {
 //       result = e;
@@ -306,27 +306,27 @@
 
 //? Q2: Search Insert Position
 // void main() {
-  //* First Approach
-  // List<int> nums = [1, 3, 5, 6];
-  // int target = 4;
-  // int count = -1;
+//* First Approach
+// List<int> nums = [1, 3, 5, 6];
+// int target = 4;
+// int count = -1;
 
-  // if (nums.contains(target)) {
-  //   print(nums.indexOf(target));
-  //   return;
-  // }
+// if (nums.contains(target)) {
+//   print(nums.indexOf(target));
+//   return;
+// }
 
-  // for (var i = 0; i < nums.length; i++) {
-  //   if (nums[i] > target) {
-  //     count = i;
-  //     break;
-  //   }
-  // }
+// for (var i = 0; i < nums.length; i++) {
+//   if (nums[i] > target) {
+//     count = i;
+//     break;
+//   }
+// }
 
-  // if (count == -1) {
-  //   count = nums.length;
-  // }
-  // print(count);
+// if (count == -1) {
+//   count = nums.length;
+// }
+// print(count);
 
 //*Second Approach
 //   List<int> nums = [1, 3, 5, 6];
@@ -351,3 +351,71 @@
 //   }
 //   print(left);
 // }
+
+//! 15/01/25
+//? Q1: Plus One
+// void main() {
+//   List<int> digits = [9,9,9];
+//     int n = digits.length-1;
+//     for(int i=n; i>=0; i--){
+//       if(digits[i] < 9){
+//           digits[i]++;
+//           print(digits);
+//       }
+//       digits[i] = 0;
+//     }
+//     digits.insert(0,1);
+//     print(digits);
+// }
+
+//! 16/01/25
+
+//* Q1: 28. Find the Index of the First Occurrence in a String
+// void main() {
+//   String s = "hello";
+//   String needle = "ll";
+// for (var i = 0; i < s.length; i++) {
+//   if (s.startsWith(needle)) {
+//     print(i);
+//     break;
+//   } else if (s.contains(needle)) {
+//    print(s.indexOf(needle));
+//   }
+// }
+// print(-1);
+// }
+
+// Q2.2425. Bitwise XOR of All Pairings
+
+void main() {
+  List<int> nums1 = [2, 1, 3];
+  List<int> nums2 = [10, 2, 5, 0];
+
+  //! First Approach
+  int xor = 0;
+  for (int i = 0; i < nums1.length; i++) {
+    for (int j = 0; j < nums2.length; j++) {
+      xor ^= nums1[i] ^ nums2[j];
+    }
+  }
+  print(xor);
+
+  //! Second Approach
+  // int xor = 0;
+
+  //* XOR all elements in nums1
+  // if (nums2.length % 2 != 0) {
+  //   for (var num in nums1) {
+  //     xor ^= num;
+  //   }
+  // }
+
+  //* XOR all elements in nums2
+  // if (nums1.length % 2 != 0) {
+  //   for (var num in nums2) {
+  //     xor ^= num;
+  //   }
+  // }
+
+  // print(xor);
+}
