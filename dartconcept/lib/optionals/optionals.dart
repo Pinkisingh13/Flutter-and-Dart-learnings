@@ -159,17 +159,132 @@ library;
 
 //! EXAMPLE 10: Combining null aware operators
 // void main() {
-//   String? name;
-
+//   String? lastname;
 //   void changeName() {
-//     name = "Foo";
+//     lastname = "Dhar";
 //   }
 
 //   changeName();
+//   print(lastname);
 
-//   print(name); // Output: Foo
+//   if (lastname?.contains("Deol") ?? false) {
+//     print("Lastname contains Deol");
+//   }
+// }
 
-//   if (name != null) {
-//     print(name.length); // Output: 3
+//? ---------------------------------------------------------
+
+//! EXAMPLE 11: Extending Optional Types
+
+// void main() {
+//* Optionals with Functions
+// String? getFullName() {
+//   return null; // This function returns null, as indicated by the nullable type String?.
+// }
+
+// String getFullNameOptional() {
+//   return "Foo Bar"; // This function always returns a non-null value.
+// }
+
+// Using ?? to provide a fallback value if getFullName() returns null.
+// String fullName = getFullName() ?? getFullNameOptional();
+// print(fullName); // Prints "Foo Bar" because getFullName() is null.
+
+//* Optionals with Objects
+// String? getFullName() {
+//   return "foo bar"; // This function returns a non-null string.
+// }
+
+// Calling getFullName and storing the result in the obj variable.
+// final obj = getFullName(); // obj has type String? (nullable String).
+
+// Calling the describe extension method on obj.
+// The describe extension can handle null values because it is defined on Object?.
+// obj.describe;
+// }
+
+// The `extension` keyword is used to add new functionality to existing types or classes.
+// Here, we extend the Object? type to add a custom `describe` method.
+// extension Describe on Object? {
+// The `describe` getter checks if `this` (the object) is null.
+// If `this` is null, it prints "This object is null".
+// Otherwise, it prints the runtime type and value of `this`.
+//   void get describe =>
+//       this == null ? print("This object is null") : print("$runtimeType: $this");
+// }
+
+//? ---------------------------------------------------------
+
+//! EXAMPLE 12: Unwrapping Multiple Optionals
+// void main() {
+//   String ans = getfullName("john",null);
+//   print(ans);
+// }
+
+// String getfullName(
+//   String? firstName,
+//   String? lastName,
+// ) {
+
+//   return withAll(
+//         [firstName, lastName],
+//         (names) => names.join(" "),
+//       ) ??
+//       "No Name";
+// }
+
+// Given a list of any value that can be  containing options like an actual string a list of strings, ao this will work with a list of optional strings, it will work with a list of optionl ints.
+// T? withAll<T>(List<T?> optionals, T Function(List<T>) callback) =>
+//     optionals.any((e) => e == null) ? null : callback(optionals.cast());
+
+//? ---------------------------------------------------------
+//! EXAMPLE 13: Optional FlatMap
+// Flatmap is a function in rust and swift that allows you to drill down within  an optional  and grab its value and map it to another data type perhaps completely to another data type  or a different value of the same data type should that optional not be null but if it is null then no flatmap  does not do anything it just returns null.
+
+// Flatmap is unwrapping and mapping an optional value.
+// void main(){
+// String? firstName = "John";
+// String? lastName = "Doe";
+
+// final fullName = firstName.flatMap((fName) => lastName.flatMap((lName) => "$fName $lName"),) ?? "Either first name or last name is null";
+
+// print(fullName); // Output: John Doe
+// }
+
+// extension FlatMap<T> on T?{
+//   R? flatMap<R>(R Function(T) callback){
+//     final shadow = this;
+//     return shadow == null ? null : callback(shadow);
+//   }
+// }
+
+//? ---------------------------------------------------------
+
+//! EXAMPLE 14: Default Value for Optionals
+// void main() {
+//   print(fullName(null, "Doe")); // Output: John Doe
+// }
+// String fullName(String? firstName, String? lastName) {
+//   return "${firstName.orDefault} ${lastName.orDefault}";
+
+// }
+// extension DefaultValues<T> on T? {
+//   T get orDefault {
+//     final shadow = this;
+//    if (shadow != null) {
+//       return shadow;
+//     }
+//     switch(T){
+//       case const (int):
+//         return 0 as T;
+//       case const (double):
+//         return 0.0 as T;
+//       case const (String):
+//         return "X" as T;
+//       case const (bool):
+//         return false as T;
+//       default:
+//         throw Exception("Type not supported");
+//     }
 //   }
 // }
