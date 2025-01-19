@@ -387,35 +387,60 @@
 
 // Q2.2425. Bitwise XOR of All Pairings
 
+// void main() {
+//   List<int> nums1 = [2, 1, 3];
+//   List<int> nums2 = [10, 2, 5, 0];
+
+//   //! First Approach
+//   int xor = 0;
+//   for (int i = 0; i < nums1.length; i++) {
+//     for (int j = 0; j < nums2.length; j++) {
+//       xor ^= nums1[i] ^ nums2[j];
+//     }
+//   }
+//   print(xor);
+
+//! Second Approach
+// int xor = 0;
+
+//* XOR all elements in nums1
+// if (nums2.length % 2 != 0) {
+//   for (var num in nums1) {
+//     xor ^= num;
+//   }
+// }
+
+//* XOR all elements in nums2
+// if (nums1.length % 2 != 0) {
+//   for (var num in nums2) {
+//     xor ^= num;
+//   }
+// }
+
+// print(xor);
+// }
+
+//!18/01/25
+//? Reverse a List
 void main() {
-  List<int> nums1 = [2, 1, 3];
-  List<int> nums2 = [10, 2, 5, 0];
-
-  //! First Approach
-  int xor = 0;
-  for (int i = 0; i < nums1.length; i++) {
-    for (int j = 0; j < nums2.length; j++) {
-      xor ^= nums1[i] ^ nums2[j];
-    }
+  List<int> list = [1, 2, 3, 4, 5];
+  Stack stack = Stack();
+  for (var i = list.length - 1; i >= 0; i--) {
+    stack.push(list[i]);
   }
-  print(xor);
+  print(stack);
+}
 
-  //! Second Approach
-  // int xor = 0;
+class Stack<E> {
+  Stack() : list = <E>[];
+  final List<E> list;
 
-  //* XOR all elements in nums1
-  // if (nums2.length % 2 != 0) {
-  //   for (var num in nums1) {
-  //     xor ^= num;
-  //   }
-  // }
+//push
+  void push(E element) => list.add(element);
 
-  //* XOR all elements in nums2
-  // if (nums1.length % 2 != 0) {
-  //   for (var num in nums2) {
-  //     xor ^= num;
-  //   }
-  // }
+//pop
+  E pop() => list.removeLast();
 
-  // print(xor);
+  @override
+  String toString() => list.toString();
 }
