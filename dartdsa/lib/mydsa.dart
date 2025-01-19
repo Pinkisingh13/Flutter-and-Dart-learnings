@@ -422,25 +422,26 @@
 
 //!18/01/25
 //? Reverse a List
-void main() {
-  List<int> list = [1, 2, 3, 4, 5];
-  Stack stack = Stack();
-  for (var i = list.length - 1; i >= 0; i--) {
-    stack.push(list[i]);
-  }
-  print(stack);
-}
+// void main() {
+//   List<int> list = [1, 2, 3, 4, 5];
+//   Stack stack = Stack();
+//   for (var i = list.length - 1; i >= 0; i--) {
+//     stack.push(list[i]);
+//   }
+//   print(stack);
+// }
 
-class Stack<E> {
-  Stack() : list = <E>[];
-  final List<E> list;
+// class Stack<E> {
+//   Stack() : list = <E>[];
+//   final List<E> list;
 
 //push
-  void push(E element) => list.add(element);
+//   void push(E element) => list.add(element);
 
 //pop
-  E pop() => list.removeLast();
+//   E pop() => list.removeLast();
 
-  @override
-  String toString() => list.toString();
-}
+//   @override
+//   String toString() => list.toString();
+// }
+
