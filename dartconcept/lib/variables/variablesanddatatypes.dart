@@ -16,7 +16,8 @@
 //* Second way: Without Defining Data Type (const, final, var)
 //* when we define variable without explicitly defining tha data type dart will identify its datatype with respect to its value.
 // void main() {
-////Example 1:
+// ignore: dangling_library_doc_comments
+//! Example 1:
 //!const:const is a keyword that is reserved. constant value, it is compile time constant.
 //Here we are doing TYPE 1 modification
 // const name2 = "foo";
@@ -29,7 +30,7 @@
 // age.add(90); //Output: It will gives Runtime Error because we are trying to modify the const variable's value's element.
 // print(age);
 
-////Example 2:
+//!Example 2:
 //! final: final is a keyword that is reserved. final value, it is runtime constant.
 //*Type 1 Modification is not allowed.
 // final name = "foo";
@@ -43,7 +44,7 @@
 
 // So, the conclusion is that we can modify the elements of the final variable(Type 2 Modification) but we can't reassign the value of the variable (Type 1 Modification).
 
-//// Example 3: 
+//! Example 3: 
 //! var keyword: In Dart, the var keyword is used to declare a variable with type inference, meaning the type of the variable is determined by the assigned value. You cannot use var together with an explicit type declaration like int. Example: var int x = 10 is invalid.
 //*Here we are doing TYPE 1 modification
 // var address = "Zoo Road, AAlubari, Samakhusi";

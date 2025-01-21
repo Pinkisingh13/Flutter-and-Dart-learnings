@@ -445,3 +445,46 @@
 //   String toString() => list.toString();
 // }
 
+//! 20/01/25
+//! Leetcode Question of the day(2661)
+//? Q1: First Completely Painted Row or Column
+void main() {
+  List<int> arr = [1, 3, 4, 2];
+  List<List<int>> mat = [
+    [1, 4],
+    [2, 3],
+  ];
+  int m = mat.length; // Number of rows
+    int n = mat[0].length; // Number of columns
+
+    // Flatten the matrix into a list of positions
+    List<List<int>> positions = List.generate(m * n, (_) => [0, 0]);
+    for (int row = 0, index = 0; row < m; row++) {
+      for (int col = 0; col < n; col++, index++) {
+        positions[mat[row][col] - 1] = [row, col];
+      }
+    }
+
+    // Row and column painting counters
+    List<int> paintedRow = List.filled(m, 0);
+    List<int> paintedCol = List.filled(n, 0);
+
+    // Iterate through `arr` to determine the first complete row/column
+    for (int i = 0; i < arr.length; i++) {
+      int num = arr[i];
+      List<int> indices = positions[num - 1]; // Get the actual indices from precomputed positions
+      int row = indices[0];
+      int col = indices[1];
+
+      // Increment painting counters for the corresponding row and column
+      paintedRow[row]++;
+      paintedCol[col]++;
+
+      // Check if the current row or column is fully painted
+      if (paintedRow[row] == n || paintedCol[col] == m) {
+        print(i); // Print the index in `arr` that completes a row/column
+      }
+    }
+
+    print(-1);
+}
