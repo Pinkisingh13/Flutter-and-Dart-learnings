@@ -480,7 +480,7 @@
 //       paintedRow[row]++;
 //       paintedCol[col]++;
 
-       // Check if the current row or column is fully painted
+// Check if the current row or column is fully painted
 //       if (paintedRow[row] == n || paintedCol[col] == m) {
 //         print(i); // Print the index in `arr` that completes a row/column
 //       }
@@ -489,15 +489,34 @@
 //     print(-1);
 // }
 
-
-
 //! 22/01/25
-//? Q1: 1765. Map of Highest Peak
-void main() {
-  List<List<int>> isWater = [
-    [0, 1],
-    [0, 0],
-  ];
+//? Q1: 7. Reverse Integer (Leetcode ==> Medium)
+import 'dart:math';
 
-  
+
+void main() {
+  int x = 123;
+
+   // Track reversed
+  int rev = 0;
+  const int intMax = 2147483648;
+
+ // Track positive/negative sign
+  int sign = x < 0 ? -1 : 1;
+
+  // Make x absolute for easier processing
+  x = x.abs();
+
+  while (x > 0) {
+    int digit = x % 10;
+    x ~/= 10.floor();
+
+    if (rev > (pow(2, 31)-1) ~/ 10) {
+      print(0);
+    }
+
+    rev = rev * 10 + digit;
+  }
+
+  print(rev * sign);
 }
