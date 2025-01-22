@@ -499,7 +499,6 @@ void main() {
 
    // Track reversed
   int rev = 0;
-  const int intMax = 2147483648;
 
  // Track positive/negative sign
   int sign = x < 0 ? -1 : 1;
