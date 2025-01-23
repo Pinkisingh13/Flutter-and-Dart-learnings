@@ -1,0 +1,76 @@
+//* 24/01/25 */
+
+//* Internal Working of sets from asked question Chatgpt*/
+
+### **How Sets Work Internally in Dart:**
+
+1. **Hashing Mechanism:**
+   - When you add an object to a `Set`, Dart computes the object's `hashCode` first.
+   - The `hashCode` is used to locate a "bucket" where the object might belong. This step allows sets to quickly determine if an object might already exist.
+
+2. **Equality Check (`==`):**
+   - If there are other objects in the same "bucket" (due to hash collisions or identical hash codes), Dart uses the `==` operator to compare the new object with existing objects.
+   - Only if both `hashCode` and `==` evaluations pass, the set determines the object is already present and does not add it.
+
+---
+
+### **Key Observations from Hash Code and Equality Behavior:**
+
+1. **`hashCode` is a First Step, Not a Guarantee:**
+   - Two objects can have the same `hashCode` but still be different. In such cases, the `==` operator plays a crucial role in verifying equality.
+   - Example:
+     ```dart
+     print("Foo".hashCode == "Foa".hashCode); // Could be true for certain values.
+     print("Foo" == "Foa"); // Will be false because the strings are not identical.
+     ```
+
+2. **Efficiency of Sets:**
+   - The use of `hashCode` makes operations like adding, removing, and checking for existence efficient (on average, O(1)).
+   - However, `==` is used as a fallback for situations where multiple objects share the same hash code.
+
+3. **Custom Classes in Sets:**
+   - When working with custom classes like `Person` or `Dog`, you must override both `hashCode` and `==` for the set to work as expected.
+   - Example:
+     ```dart
+     class Person {
+       final String name;
+       final int age;
+
+       @override
+       int get hashCode => Object.hash(name, age);
+
+       @override
+       bool operator ==(Object other) =>
+           identical(this, other) ||
+           (other is Person && name == other.name && age == other.age);
+     }
+     ```
+
+4. **Sets Avoid Duplicates Based on Hash Code and Equality:**
+   - If two objects have the same `hashCode` and are considered equal by `==`, they are treated as the same object in the set.
+   - Conversely, if either `hashCode` or `==` differs, the set treats them as distinct objects.
+
+---
+
+### **What You Should Learn:**
+
+1. **Importance of Overriding `hashCode` and `==`:**
+   - When using custom objects in sets, always override these methods to ensure sets behave as expected.
+
+2. **Understanding `hashCode` Limitations:**
+   - Hash codes are not unique; two different objects can have the same `hashCode`.
+   - A good hashing algorithm minimizes collisions, but it cannot eliminate them.
+
+3. **Role of `==` in Final Verification:**
+   - `==` is the ultimate deciding factor in determining if two objects are the same.
+
+4. **Sets Are Optimized for Performance:**
+   - Using `hashCode` and `==` together ensures sets are fast and efficient while maintaining correctness.
+
+---
+
+### **Your Explanation:**
+
+> *"Set checks hashCode and equality internally. If both are true, only then it considers the element the same and does not add it."*
+
+This is **correct.** Sets in Dart rely on both `hashCode` and `==` to identify duplicates, ensuring that elements are truly unique. Well done! 😊

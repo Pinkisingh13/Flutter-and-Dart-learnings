@@ -1,0 +1,44 @@
+
+Question no: 10 of Sets dsa
+how b2 has different hashcode ?
+
+The reason `b2` has a different hash code is that the hash code is calculated based on the **`isbn`** property of the `Book` object. Since `b2` has a unique `isbn` value (`"456"`) that is different from the `isbn` of `b1` (`"123 abf cdg"`), it naturally produces a different hash code.
+
+### Key Points:
+1. **`isbn.hashCode`:**
+   - In the `hashCode` getter, we rely on the built-in `hashCode` of the `isbn` string. Each unique string in Dart has its own hash code.
+
+2. **Why hash codes differ:**
+   - `b1` and `b2` have distinct `isbn` values:
+     - `b1.isbn = "123 abf cdg"`
+     - `b2.isbn = "456"`
+   - The hash codes generated for these two strings will not be the same because their contents are different.
+
+### Example for Better Understanding:
+```dart
+void main() {
+  final String isbn1 = "123 abf cdg";
+  final String isbn2 = "456";
+
+  print("Hash code of isbn1: ${isbn1.hashCode}");
+  print("Hash code of isbn2: ${isbn2.hashCode}");
+}
+```
+
+#### Output:
+```plaintext
+Hash code of isbn1: <some unique value>
+Hash code of isbn2: <another unique value>
+```
+
+### How Hash Codes Work in Dart:
+- **String's `hashCode`:**
+  - Strings in Dart are hashed based on their content. Each unique string has a unique hash code (though hash collisions can theoretically occur, they are rare in practice).
+  
+- **Custom Classes:**
+  - For custom objects like `Book`, we explicitly define how the `hashCode` should be computed. In your case, `hashCode` is derived solely from the `isbn`.
+
+### Why Is This Important?
+- The hash code is used by collections like `Set` to quickly check if an element is already present. 
+- If two objects have the same hash code, the `Set` further checks their equality using the overridden `==` operator.
+- Because `b1` and `b2` have different `isbn` values, they produce different hash codes and are treated as distinct objects.
