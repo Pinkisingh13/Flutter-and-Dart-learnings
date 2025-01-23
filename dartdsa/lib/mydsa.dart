@@ -491,31 +491,72 @@
 
 //! 22/01/25
 //? Q1: 7. Reverse Integer (Leetcode ==> Medium)
-import 'dart:math';
+// import 'dart:math';
 
+// void main() {
+//   int x = 123;
 
+//    // Track reversed
+//   int rev = 0;
+
+//  // Track positive/negative sign
+//   int sign = x < 0 ? -1 : 1;
+
+//   // Make x absolute for easier processing
+//   x = x.abs();
+
+//   while (x > 0) {
+//     int digit = x % 10;
+//     x ~/= 10.floor();
+
+//     if (rev > (pow(2, 31)-1) ~/ 10) {
+//       print(0);
+//     }
+
+//     rev = rev * 10 + digit;
+//   }
+
+//   print(rev * sign);
+// }
+
+//! 23/01/25
+//? Q1: 1267 Count Servers that Communicate 
+// Time Complexity:   // O(M+N)
 void main() {
-  int x = 123;
+  List<List<int>> grid = [
+    [1, 1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1]
+  ];
+  int m = grid.length; //row
+  int n = grid[0].length; //column
+  int serverCount = 0;
 
-   // Track reversed
-  int rev = 0;
+  List<int> rowCount = List.filled(m, 0);
+  List<int> colCount = List.filled(n, 0);
 
- // Track positive/negative sign
-  int sign = x < 0 ? -1 : 1;
-
-  // Make x absolute for easier processing
-  x = x.abs();
-
-  while (x > 0) {
-    int digit = x % 10;
-    x ~/= 10.floor();
-
-    if (rev > (pow(2, 31)-1) ~/ 10) {
-      print(0);
+  // Row
+  for (int i = 0; i < m; i++) {
+    for (var j = 0; j < n; j++) {
+      if (grid[i][j] == 1) {
+        rowCount[i]++;
+        colCount[j]++;
+      }
     }
-
-    rev = rev * 10 + digit;
   }
 
-  print(rev * sign);
+  print("RowCount ==> $rowCount");
+  print("ColCount ==> $colCount");
+
+  for (var i = 0; i < m; i++) {
+    for (var j = 0; j < n; j++) {
+      if (grid[i][j] == 1) {
+        if (rowCount[i] > 1 || colCount[j] > 1) {
+          serverCount++;
+        }
+      }
+    }
+  }
+  print("Number of communicating servers: $serverCount");
 }
