@@ -2,8 +2,8 @@
 
 //! 13/01/25 and 14/01/25 (Dart Variables and data types)
 //! Important Note:  Modification has two type:
-//  TYPE 2. Modification of varibles elements value. (Modifying the elements of the variable's value);
 //  TYPE 1. Modification of variables value.(Reassigning the value of the variable directly)
+//  TYPE 2. Modification of varibles elements value. (Modifying the elements of the variable's value);
 
 //* First way: Define Datatype of the variable
 // void main() {
@@ -14,7 +14,7 @@
 //? --------------------------------------------------------
 
 //* Second way: Without Defining Data Type (const, final, var)
-//* when we define variable without explicitly defining tha data type dart will identify its datatype with respect to its value.
+//* when we define variable without explicitly defining the data type dart will identify its datatype with respect to its value.
 // void main() {
 // ignore: dangling_library_doc_comments
 //! Example 1:

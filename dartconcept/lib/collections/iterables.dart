@@ -8,21 +8,27 @@
 //?--------------------------------------------------------------------------------------------------------------------
 
 //! Example 1:  Basic iterable example
-// void main(List<String> args) {
-//   String getName(int i) {
-//     print("getName called");
-//     return "Name $i";
-// }
+void main(List<String> args) {
+  String getName(int i) {
+    print("getName called");
+    return "Name $i";
+}
 
-//Iterables are lazily evaluated in dart.   //Iterable.generate() is a factory method that creates an iterable that generates values on-the-fly. Iterab;es are lazily generated so the function getName() will be called only when the value is accessed.
-// Iterable<String> numbers = Iterable.generate(20, (index) => getName(index));
-// print(numbers);
+// Iterables are lazily evaluated in dart.  
+//Iterable.generate() is a factory method that creates an iterable that generates values on-the-fly. Iterables are lazily generated so the function getName() will be called only when the value is accessed.
 
-//Here this take() method will take the first two elements from the iterable.
-//   for (var number in numbers.take(2)) {
-//     print(number);
-//   }
-// }
+//!When you use Iterable.generate, the getName() function is not called immediately for all elements. Instead, getName() is called only when a specific element is accessed during iteration. This means memory is not allocated for all the elements upfront, and computation happens only for the elements you explicitly use.
+Iterable<String> numbers = Iterable.generate(10, (index) => getName(index));
+  for (var number in numbers.take(2)) {
+    print(number);
+  }
+
+ //! List.generate() is not lazily evaluated. It is eagerly evaluated. When you use List.generate, the getName() function is called immediately for all 10 elements. This means all the elements are precomputed and stored in memory at once, even if you only need the first two elements.
+final List<String> l = List.generate(10, (index) => getName(index));
+  for (var number in l.take(2)) {
+    print(number);
+  }
+}
 
 //?------------------------------------------------------
 
@@ -36,6 +42,7 @@
   // This is an iterable of String
   //why this is iterable<String> not list<String>?  The reason behind  this that dart says you may be doing some heavy calculation in this map function, so do i really call this map for every element in the list? The answer is no. Dart will call this map function only when you access the value.
   // iterable saves memory and time. and it does not perform necessary calculations until you access the value.
+  
   // Iterable<String> namesIterable = names.map((name) {
   //  return name.toUpperCase();
   // });
@@ -49,3 +56,4 @@
 
 
 //?------------------------------------------------------
+

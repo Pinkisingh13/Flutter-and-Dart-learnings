@@ -8,10 +8,7 @@
 //! Example 1:  Synchronus Generating
 void main(List<String> args) {
   var names = getName();
-  print(names);
-  for (var name in names) {
-    print(name);
-  }
+  print(names); // (Jack, Jill, John, Jake, Dolly, Pinku, Jackie, Jillie)
 }
 
   Iterable<String> templateNames() sync* {
