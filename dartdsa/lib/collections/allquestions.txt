@@ -1,0 +1,142 @@
+Great work on completing all the topics of Dart collections! To ensure you've mastered everything and can solve practical challenges, let's review the main Dart collection topics you've covered. I'll also provide **10 questions for each topic** as practice.
+
+---
+
+### Topics in Dart Collections:
+1. **Lists**
+2. **Sets**
+3. **Maps**
+4. **Iterables**
+5. **Unmodifiable Collections**
+6. **Collection Comprehensions**
+7. **Extending List/Set/Map**
+8. **Spread Operator**
+9. **Synchronous Generators**
+
+---
+
+### 1. **List Practice Questions:**
+1. Write a program to find the second largest element in a list.
+2. Reverse a list without using the `reversed` property.
+3. Find the frequency of each element in a list of integers.
+4. Combine two lists and remove duplicates from the resulting list.
+5. Write a function to rotate a list to the right by `k` positions.
+6. Create a list of even numbers from 1 to 100.
+7. Remove all null or empty strings from a list of strings.
+8. Convert a list of strings to uppercase.
+9. Check if a given list is a palindrome.
+10. Use the `retainWhere` method to keep only elements divisible by 3.
+
+---
+
+### 2. **Set Practice Questions:**
+1. Find the union, intersection, and difference of two sets of integers.
+2. Check if one set is a subset of another set.
+3. Remove duplicate elements from a list using a set.
+4. Create a set of all vowels present in a given string.
+5. Write a function to find symmetric differences between two sets.
+6. Check if a given string contains only unique characters using a set.
+7. Use a `LinkedHashSet` to maintain insertion order.
+8. Implement a tagging system for blog posts using sets.
+9. Convert a list of integers into a set and back into a sorted list.
+10. Store unique objects in a set by overriding `hashCode` and `==`.
+
+---
+
+### 3. **Map Practice Questions:**
+1. Count the frequency of characters in a string using a map.
+2. Create a map of country names and their capitals and allow lookups.
+3. Write a function to sort a map by its keys.
+4. Filter a map to retain only values greater than 50.
+5. Merge two maps, giving precedence to the second map in case of conflicts.
+6. Check if two maps are equal by content.
+7. Create a map where keys are numbers from 1 to 5, and values are their squares.
+8. Remove all entries with null values from a map.
+9. Convert a list of pairs into a map.
+10. Write a program to invert a map (swap keys and values).
+
+---
+
+### 4. **Iterable Practice Questions:**
+1. Use the `map` function to transform an iterable of numbers into their squares.
+2. Use `expand` to flatten a list of lists.
+3. Write a function to filter even numbers from an iterable.
+4. Find the first element in an iterable that satisfies a condition.
+5. Convert an iterable into a list, set, and map.
+6. Create an infinite iterable using `generate` and stop after 10 elements.
+7. Use `takeWhile` to collect numbers from an iterable until a condition fails.
+8. Use `fold` to calculate the sum of numbers in an iterable.
+9. Find the index of a specific element in an iterable.
+10. Check if all elements in an iterable are positive numbers.
+
+---
+
+### 5. **Unmodifiable Collections Practice Questions:**
+1. Create an unmodifiable list and try adding elements to it.
+2. Use `Set.unmodifiable` to create a read-only set.
+3. Write a program to convert a mutable map into an unmodifiable map.
+4. Implement a class that provides read-only access to its internal list.
+5. Create a copy of a list that cannot be modified.
+6. Use `unmodifiable` with nested collections and observe behavior.
+7. Demonstrate the difference between `const` collections and unmodifiable collections.
+8. Try modifying an unmodifiable collection using a spread operator and observe.
+9. Write a function that returns a read-only view of a collection.
+10. Discuss when to use unmodifiable collections in an application.
+
+---
+
+### 6. **Collection Comprehensions Practice Questions:**
+1. Generate a list of squares for numbers 1 to 10 using collection comprehension.
+2. Create a map of numbers and their factorials using comprehension.
+3. Write a comprehension to create a set of unique words from a list of sentences.
+4. Filter a list of numbers to retain only multiples of 5 using comprehension.
+5. Create a nested list comprehension to generate a 2D grid.
+6. Use collection comprehension to flatten a list of lists.
+7. Write a comprehension to create a map of character counts from a string.
+8. Use comprehension to create a set of all odd numbers from 1 to 20.
+9. Generate a list of tuples (x, y) where x and y are numbers from 1 to 5.
+10. Combine two lists into a map using a comprehension.
+
+---
+
+### 7. **Extending List/Set/Map Practice Questions:**
+1. Extend the `List` class to add a method for reversing its elements.
+2. Create a custom `Set` class that tracks the number of elements added.
+3. Write a `Map` subclass that throws an error for null keys.
+4. Add a method to a list class to find the median of its elements.
+5. Implement a `Set` subclass that maintains insertion order like a `LinkedHashSet`.
+6. Add a method to a `Map` class to filter entries based on keys or values.
+7. Extend the `List` class to support matrix-like operations (e.g., transpose).
+8. Override `add` in a custom `Set` class to enforce certain rules.
+9. Create a `List` subclass that supports slicing like Python lists.
+10. Write a `Map` class that logs every addition or deletion.
+
+---
+
+### 8. **Spread Operator Practice Questions:**
+1. Merge multiple lists into one using the spread operator.
+2. Combine sets with the spread operator to remove duplicates.
+3. Create a new map by merging two maps using the spread operator.
+4. Use the spread operator to add elements to an existing list dynamically.
+5. Flatten a list of lists using the spread operator.
+6. Write a program to clone a map using the spread operator.
+7. Combine nested maps and lists with the spread operator.
+8. Create a collection where default elements come from another collection.
+9. Use conditional spread operators to include elements based on a condition.
+10. Discuss limitations of the spread operator with null collections.
+
+---
+
+### 9. **Synchronous Generators Practice Questions:**
+1. Create a synchronous generator to generate Fibonacci numbers.
+2. Write a generator that yields numbers divisible by 3 up to 100.
+3. Use a generator to iterate over a large dataset lazily.
+4. Implement a generator that yields prime numbers.
+5. Create a generator for generating powers of 2 up to a limit.
+6. Write a generator that alternates between positive and negative values.
+7. Use `yield` to pause a generator and resume it.
+8. Write a generator that generates the first `n` factorials.
+9. Combine synchronous and asynchronous generators in an example.
+10. Discuss use cases where synchronous generators are preferred over lists.
+
+---
