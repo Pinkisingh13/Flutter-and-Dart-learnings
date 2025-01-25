@@ -145,7 +145,7 @@
 //   final Person p2 = Person(name: "Jacky", age: 60, city: "xyc, sector 67");
 //   final Dog d1 = Dog(city: "xyc, sector 67", name: "Jacky", age: 60);
 
-//   // Hascodes are same:
+// Hascodes are same:
 //   print(p1.hashCode);
 //   print(p2.hashCode);
 //   print(d1.hashCode);

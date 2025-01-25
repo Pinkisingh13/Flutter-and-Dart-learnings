@@ -9,8 +9,7 @@
 import 'dart:collection';
 
 void main(List<String> args) {
-  var saferList = SaferList(
-      absentValue: "Not_found", defaultValue: "Default", val: ["Jack", "Jill"]);
+  var saferList = SaferList(absentValue: "Not_found", defaultValue: "Default", val: ["Jack", "Jill"]);
   print(saferList);
   print(saferList[0]); // Jack
   print(saferList[1]); // Jill

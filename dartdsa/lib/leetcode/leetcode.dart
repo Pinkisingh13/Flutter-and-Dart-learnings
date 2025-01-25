@@ -51,23 +51,25 @@
 //? Time Complexity: O(n)
 //? Space Complexity: O(1)
 
-import 'dart:math';
+// import 'dart:math';
 
-void main() {
-  List<int> height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
-  int maxWater = 0;
-  int left = 0, right = height.length - 1;
+// void main() {
+//   List<int> height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+//   int maxWater = 0;
+//   int left = 0, right = height.length - 1;
 
-if (height.length < 2) print(0);
+// if (height.length < 2) print(0);
 
-  while (left < right) {
-    int width = right - left;
-    int minHeight = min(height[left], height[right]);
-    int areaOfWater = width * minHeight;
+//   while (left < right) {
+//     int width = right - left;
+//     int minHeight = min(height[left], height[right]);
+//     int areaOfWater = width * minHeight;
 
-    maxWater = max(maxWater, areaOfWater);
-    height[left] < height[right] ? left++ : right--;
-  }
+//     maxWater = max(maxWater, areaOfWater);
+//     height[left] < height[right] ? left++ : right--;
+//   }
 
-  print(maxWater);
-}
+//   print(maxWater);
+// }
+
+//?----------------------------------------------------------------------------------------------------------------------------------
