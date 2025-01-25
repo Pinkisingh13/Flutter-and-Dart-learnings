@@ -19,7 +19,7 @@
 //   List<int> rowCount = List.filled(m, 0);
 //   List<int> colCount = List.filled(n, 0);
 
-//   // Row
+// Row
 //   for (int i = 0; i < m; i++) {
 //     for (var j = 0; j < n; j++) {
 //       if (grid[i][j] == 1) {
@@ -64,12 +64,40 @@
 //     int width = right - left;
 //     int minHeight = min(height[left], height[right]);
 //     int areaOfWater = width * minHeight;
-
 //     maxWater = max(maxWater, areaOfWater);
 //     height[left] < height[right] ? left++ : right--;
 //   }
-
 //   print(maxWater);
 // }
 
-//?----------------------------------------------------------------------------------------------------------------------------------
+//?------------------------------------------------------------------------------------------------------------------------------------
+
+//! 25/01/25
+//! Question no 1: Pascal's Triangle(Leetcode)
+
+// void main(List<String> args) {
+//   int n = 5;
+//   List<List<int>> list = [];
+//   for (int i = 1; i <= n; i++) {
+//     if (i == 1) {
+//       list.add([1]);
+//       continue;
+//     } else if (i == 2) {
+//       list.add([1, 1]);
+//       continue;
+//     } else {
+//       List<int> row = [];
+//       row.add(1);
+//       List<int> prevRowFirst = list[i - 2];
+//       print("prevRowFirst.length ${prevRowFirst.length-1}");
+//       for (int j = 0; j < prevRowFirst.length - 1; j++) {
+//         row.add(prevRowFirst[j] + prevRowFirst[j + 1]);
+//       }
+//       row.add(1);
+//       list.add(row);
+//     }
+//   }
+//   print(list);
+// }
+//else if ke time pe list aisa dikhtha hao: [[1], [1,1]] 1st and 2nd row 
+// ab 3rd row m 1 element hoga 1 and last element hoga 1. and middle element sum hoga previous row ke 2 elements ka. 

@@ -7,7 +7,7 @@ library;
 //! EXAMPLE 1:
 //* Optionality in Dart is the ability to have a value or to not have a value. So, either a variable can have a value or it doesn't.
 //* In Dart, null is not a datatype, it is a value that represents the absence of a value.
-//* If we are not soecifying the dart type we can assign null to it. but in the case of const variables, we can't assign null to it. if we are specifying the data type we have to use the ? oprator to assign null to it.
+//* If we are not specifying the dart type we can assign null to it. but in the case of const variables, we can't assign null to it. if we are specifying the data type we have to use the ? oprator to assign null to it.
 // void main() {
 // const name = "Foo";
 // print(name); // Output: Foo
@@ -38,7 +38,7 @@ library;
 // void main() {
 //   int? age = 29;
 //   age = null;
-//   print(age);
+//   print(age);  // null
 //   if (age == null) {
 //     print("Age is null");
 //   } else {
@@ -67,6 +67,7 @@ library;
 //? ---------------------------------------------------------
 
 //! EXAMPLE 5: Null Compund Assignment Operator
+//* The ??= operator assigns a value to a variable only if that variable is currently null.
 // void main() {
 //   String? name;
 // If name is null, assign "Foo" to it.
@@ -81,6 +82,7 @@ library;
 
 //! Sub-Example 1:
 // ?. is used to work with null values. It is used to avoid runtime errors when the left operand is null.
+// ?. means that if the operand is null, the expression evaluates to null. Otherwise, it evaluates to the value of the operand.
 // void main() {
 // String? lastName;
 // print(lastName?.length); // Output: null

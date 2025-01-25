@@ -70,20 +70,53 @@
 
 //! Question no 4: Combine two lists and remove duplicates from the resulting list.
 
-import 'package:collection/collection.dart';
+// import 'package:collection/collection.dart';
 
-void main(List<String> args) {
-  List<int> l1 = [1, 2, 3];
-  List<int> l2 = [3, 4, 5, 2];
+// void main(List<String> args) {
+// List<int> l1 = [1, 2, 3];
+// List<int> l2 = [3, 4, 5, 2];
 
 //! First way
-  List<int> l3 = [...l1, ...l2].toSet().toList();
-  print(l3);
+// List<int> l3 = [...l1, ...l2].toSet().toList();
+// print(l3);
 
 //! Second way
-  // final Set<int> setL1 = l1.toSet();
-  // final Set<int> setL2 = l2.toSet();
-  // final Set<int> uniquesList = setL1.union(setL2);
-  // print(uniquesList.toList());
- 
+// final Set<int> setL1 = l1.toSet();
+// final Set<int> setL2 = l2.toSet();
+// final Set<int> uniquesList = setL1.union(setL2);
+// print(uniquesList.toList());
+
+// }
+
+//?-----------------------------------------------------------
+
+//! Question no 5: Write a function to rotate a list to the right by `k` positions.
+
+void main(List<String> args) {
+  List<int> list = [1, 2, 3, 4, 5];
+  int k = 2;
+
+  // rotateList(list, k);
+
+  rotateByK(list, k);
+}
+
+// void rotateList(List<int> list, int k) {
+//   k = k % list.length;
+//   if (k == 0) {
+//     print(list);
+//   }
+
+//   List<int> lastPart = list.sublist(list.length - k);
+//   List<int> firstPart = list.sublist(0, list.length - k);
+
+//   print([...lastPart, ...firstPart]);
+// }
+
+void rotateByK(List<int> list, int k) {
+  for (int i = 0; i < k; i++) {
+    int lastElement = list.removeLast();
+    list.insert(0, lastElement);
+  }
+  print(list);
 }
