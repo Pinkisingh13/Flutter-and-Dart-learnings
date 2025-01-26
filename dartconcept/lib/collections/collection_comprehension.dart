@@ -3,6 +3,14 @@
 //! Collections in dart
 //!  Collection Comprehension
 
+//! What is Collection Comprehension?
+//* Collection comprehension refers to a concise syntax for creating new collections by transforming or filtering existing ones. It is commonly found in modern programming languages, and Dart implements this concept as part of its collection literals.
+
+//! Name for This Syntax: 
+//* This approach is a part of Dart's Collection-For and Collection-If Constructs, specifically used for dynamically generating maps, lists, or sets in Dart.
+//* Collection-For: Allows iteration within a collection literal (e.g., lists, maps, sets).
+//* Collection-If: Allows conditional entries in a collection literal.
+
 //?--------------------------------------------------------------------------------------------------------------------
 
 // //! Example 1:  Collection Comprehension With Set

@@ -55,10 +55,10 @@
 //?------------------------------------------------------
 
 //! Example 4: Modify const map using spread operator
-void main(List<String> args) {
-  addToDictionaryWrong(); // Error: Unsupported operation: Cannot add to an unmodifiable map
-  addToDictionaryRight();
-}
+// void main(List<String> args) {
+//   addToDictionaryWrong(); // Error: Unsupported operation: Cannot add to an unmodifiable map
+//   addToDictionaryRight();
+// }
 
 void addToDictionaryWrong() {
   const names = {'first': 'Jack', 'second': 'Jill'};
@@ -79,7 +79,14 @@ void addToDictionaryRight() {
   const names = {'first': 'Jack', 'second': 'Jill'};
 
   //How can we able to add to an unmodifiable map?
-  // We can use the spread operator to create a new map with the same key-value pairs as the original map and then add new key-value pairs to the new map. This way, we can add new key-value pairs to the map without modifying the original map. 
+  // We can use the spread operator to create a new map with the same key-value pairs as the original map and then add new key-value pairs to the new map. This way, we can add new key-value pairs to the map without modifying the original map.
   final allNames = {...names}..addAll({'third': 'John'});
   print(allNames); // {first: Jack, second: Jill, third: John}
+}
+
+//!Example 5:  Conditional spread operator
+void main(List<String> args) {
+  List<int>? list1;
+  List<int>? list2 = [4, 5, 6,...?list1];
+  print(list2); // [4, 5, 6] // if list1 is null then it will not add  list1 to list2  
 }
