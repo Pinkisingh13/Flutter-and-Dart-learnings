@@ -96,9 +96,9 @@
 //   List<int> list = [1, 2, 3, 4, 5];
 //   int k = 2;
 
-  // rotateList(list, k);
+// rotateList(list, k);
 
-  // rotateByK(list, k);
+// rotateByK(list, k);
 // }
 
 //! First way
@@ -128,4 +128,17 @@
 //   print(list);
 // }
 
-
+//! Question no 6:Create a list of even numbers from 1 to 100
+void main(List<String> args) {
+  final List<int> l = [];
+  List.generate(
+    100,
+    (index) {
+      for (var i = 1; i <= 100; i++) {
+        l.add(index+i);
+      }
+    },
+  );
+  print(l);
+  final list = [for (var i = 1; i <= 100; i++) {}];
+}

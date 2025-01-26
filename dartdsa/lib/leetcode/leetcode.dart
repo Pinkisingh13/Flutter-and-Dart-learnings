@@ -104,6 +104,22 @@
 
 //?--------------------------------------------------------------------------------
 
-//! Question Leetcode
-
-
+//!26/01/25 (Leetcode contest Question)
+//! Question no 1: Count Partitions with Even Sum Difference:
+//!you are given an integer array nums of length n. A partition is defined as an index i where 0 <= i < n - 1, splitting the array into two non-empty subarrays such that: Left subarray contains indices [0, i]. Right subarray contains indices [i + 1, n - 1]. Return the number of partitions where the difference between the sum of the left and right subarrays is even.
+void main(List<String> args) {
+  List<int> nums = [10, 10, 3, 7, 6];
+  int leftSum = 0;
+  int totalSum =
+      nums.fold(0, (previousValue, element) => previousValue += element);
+  int count = 0;
+  for (var i = 0; i < nums.length - 1; i++) {
+    leftSum += nums[i];
+    int rightSum = totalSum - leftSum;
+    int difference = (leftSum - rightSum).abs();
+    if (difference % 2 == 0) {
+      count++;
+    }
+  }
+  print(count);
+}
