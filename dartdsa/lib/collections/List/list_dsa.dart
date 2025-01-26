@@ -129,16 +129,86 @@
 // }
 
 //! Question no 6:Create a list of even numbers from 1 to 100
-void main(List<String> args) {
-  final List<int> l = [];
-  List.generate(
-    100,
-    (index) {
-      for (var i = 1; i <= 100; i++) {
-        l.add(index+i);
-      }
-    },
-  );
-  print(l);
-  final list = [for (var i = 1; i <= 100; i++) {}];
-}
+// void main(List<String> args) {
+//   List<int> numbers = List.generate(100, (index) => index + 1);
+
+// Second way
+//   final list = [
+//     for (var n in numbers)
+//       if (n.isEven) n
+//   ];
+//   print(list);
+
+//  First Way
+//   final evenNumberFunction = numbers.where((e) => e.isEven).toList();
+//   print(evenNumberFunction);
+// }
+
+//! Question no 7: Remove all null or empty strings from a list of strings.
+// void main(List<String> args) {
+//   List<String?> list = ['a', 'b', '', 'c', null, 'd'];
+
+//! First Way
+// for (var i = 0; i < list.length; i++) {
+//   if (list[i] == "" || list[i] == null) {
+//     list.removeAt(i);
+//   }
+// }
+// print(list);
+
+//! Second Way
+//     list.removeWhere(
+//       (element) => element == "" || element == null,
+//     );
+
+//   print(list);
+// }
+
+//?--------------------------------------------------------------------
+
+//! Question no 8:  Convert a list of strings to uppercase
+
+// void main(List<String> args) {
+//   final List<String> list = ["apple", "banana", "papaya", "litchi"];
+
+//   final uppercaseList = list.map((str) => str.toUpperCase());
+//   print(uppercaseList);
+// }
+
+//?--------------------------------------------------------------------
+
+//! Question no 9: . Check if a given list is a palindrome.
+// import 'package:collection/collection.dart';
+
+// void main(List<String> args) {
+//   final List<int> list = [1, 2, 3, 2, 1];
+
+//! First Way
+// final List<int> list2 = List.filled(list.length, 0);
+// for (var i = list.length - 1, j = 0; i >= 0; i--, j++) {
+//   list2[j] = list[i];
+// }
+
+// if (list.equals(list2)) {
+//   print(true);
+// } else {
+//   print(false);
+// }
+
+//! Second Way
+// final reversedList = list.reversed.toList();
+// list.equals(reversedList) ? print(true) : print(false);
+// }
+
+//?--------------------------------------------------------------------
+
+//! Question no 10: Use the `retainWhere` method to keep only elements divisible by 3.
+
+// void main(List<String> args) {
+  // final List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  // final List<int> oddList = list.where((element) => element % 2 != 0).toList();
+  // print(oddList);
+// }
+
+
+//! Finished on 26/01/25
