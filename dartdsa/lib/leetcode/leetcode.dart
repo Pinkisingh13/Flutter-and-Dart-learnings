@@ -99,5 +99,11 @@
 //   }
 //   print(list);
 // }
-//else if ke time pe list aisa dikhtha hao: [[1], [1,1]] 1st and 2nd row 
-// ab 3rd row m 1 element hoga 1 and last element hoga 1. and middle element sum hoga previous row ke 2 elements ka. 
+//else if ke time pe list aisa dikhtha hao: [[1], [1,1]] 1st and 2nd row
+// ab 3rd row m 1 element hoga 1 and last element hoga 1. and middle element sum hoga previous row ke 2 elements ka.
+
+//?--------------------------------------------------------------------------------
+
+//! Question Leetcode
+
+

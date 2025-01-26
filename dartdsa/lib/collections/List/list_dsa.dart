@@ -92,15 +92,16 @@
 
 //! Question no 5: Write a function to rotate a list to the right by `k` positions.
 
-void main(List<String> args) {
-  List<int> list = [1, 2, 3, 4, 5];
-  int k = 2;
+// void main(List<String> args) {
+//   List<int> list = [1, 2, 3, 4, 5];
+//   int k = 2;
 
   // rotateList(list, k);
 
-  rotateByK(list, k);
-}
+  // rotateByK(list, k);
+// }
 
+//! First way
 // void rotateList(List<int> list, int k) {
 //   k = k % list.length;
 //   if (k == 0) {
@@ -113,10 +114,18 @@ void main(List<String> args) {
 //   print([...lastPart, ...firstPart]);
 // }
 
-void rotateByK(List<int> list, int k) {
-  for (int i = 0; i < k; i++) {
-    int lastElement = list.removeLast();
-    list.insert(0, lastElement);
-  }
-  print(list);
-}
+//! Second way
+
+// void rotateByK(List<int> list, int k) {
+//   int i = 0;
+//   while (i < k) {
+//     int lastElement = list.removeLast();
+//     list.insert(0, lastElement);
+
+//     i++;
+//   }
+
+//   print(list);
+// }
+
+
