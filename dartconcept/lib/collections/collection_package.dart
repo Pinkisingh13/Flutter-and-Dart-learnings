@@ -125,7 +125,7 @@ void testCanonicalizedMap() {
 void testBoolList() {
   final boolList = BoolList(
     10,
-    growable: true,
+    growable: true, 
   );
   print(boolList);
   boolList[3] = true;

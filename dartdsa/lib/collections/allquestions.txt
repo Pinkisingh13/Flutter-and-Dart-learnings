@@ -57,21 +57,7 @@ Great work on completing all the topics of Dart collections! To ensure you've ma
 
 ---
 
-### 4. **Iterable Practice Questions:**
-1. Use the `map` function to transform an iterable of numbers into their squares.
-2. Use `expand` to flatten a list of lists.
-3. Write a function to filter even numbers from an iterable.
-4. Find the first element in an iterable that satisfies a condition.
-5. Convert an iterable into a list, set, and map.
-6. Create an infinite iterable using `generate` and stop after 10 elements.
-7. Use `takeWhile` to collect numbers from an iterable until a condition fails.
-8. Use `fold` to calculate the sum of numbers in an iterable.
-9. Find the index of a specific element in an iterable.
-10. Check if all elements in an iterable are positive numbers.
-
----
-
-### 5. **Unmodifiable Collections Practice Questions:**
+### 4. **Unmodifiable Collections Practice Questions:**
 1. Create an unmodifiable list and try adding elements to it.
 2. Use `Set.unmodifiable` to create a read-only set.
 3. Write a program to convert a mutable map into an unmodifiable map.
@@ -85,7 +71,7 @@ Great work on completing all the topics of Dart collections! To ensure you've ma
 
 ---
 
-### 6. **Collection Comprehensions Practice Questions:**
+### 5. **Collection Comprehensions Practice Questions:**
 1. Generate a list of squares for numbers 1 to 10 using collection comprehension.
 2. Create a map of numbers and their factorials using comprehension.
 3. Write a comprehension to create a set of unique words from a list of sentences.
@@ -99,7 +85,7 @@ Great work on completing all the topics of Dart collections! To ensure you've ma
 
 ---
 
-### 7. **Extending List/Set/Map Practice Questions:**
+### 6. **Extending List/Set/Map Practice Questions:**
 1. Extend the `List` class to add a method for reversing its elements.
 2. Create a custom `Set` class that tracks the number of elements added.
 3. Write a `Map` subclass that throws an error for null keys.
@@ -113,7 +99,7 @@ Great work on completing all the topics of Dart collections! To ensure you've ma
 
 ---
 
-### 8. **Spread Operator Practice Questions:**
+### 7. **Spread Operator Practice Questions:**
 1. Merge multiple lists into one using the spread operator.
 2. Combine sets with the spread operator to remove duplicates.
 3. Create a new map by merging two maps using the spread operator.
@@ -127,7 +113,7 @@ Great work on completing all the topics of Dart collections! To ensure you've ma
 
 ---
 
-### 9. **Synchronous Generators Practice Questions:**
+### 8. **Synchronous Generators Practice Questions:**
 1. Create a synchronous generator to generate Fibonacci numbers.
 2. Write a generator that yields numbers divisible by 3 up to 100.
 3. Use a generator to iterate over a large dataset lazily.

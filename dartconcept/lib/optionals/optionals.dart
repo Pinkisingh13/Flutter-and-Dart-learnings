@@ -14,8 +14,8 @@ library;
 // if i change it:
 // const String name = null; // Error: Null value is not allowed
 // But we can assign value
-//   const String? name = null;
-//   print(name);
+// const String? name = null;
+// print(name);
 // }
 
 //? ---------------------------------------------------------
@@ -28,6 +28,12 @@ library;
 // const someVal = null;
 // print(someVal); // Output: null // dynamic
 
+// final name = null;
+// print(name);
+
+//  String? name2 = null;
+// print(name2);
+
 // const double? someVal2 = 5;
 // print(someVal2); // Output: 5.0 // double
 // }
@@ -35,15 +41,28 @@ library;
 //? ---------------------------------------------------------
 
 //! EXAMPLE 3: Comparing null values
+//* When you declare age as int?, it allows the variable to be either an integer or null. In the main function, the analyzer can see that age has been initialized with a value (29), so if you leave the line age = null; commented out, it assumes age can never be null for that context. Hence, it gives a warning that the condition will always be false.
+//* In the something() function, however, the analyzer doesn't have the context of where age came from. It treats the parameter as a separate entity. This means it can't guarantee that the caller has set the value of age to be non-null, so it rightly allows you to check if age is null or not.
+//* If you uncomment age = null; in the main function, it will reintroduce that ambiguity, and the analyzer will then indicate that the condition may be true.
+
 // void main() {
 //   int? age = 29;
-//   age = null;
-//   print(age);  // null
+// age = null;
+//   print(age); // null
 //   if (age == null) {
 //     print("Age is null");
 //   } else {
 //     print("Age is Not null");
+//   }
 
+//   something(age);
+// }
+
+// void something(int? age) {
+//   if (age == null) {
+//     print("age is null");
+//   } else {
+//     print("age is not null");
 //   }
 // }
 
@@ -96,15 +115,21 @@ library;
 // void main() {
 // String? lastName1;
 // print(lastName1 ?? "Doe"); // Output: Doe
+// print(lastName1);
 
-//Here lastName2 is not null, so it will print the value of lastName2 (Bar).
+// String? last;
+// print(last ??= "Barrr");
+// last ??= "foo";
+// print(last);
+
+// Here lastName2 is not null, so it will print the value of lastName2 (Bar).
 // String? lastName2 = "Bar";
 // print(lastName2 ?? "Doe"); // Output: Bar
 // }
 
 //? ---------------------------------------------------------
 
-//!Example 7: Nullabla Collection
+//!Example 7: Nullable Collection
 // void main() {
 // here we are using the ? operator to tell dart that this list can have a value or null.
 //IN DART, Both list and its content can be null.
@@ -178,42 +203,47 @@ library;
 
 //! EXAMPLE 11: Extending Optional Types
 
-// void main() {
+void main() {
 //* Optionals with Functions
-// String? getFullName() {
+// here why one function return as an string and other as an optional string because the reason is behind is that the first function in not guranteeing really returning an actual string it does happen to be returning its string but it can't guarantee because sometimes programmer can then go ahead and say in this case i want to return null but you can't do the same thing in this function beacuse you are guaranteeing to return String value
+// String? getFullNameOptional() {
 //   return null; // This function returns null, as indicated by the nullable type String?.
 // }
 
-// String getFullNameOptional() {
+// String getFullName() {
 //   return "Foo Bar"; // This function always returns a non-null value.
 // }
 
 // Using ?? to provide a fallback value if getFullName() returns null.
-// String fullName = getFullName() ?? getFullNameOptional();
+// String fullName = getFullNameOptional() ?? getFullName();
 // print(fullName); // Prints "Foo Bar" because getFullName() is null.
 
-//* Optionals with Objects
-// String? getFullName() {
-//   return "foo bar"; // This function returns a non-null string.
-// }
+//* Optionals with Extension Objects
+  String? getFullName() {
+    return null; // This function returns a non-null string.
+  }
 
 // Calling getFullName and storing the result in the obj variable.
-// final obj = getFullName(); // obj has type String? (nullable String).
+  final obj = getFullName(); // obj has type String? (nullable String).
+ 
 
 // Calling the describe extension method on obj.
 // The describe extension can handle null values because it is defined on Object?.
-// obj.describe;
-// }
+
+obj.describe;
+
+}
 
 // The `extension` keyword is used to add new functionality to existing types or classes.
 // Here, we extend the Object? type to add a custom `describe` method.
-// extension Describe on Object? {
+extension Describe on Object? {
 // The `describe` getter checks if `this` (the object) is null.
 // If `this` is null, it prints "This object is null".
 // Otherwise, it prints the runtime type and value of `this`.
-//   void get describe =>
-//       this == null ? print("This object is null") : print("$runtimeType: $this");
-// }
+  void get describe => this == null
+      ? print("This object is null")
+      : print("$runtimeType: $this");
+}
 
 //? ---------------------------------------------------------
 

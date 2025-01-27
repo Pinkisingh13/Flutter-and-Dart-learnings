@@ -8,27 +8,27 @@
 //?--------------------------------------------------------------------------------------------------------------------
 
 //! Example 1:  Basic iterable example
-void main(List<String> args) {
-  String getName(int i) {
-    print("getName called");
-    return "Name $i";
-}
+// void main(List<String> args) {
+//   String getName(int i) {
+//     print("getName called");
+//     return "Name $i";
+// }
 
 // Iterables are lazily evaluated in dart.  
 //Iterable.generate() is a factory method that creates an iterable that generates values on-the-fly. Iterables are lazily generated so the function getName() will be called only when the value is accessed.
 
 //!When you use Iterable.generate, the getName() function is not called immediately for all elements. Instead, getName() is called only when a specific element is accessed during iteration. This means memory is not allocated for all the elements upfront, and computation happens only for the elements you explicitly use.
-Iterable<String> numbers = Iterable.generate(10, (index) => getName(index));
-  for (var number in numbers.take(2)) {
-    print(number);
-  }
+// Iterable<String> numbers = Iterable.generate(10, (index) => getName(index));
+//   for (var number in numbers.take(2)) {
+//     print(number);
+//   }
 
  //! List.generate() is not lazily evaluated. It is eagerly evaluated. When you use List.generate, the getName() function is called immediately for all 10 elements. This means all the elements are precomputed and stored in memory at once, even if you only need the first two elements.
-final List<String> l = List.generate(10, (index) => getName(index));
-  for (var number in l.take(2)) {
-    print(number);
-  }
-}
+// final List<String> l = List.generate(10, (index) => getName(index));
+//   for (var number in l.take(2)) {
+//     print(number);
+//   }
+// }
 
 //?------------------------------------------------------
 
