@@ -143,9 +143,56 @@
 //     if (map.containsKey(result)) {
 //       print([map[result]!, i]);
 //     }
-    
+
 //     map[nums[i]] = i;
 //     print(map);
 //   }
 
+// }
+
+//! 28/01/25 (Leetcode: Pascal's Triangle II)
+//? Given an integer rowIndex, return the rowIndexth row of the Pascal's triangle.
+
+// void main(List<String> args) {
+//   int rowIndex = 3;
+//   List<int> row = [1];
+//   if (rowIndex == 0) print(row);
+//   if (rowIndex == 1) print([1, 1]);
+
+//   if (rowIndex > 1) {
+//     for (var i = 1; i <= rowIndex; i++) {
+//       List<int> newList = [];
+//       newList.add(1);
+//       for (var j = 1; j < row.length; j++) {
+//         newList.add(row[j - 1] + row[j]);
+//         print(newList);
+//       }
+//       newList.add(1);
+//       row = newList;
+//     }
+
+//   }
+//   print(row);
+// }
+
+//! 28/01/25 (Leetcode: 268 Missing Number)
+//? Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+// void main(List<String> args) {
+//   List<int> l = [3, 0, 1];
+
+//!First way
+//   int ans = 0;
+//   for (var i = 0; i < l.length; i++) {
+//     if (!l.contains(l.length - i)) {
+//       ans = l.length - i;
+//       print(ans);
+//     }
+//   }
+
+//!Second way
+//   int res = l.length;
+//   for (int i = 0; i <= l.length - 1; i++) {
+//     print(res += (i - l[i]));
+//   }
+  // print(res);
 // }
