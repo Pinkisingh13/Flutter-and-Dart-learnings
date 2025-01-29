@@ -522,41 +522,61 @@
 //! 23/01/25
 //? Q1: 1267 Count Servers that Communicate 
 // Time Complexity:   // O(M+N)
-void main() {
-  List<List<int>> grid = [
-    [1, 1, 0, 0],
-    [0, 0, 1, 0],
-    [0, 0, 1, 0],
-    [0, 0, 0, 1]
-  ];
-  int m = grid.length; //row
-  int n = grid[0].length; //column
-  int serverCount = 0;
+// void main() {
+//   List<List<int>> grid = [
+//     [1, 1, 0, 0],
+//     [0, 0, 1, 0],
+//     [0, 0, 1, 0],
+//     [0, 0, 0, 1]
+//   ];
+//   int m = grid.length; //row
+//   int n = grid[0].length; //column
+//   int serverCount = 0;
 
-  List<int> rowCount = List.filled(m, 0);
-  List<int> colCount = List.filled(n, 0);
+//   List<int> rowCount = List.filled(m, 0);
+//   List<int> colCount = List.filled(n, 0);
 
-  // Row
-  for (int i = 0; i < m; i++) {
-    for (var j = 0; j < n; j++) {
-      if (grid[i][j] == 1) {
-        rowCount[i]++;
-        colCount[j]++;
-      }
-    }
-  }
+//   // Row
+//   for (int i = 0; i < m; i++) {
+//     for (var j = 0; j < n; j++) {
+//       if (grid[i][j] == 1) {
+//         rowCount[i]++;
+//         colCount[j]++;
+//       }
+//     }
+//   }
 
-  print("RowCount ==> $rowCount");
-  print("ColCount ==> $colCount");
+//   print("RowCount ==> $rowCount");
+//   print("ColCount ==> $colCount");
 
-  for (var i = 0; i < m; i++) {
-    for (var j = 0; j < n; j++) {
-      if (grid[i][j] == 1) {
-        if (rowCount[i] > 1 || colCount[j] > 1) {
-          serverCount++;
-        }
-      }
-    }
-  }
-  print("Number of communicating servers: $serverCount");
+//   for (var i = 0; i < m; i++) {
+//     for (var j = 0; j < n; j++) {
+//       if (grid[i][j] == 1) {
+//         if (rowCount[i] > 1 || colCount[j] > 1) {
+//           serverCount++;
+//         }
+//       }
+//     }
+//   }
+//   print("Number of communicating servers: $serverCount");
+// }
+
+
+//?-----------------------------=-------------------------
+
+//!Question no 1: Check If Two Strings Are Permutations of Each Other:  Given two strings, determine if one is a permutation of the other (i.e., contains the exact same characters but in any order).
+
+void main(List<String> args) {
+  String s1 = "ab";
+  String s2 = "eidbaooo";
+
+ Map<String, int> map = {};
+
+ for (var i = 0; i < s2.length; i++) {
+   map[s2[i]] = (map[s2[i]] ?? 0) + 1;
+   map[s1[i]] = (map[s1[i]] ?? 0) - 1;
+ }
+
+ print(map.values.every((element) => element == 0,));
 }
+ 

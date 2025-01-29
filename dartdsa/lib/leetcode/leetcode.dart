@@ -124,7 +124,7 @@
 //   print(count);
 // }
 
-// ?---------------------------------------------------------------------------------------------------------------------------------------------------
+// ?----------------------------------------------------------------------------------------------------------------------------------
 
 //! 27/01/25 (Leetcode: 1 Two Sum)
 //*Pattern Summary: This approach demonstrates the "lookup while iterating" pattern:
@@ -196,3 +196,43 @@
 //   }
   // print(res);
 // }
+
+//?-----------------------------------------------------------------------------------------------------------------------------
+
+//! 29/01/25 (Leetcode: 242 Valid Anagram)
+
+//? this is giving time limit exceeded
+// main(List<String> args) {
+//   String s = "anagram";
+//   String t = "nagaram";
+//   if (s.length != t.length) {
+//     print(false);
+//   }
+  
+//   List<String> sList = s.split('');
+//   List<String> tList = t.split('');
+//   print(sList);
+//   print(tList);
+
+//   for (var i = 0; i < s.length; i++) {
+//     if (!tList.contains(sList[i])) {
+//       print(false);
+//     }
+//     tList.remove(sList[i]);
+//   }
+//   print(true);
+// }
+
+//! Second way
+// void main(List<String> args) {
+//   String s = "anagram";
+//   String t = "nagaram";
+//   Map<String, int> map = {};
+//   for (var i = 0; i < s.length; i++) {
+//     map[s[i]] = (map[s[i]] ?? 0) + 1;
+//     map[t[i]] = (map[t[i]] ?? 0) - 1;
+//   }
+//   print(map);
+//   print(map.values.every((element) => element == 0,));
+// }
+
