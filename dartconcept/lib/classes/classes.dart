@@ -196,3 +196,127 @@
 //  If the calculation is expensive, you might want to use a list initializer constructor instead of a getter. In this case, the fullName property is calculated only once when the instance is created.
 
 // The difference is that a getter is a method that is called when you access a property of an object, while a list initializer constructor is called when you create an object.
+
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 5: Methods
+//* Methods are functions that are defined inside a class. They can be used to perform operations on the data stored in the class.
+
+// void main(List<String> args) {
+
+//   final car = Car();
+//   car.drive(speed: 20); // Car Driving...
+//   car.speed = 40; // setting the speed
+//   car.drive(speed: car.speed); // Car Driving...
+//   car.stop(); // Car Stopped!
+//   print(car.speed); // 0
+
+// }
+
+//Here the methodss are belonging to the an instance meaning that you have to make an instance of the class to call the method.
+// Those functions which are no static and accessed by the instance of the class are called methods.
+// here we have no control over the speed property of the car class because it is public and can be accessed from outside the class. We can set the speed to any value we want, even a negative value, which doesn't make sense for a car. To fix this, we can make the speed property private and provide a setter method to set the speed.
+
+// class Car {
+
+//   int speed = 0;
+
+//   void drive({required int speed}) {
+//     print('Car Driving at $speed km/h...');
+//   }
+
+//   void stop() {
+//     speed = 0;
+//     print('Car Stopped!');
+//   }
+// }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 6: Setters Methods
+//* Setters are used to set the value of a property in a class. They are defined using the set keyword followed by the property name.
+
+// void main(List<String> args) {
+  // final car = Car();
+  // car.speed = 40;
+  // print(car.speed); // 40
+  // car.drive( speed:  40); // Car Driving at 40 km/h...
+  // car.speed = -10; // Exception: Speed cannot be negative
+//   car.speed = 60;
+// }
+ 
+ //Here drive method cant directly access the speed property of the car class because it is private. So, we have to use the setter method to set the speed property. The setter method is called when we set the value of the speed property.
+ // hERE we are following encapsulation principle.
+ // Validation :
+ //The speed setter method includes validation to prevent negative speed values. If the drive method were to assign speed directly to _speed, it would bypass the validation logic. 
+
+// class Car {
+//   int _speed = 0;
+
+//   int get speed => _speed;
+
+//   set speed(int value) {
+//     print("Setter called");
+//     if (value < 0) {
+//       throw Exception('Speed cannot be negative');
+//     } else {
+//       _speed = value;
+//     }
+//   }
+
+//   void drive({required int speed}) {
+
+//     print("Drive called");
+//     this.speed = speed;
+//     print('Car Driving at $_speed km/h...');
+//   }
+
+//   void stop() {
+//     speed = 0;
+//     print('Car Stopped!');
+//   }
+// }
+
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 7: Static Methods and Static Properties
+//* Static methods and properties are associated with the class itself, rather than with any particular instance of the class. They can be accessed using the class name without creating an instance of the class.
+//changes made to the static property or method will be reflected in all instances of the class.
+// because static methods scope is not based on the instance of the class, it is based on the class itself.
+// void main(List<String> args) { 
+//   print(Car.carInstantiated);
+//     Car(name: "Car1"); // creating an instance of the car class
+//   print(Car.carInstantiated);
+//   Car(name: "Car2");
+//   print(Car.carInstantiated);
+// }
+
+
+// Here we a static property which create a once per class and if you create thousand uses of the car this _carInstantiated will be the same for all of them. we are able to access this property.
+// Then  we are creating getter out of it as you can see in here so that the outside world can read this property. and we indicate world that hey dont mess with this variable because it is private and we are not going to allow you to change it.
+
+
+
+// class Car {
+//   static int _carInstantiated = 0;
+
+
+// static int get carInstantiated => _carInstantiated;
+// static void _incrementCarInstantiated() => _carInstantiated++;
+
+// String name;
+// Car({this.name = 'Car'}) {
+//   _incrementCarInstantiated();
+//   print('Car Instantiated: $_carInstantiated');
+//   }
+// }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 8: Factory Constructors
+
+// void main(List<String> args) {
+//   // 
+// }
