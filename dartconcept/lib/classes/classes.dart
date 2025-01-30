@@ -309,9 +309,9 @@
 
 // void main(List<String> args) {
 //! Creating instance of the Car class using the constructor
-  // if you want to go ahead and ask a vehicle to create a car for you, you can do that with a factory constructor.  Here we are creating an instance of the Car class directly using the Car constructor
-  // final car = Car(); 
-  // print(car);
+// if you want to go ahead and ask a vehicle to create a car for you, you can do that with a factory constructor.  Here we are creating an instance of the Car class directly using the Car constructor
+// final car = Car();
+// print(car);
 
 //! Creating instance of the Vehicle class using the factory constructor
 //   final factoryCar = Vehicle.car();
@@ -327,16 +327,13 @@
 // class Vehicle {
 //   const Vehicle();
 
-
 // Single factory constructor
 // factory Vehicle.car(){
 //   print('Car created from Vehicle');
 //   return Car();
 // }
 
-
 //Here, we have a factory constructor that creates instances of the Car and Truck classes. The factory constructor takes a type parameter that specifies the type of vehicle to create. If the type is 'car', it returns an instance of the Car class. If the type is 'truck', it returns an instance of the Truck class. Otherwise, it returns an instance of the Vehicle class.
-
 
 //  factory Vehicle.create(String type) {
 //     switch (type) {
@@ -348,8 +345,6 @@
 //         return Vehicle();
 //     }
 //   }
-
-
 // }
 
 // class Car extends Vehicle {
@@ -359,3 +354,99 @@
 // class Truck extends Vehicle {
 //   const Truck();
 // }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 9: Inheriting Constructors
+//constructors are special functions that are not inherited by subclasses. However, you can call a superclass constructor from a subclass constructor using the super keyword.
+
+//! Flow of Execution
+//*Instance Creation: final mom1 = Mom();
+
+//* Mom Constructor Runs:
+// Calls super(role: Role.mom);, which invokes Person's constructor.
+// The Person constructor assigns Role.mom to this.role.
+
+//* Printing role:
+// mom1.role is now Role.mom.
+// Output: Role.mom
+
+//! Key Takeaways
+// Constructors are not inherited in Dart.
+
+// You can use the super keyword to call a constructor of the superclass.
+
+// If the superclass has a required constructor parameter, the subclass must provide values when calling super().
+
+// Enums can be used to represent fixed sets of values (like roles in this example).
+
+// enum Role {mom, dad, son, daughter, grandpa, grandma}
+// void main(List<String> args) {
+//   final mom1 = Mom();
+//   print(mom1.role); // Role.mom
+// }
+
+// class Person {
+//   final Role role;
+//   Person({required this.role});
+// }
+
+// Mom extends Person, meaning it inherits all properties and methods of Person. Since the Person class has a required constructor parameter (role), the Mom class must pass a value for role when calling the Person constructor. This is done using super(role: Role.mom); in the Mom constructor.  super calls the constructor of the superclass (Person). It passes Role.mom to satisfy the required role parameter.
+// class Mom extends Person {
+//   Mom(): super(role: Role.mom);
+// }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 10: Abstract Classes
+//* Abstract classes are classes that cannot be instantiated directly. They are used as base classes for other classes and can contain abstract methods that must be implemented by subclasses.
+
+// abstract classes are little bit special in that they are blueprint of a bluprint(class), they are not meant to be instantiated directly. They are meant to be used as a base class for other classes. They can contain abstract methods that must be implemented by subclasses.
+
+//It is helpful in the case where we have two classes with similar properties and methods,  we can call it a special pattern which is common in both class and then we can create an abstract class and then we can extend that abstract class in both of these classes, So that both class have to impliment all the common properties and methods of the abstract class. It is helpful or time saving in the case where we have to write the same code again and again, it save our time and make our code more readable and maintainable.
+void main(List<String> args) {
+  // Extending the Animal class
+  const dog = Dog();
+  dog.makeSound(); // Dog barks
+  print(dog.leg); // 4
+
+// Implementing the Animal class
+  const cat = Cat(name: 'Fluffy');
+  cat.makeSound(); // Cat meows
+  print(cat.leg); // 4
+  print(cat.name); // Fluffy
+}
+
+abstract class Animal {
+  final String leg;
+
+  const Animal({required this.leg});
+  void makeSound() {
+    print('$runtimeType makes a sound');
+  }
+}
+
+class Dog extends Animal {
+  const Dog() : super(leg: '4');
+}
+
+class Cat implements Animal {
+
+
+//!Wrong way to implement an abstract class
+ // This will show an error because The issue is that the Cat class is using super to call the constructor of Animal, but implements does not allow calling a superclass constructor. Instead, you need to define the properties and methods directly in the Cat class. 
+//  Cat() : super(leg: '4');
+
+//!Correct way to implement an abstract class
+final String name;
+const Cat({required this.name});
+  
+  @override
+  void makeSound() {
+    print('Cat meows');
+  }
+  
+  @override
+  String get leg => '4';
+
+}
