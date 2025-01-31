@@ -564,19 +564,90 @@
 
 //?-----------------------------=-------------------------
 
-//!Question no 1: Check If Two Strings Are Permutations of Each Other:  Given two strings, determine if one is a permutation of the other (i.e., contains the exact same characters but in any order).
+//!Question no 1: Check If Two Strings Are Permutations of Each Other: Given two strings, determine if one is a permutation of the other (i.e., contains the exact same characters but in any order).
 
-void main(List<String> args) {
-  String s1 = "ab";
-  String s2 = "eidbaooo";
+// void main(List<String> args) {
+//   String s1 = "abc";
+//   String s2 = "bca";
 
- Map<String, int> map = {};
+//  Map<String, int> map = {};
 
- for (var i = 0; i < s2.length; i++) {
-   map[s2[i]] = (map[s2[i]] ?? 0) + 1;
-   map[s1[i]] = (map[s1[i]] ?? 0) - 1;
- }
+//  for (var i = 0; i < s2.length; i++) {
+//    map[s2[i]] = (map[s2[i]] ?? 0) + 1;
+//    map[s1[i]] = (map[s1[i]] ?? 0) - 1;
+//  }
 
- print(map.values.every((element) => element == 0,));
-}
- 
+//  print(map.values.every((element) => element == 0,));
+// }
+
+//! Optimized Way
+
+// void main(List<String> args) {
+//   String s1 = "test";
+//   String s2 = "text";
+
+//  if (s1.length != s2.length) print(false);
+
+//   List<int> charCount = List.filled(26, 0) ;
+
+//   for (var i = 0; i < s1.length; i++) {
+//     print("code unit $i : ${s1.codeUnitAt(i)}");
+//     print('a'.codeUnitAt(0)); //97
+//     charCount[s1.codeUnitAt(i) - 'a'.codeUnitAt(0)]++;
+//     charCount[s2.codeUnitAt(i) - 'a'.codeUnitAt(0)]--;
+//   }
+
+//   print(charCount.every((element) => element==0,));
+//     print("charCount==> $charCount");
+// }
+
+//?----------------------------------------------
+//
+// //! 31/01/25
+// //! 2. Group Anagrams Together : Given a list of words, group all the anagrams together.
+
+// //! How to Check for Anagrams?
+// //? Two strings are anagrams if:
+//  They have the same length.
+// They contain the same characters with the same frequency.
+// void main(List<String> args) {
+
+//   List<String> w = ["eat","tea","tan","ate","nat","bat"];
+//   List<List<String>> l = [];
+
+// Checking if length == 1
+//   if ( w.length == 1) {
+//     l.add([w[0]]);
+//     print(l);
+//     return;
+//   }
+
+//   //Checking if length of all elements is the same 
+//   bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
+//   if (!len) {
+//     l.add([]);
+//     return;
+//   }
+
+//  //Main logic 
+//   Map<String, List<String>>  map = {};
+
+//   for (int i = 0; i < w.length; i++) {
+//      String sortedWord = String.fromCharCodes(w[i].runes.toList()..sort());
+//     print("Sorted Word is $sortedWord");
+
+//     if (map.containsKey(sortedWord)) {
+//       map[sortedWord]!.add(w[i]);
+      
+//     }else{
+//       map[sortedWord] = [w[i]];
+//     }
+//   }
+
+//  for (var e in map.entries) {
+//    l.add(e.value);
+//  }
+
+//  print(l);
+
+// }

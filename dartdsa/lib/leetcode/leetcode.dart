@@ -239,3 +239,50 @@
 //?----------------------------------------------------------------------------------------------------------
 
 
+//! 31/01/25 Leetcode (49 Group Anagrams) : Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+
+//! How to Check for Anagrams?
+//? Two strings are anagrams if:
+// They have the same length.
+// They contain the same characters with the same frequency.
+void main(List<String> args) {
+
+  List<String> w = ["eat","tea","tan","ate","nat","bat"];
+  List<List<String>> l = [];
+
+// Checking if length == 1
+  if ( w.length == 1) {
+    l.add([w[0]]);
+    print(l);
+    return;
+  }
+
+  //Checking if length of all elements is the same 
+  bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
+  if (!len) {
+    l.add([]);
+    return;
+  }
+
+ //Main logic 
+  Map<String, List<String>>  map = {};
+
+  for (int i = 0; i < w.length; i++) {
+     String sortedWord = String.fromCharCodes(w[i].runes.toList()..sort());
+    print("Sorted Word is $sortedWord");
+
+    if (map.containsKey(sortedWord)) {
+      map[sortedWord]!.add(w[i]);
+      
+    }else{
+      map[sortedWord] = [w[i]];
+    }
+  }
+
+ for (var e in map.entries) {
+   l.add(e.value);
+ }
+
+ print(l);
+
+}
