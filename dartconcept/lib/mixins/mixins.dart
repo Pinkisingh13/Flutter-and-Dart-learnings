@@ -26,7 +26,7 @@
 //     print('$runtimeType is jumping at $speed');
 //     this.speed = speed;
 //   }
- 
+
 // }
 // mixin CanWalk on HasSpeed{
 
@@ -34,7 +34,7 @@
 //     print('$runtimeType is walking at $speed');
 //     this.speed = speed;
 //   }
- 
+
 // }
 
 //here, Person class is inheriting the functionalities of HasSpeed, CanJump and CanWalk. parent mixin HasSpeed comes first and then CanJump and CanWalk.
@@ -68,7 +68,6 @@
 //   String get fullName => '$firstName $lastName';
 // }
 
-
 // //here, first name and last name are variable but in the mixin class it is a getter. so in mixin it does not matter if you are passing a variable or a getter, what mixin  class needed is the value of the variable or getter.
 // class Person with HasFirstName, HasLastName, HasFullName{
 //   @override
@@ -97,7 +96,7 @@
 
 // class Cat with HasAge{
 //   @override
-  //here we cant can not have const constructor and final int age  because  mixin class HasAge does not say this abstract int age is a get age  like this int get agel; because thenn it would not be able to increment the age. so, we have to leave it like abstract int age; its a property that i can read from and write  to, therefore cat that conforms to HasAge can not have a const constructor and final int age. simply because one of HasAge function which it has brought in using HasAge mixin is actualling modifying or mutating the this age instance internally therefore we cant have a const constructor and final int age.
+//here we cant can not have const constructor and final int age  because  mixin class HasAge does not say this abstract int age is a get age  like this int get agel; because thenn it would not be able to increment the age. so, we have to leave it like abstract int age; its a property that i can read from and write  to, therefore cat that conforms to HasAge can not have a const constructor and final int age. simply because one of HasAge function which it has brought in using HasAge mixin is actualling modifying or mutating the this age instance internally therefore we cant have a const constructor and final int age.
 //   int age;
 
 //   Cat({required this.age});
@@ -108,9 +107,9 @@
 //! Example 4: Mixin with Data Types or Mixin on class
 
 // void main(List<String> args) {
-  // final bla = Has2Feet();
-  //here this bla.run  is not working because Has2Feet does not have run method.
-  // bla.run();
+// final bla = Has2Feet();
+//here this bla.run  is not working because Has2Feet does not have run method.
+// bla.run();
 
 //   final person = Person();
 //   person.run();
@@ -135,9 +134,6 @@
 //   const Fish();
 // }
 
-
-
-
 //here we can access the run method because canRun implimenting on Has2Feet class and Has2Feet dont have run method,
 
 //this syntax mixin CanRun on Has2Feet{} is saying that i am available on any type that conforms to Has2Feet if that type brings me in but i am not available on any other type even if they bring me  in as long as i mean. basically it is ssaying taht i am only available on any type that conforms it Has2Feet and thats all. so, if you have a class that conforms to Has2Feet and you bring in CanRun mixin then you can access the run method. to use rum method in Has2Feet class, we have to create a subclass of Has2Feet and then bring in the CanRun mixin.
@@ -145,4 +141,58 @@
 //   void run() => print('$runtimeType is Running');
 // }
 
+//?------------------------------------------------------------------------------------------------
+
+//! Example 5: Mixin with hascode Implementation
+// void main(List<String> args) {
+//   final cat1 = Cat(petName: 'Tom', age: 10);
+//   final dog1 = Cat(petName: 'Joffy', age: 10);
+//   final cat2 = Cat(petName: 'Tom', age: 10);
+//   print(cat1.hashCode);
+//   print(dog1.hashCode);
+//   print(cat2.hashCode);
+//   print(cat1 == dog1);
+//   print(cat1 == cat2);
+// }
+
+// enum PetType { Dog, Cat, Bird }
+
+// mixin Pet {
+//   String get petName;
+//   PetType get petType;
+//   int get age;
+
+//   @override
+//   int get hashCode => Object.hash(
+//         petName,
+//         petType,
+//         age,
+//       );
+
+//   @override
+//   String toString() =>
+//       'Pet ( name: $petName, pet type: $petType, pet age: $age)';
+
+//   @override
+//   bool operator ==(Object other) => other is Pet && other.hashCode == hashCode;
+// }
+
+// class Cat with Pet {
+//   @override
+//   final String petName;
+//   @override
+//   final PetType petType;
+//   @override
+//   final int age;
+
+//   Cat({required this.petName, required this.age}) : petType = PetType.Cat;
+// }
+
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 6: Mixin and Reflection
+void main(List<String> args) {
+  
+}
 
