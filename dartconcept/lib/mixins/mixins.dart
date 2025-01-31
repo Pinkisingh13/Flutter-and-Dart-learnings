@@ -191,8 +191,142 @@
 
 //?--------------------------------------------------------------------------------------------------------------
 
-//! Example 6: Mixin and Reflection
+//! Example 6: Mixin with Reflection
+
+// import 'dart:mirrors'; //for reflection
+
+// void main(List<String> args) {
+//   final person = Person(
+//     name: 'John',
+//     age: 30,
+//   );
+//   print(person);
+//   final house = House(
+//     address: '123 Main St',
+//     rooms: 6,
+//   );
+//   print(house);
+// }
+// mixin HasDescription {
+//   @override
+//   String toString() {
+//     final reflection = reflect(this);
+//     final thisType = MirrorSystem.getName(
+//       reflection.type.simpleName,
+//     );
+
+//     final variables =
+//         reflection.type.declarations.values.whereType<VariableMirror>();
+
+//     final properties = <String, dynamic>{
+//       for (final field in variables)
+//         field.asKey: reflection
+//             .getField(
+//               field.simpleName,
+//             )
+//             .reflectee,
+//     }.toString();
+
+//     return '$thisType = $properties';
+//   }
+// }
+
+// extension AsKey on VariableMirror {
+//   String get asKey {
+//     final fieldName = MirrorSystem.getName(simpleName);
+//     final fieldType = MirrorSystem.getName(type.simpleName);
+//     return '$fieldName ($fieldType)';
+//   }
+// }
+
+// class Person with HasDescription {
+//   final String name;
+//   final int age;
+
+//   const Person({
+//     required this.name,
+//     required this.age,
+//   });
+// }
+
+// class House with HasDescription {
+//   final String address;
+//   final int rooms;
+
+//   const House({
+//     required this.address,
+//     required this.rooms,
+//   });
+// }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! Example 7: Mixin with Equality Implementation
+
+import 'package:uuid/uuid.dart';
+
 void main(List<String> args) {
-  
+  final uuid1 = const Uuid().v4();
+  final uuid2 = const Uuid().v4();
+
+  final person1 = Person(
+    id: uuid1,
+    name: 'John',
+    age: 30,
+  );
+
+  final person1Again = Person(
+    id: uuid1,
+    name: 'john',
+    age: 30,
+  );
+
+  final person2 = Person(
+    id: uuid2,
+    name: 'John',
+    age: 30,
+  );
+
+  if (person1 == person2) {
+    print('Person 1 and Person 2 are equal');
+  } else {
+    print('Person 1 and Person 2 are NOT equal');
+  }
+
+  if (person1 == person1Again) {
+    print('Person 1 and Person 1 Again are equal');
+  } else {
+    print('Person 1 and Person 1 Again are NOT equal');
+  }
+
+  if (person1Again == person2) {
+    print('Person 1 Again and Person 2 are equal');
+  } else {
+    print('Person 1 Again and Person 2 are NOT equal');
+  }
 }
 
+mixin HasIdentifier {
+  String get id;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is HasIdentifier &&
+          runtimeType == other.runtimeType &&
+          id == other.id;
+}
+
+class Person with HasIdentifier {
+  @override
+  final String id;
+
+  final String name;
+  final int age;
+
+  Person({
+    required this.id,
+    required this.name,
+    required this.age,
+  });
+}
