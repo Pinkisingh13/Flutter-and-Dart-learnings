@@ -520,7 +520,7 @@
 // }
 
 //! 23/01/25
-//? Q1: 1267 Count Servers that Communicate 
+//? Q1: 1267 Count Servers that Communicate
 // Time Complexity:   // O(M+N)
 // void main() {
 //   List<List<int>> grid = [
@@ -560,7 +560,6 @@
 //   }
 //   print("Number of communicating servers: $serverCount");
 // }
-
 
 //?-----------------------------=-------------------------
 
@@ -622,14 +621,14 @@
 //     return;
 //   }
 
-//   //Checking if length of all elements is the same 
+//   //Checking if length of all elements is the same
 //   bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
 //   if (!len) {
 //     l.add([]);
 //     return;
 //   }
 
-//  //Main logic 
+//  //Main logic
 //   Map<String, List<String>>  map = {};
 
 //   for (int i = 0; i < w.length; i++) {
@@ -638,7 +637,7 @@
 
 //     if (map.containsKey(sortedWord)) {
 //       map[sortedWord]!.add(w[i]);
-      
+
 //     }else{
 //       map[sortedWord] = [w[i]];
 //     }
@@ -651,3 +650,48 @@
 //  print(l);
 
 // }
+
+//?----------------------------------------------
+
+//! 01/02/25
+//! 📝 3. Find the First Unique Character in a String
+// Problem: Given a string, return the index of the first non-repeating character. If it doesn't exist, return -1.
+
+// void main(List<String> args) {
+//   String s = "leetcode";
+//   Map<String,int> map = {};
+//   for (var i = 0; i < s.length; i++) {
+
+//     if (map.containsKey(s[i])) {
+//      map[s[i]] =  map[s[i]]!+1;
+
+//     }else{
+//      map[s[i]] = 1;
+//     }
+//   }
+
+//  final ans =  map.entries.firstWhere((element) => element.value == 1,
+//  orElse: () => MapEntry("", -1),
+//  );
+
+//   print(ans.key.isNotEmpty ? s.indexOf(ans.key) : -1);
+//   print(map);
+// }
+
+// 01/02/25
+//! 3151. Special Array I
+
+void main(List<String> args) {
+  List<int> nums = [2, 1, 4];
+
+  for (var i = 0; i < nums.length - 1; i++) {
+    if (nums[i].isEven && nums[i + 1].isEven) {
+      print(false);
+    }
+    if (nums[i].isOdd && nums[i + 1].isOdd) {
+      print(false);
+    }
+  }
+  print(true);
+  
+}
