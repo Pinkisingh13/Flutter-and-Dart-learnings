@@ -621,14 +621,14 @@
 //     return;
 //   }
 
-//   //Checking if length of all elements is the same
+// Checking if length of all elements is the same
 //   bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
 //   if (!len) {
 //     l.add([]);
 //     return;
 //   }
 
-//  //Main logic
+//  Main logic
 //   Map<String, List<String>>  map = {};
 
 //   for (int i = 0; i < w.length; i++) {
@@ -678,20 +678,46 @@
 //   print(map);
 // }
 
-// 01/02/25
+// ?------------------------------------------------------------
+
+//! 01/02/25
 //! 3151. Special Array I
+// void main(List<String> args) {
+//   List<int> nums = [2, 1, 4];
 
-void main(List<String> args) {
-  List<int> nums = [2, 1, 4];
+//   for (var i = 0; i < nums.length - 1; i++) {
+//     if (nums[i].isEven && nums[i + 1].isEven) {
+//       print(false);
+//     }
+//     if (nums[i].isOdd && nums[i + 1].isOdd) {
+//       print(false);
+//     }
+//   }
+//   print(true);
 
-  for (var i = 0; i < nums.length - 1; i++) {
-    if (nums[i].isEven && nums[i + 1].isEven) {
-      print(false);
-    }
-    if (nums[i].isOdd && nums[i + 1].isOdd) {
-      print(false);
-    }
-  }
-  print(true);
-  
-}
+// }
+
+// ?------------------------------------------------------------
+
+//!04/02/25
+//! Question no 1: Find the Most Frequent Character in a String given a string, return the character that appears most frequently.
+
+// void main(List<String> args) {
+//   String s = "abcbba";
+//   Map<String, int> map = {};
+
+//  for (var i = 0; i < s.length; i++) {
+//     if (map.containsKey(s[i])) {
+//       map[s[i]] = map[s[i]]! + 1;
+//     } else {
+//       map[s[i]] = (map[s[i]] ?? 0) + 1;
+//     }
+//   }
+
+//   final ans = map.entries.reduce((v, e) => v.value >= e.value ? v : e);
+//   print(map);
+//   print(ans.key);
+// }
+
+
+//Question no 2: Leetcode(1002 Find Common Characters)

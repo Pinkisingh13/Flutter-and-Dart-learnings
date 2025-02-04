@@ -23,7 +23,6 @@ print(mostFrequentChar("aabbcc")); // ✅ Output: "a" (or "b", or "c" if multipl
 Use a HashMap<String, int> to store the count of each character.
 Iterate through the map and return the character with the highest count.
 
-
 ?---------------------------------
 
 📝 5. Check If Two Strings Are Isomorphic
