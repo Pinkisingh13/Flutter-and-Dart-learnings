@@ -238,51 +238,75 @@
 
 //?----------------------------------------------------------------------------------------------------------
 
-
 //! 31/01/25 Leetcode (49 Group Anagrams) : Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 
 //! How to Check for Anagrams?
 //? Two strings are anagrams if:
 // They have the same length.
 // They contain the same characters with the same frequency.
-void main(List<String> args) {
+// void main(List<String> args) {
 
-  List<String> w = ["eat","tea","tan","ate","nat","bat"];
-  List<List<String>> l = [];
+//   List<String> w = ["eat","tea","tan","ate","nat","bat"];
+//   List<List<String>> l = [];
 
-// Checking if length == 1
-  if ( w.length == 1) {
-    l.add([w[0]]);
-    print(l);
-    return;
-  }
+//  Checking if length == 1
+//   if ( w.length == 1) {
+//     l.add([w[0]]);
+//     print(l);
+//     return;
+//   }
 
-  //Checking if length of all elements is the same 
-  bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
-  if (!len) {
-    l.add([]);
-    return;
-  }
+//  Checking if length of all elements is the same
+//   bool len =  w.map((e) => e.length,).every((element) => element == w[0].length,);
+//   if (!len) {
+//     l.add([]);
+//     return;
+//   }
 
- //Main logic 
-  Map<String, List<String>>  map = {};
+//Main logic
+//   Map<String, List<String>>  map = {};
 
-  for (int i = 0; i < w.length; i++) {
-     String sortedWord = String.fromCharCodes(w[i].runes.toList()..sort());
-    print("Sorted Word is $sortedWord");
+//   for (int i = 0; i < w.length; i++) {
+//      String sortedWord = String.fromCharCodes(w[i].runes.toList()..sort());
+//     print("Sorted Word is $sortedWord");
 
-    if (map.containsKey(sortedWord)) {
-      map[sortedWord]!.add(w[i]);
-      
-    }else{
-      map[sortedWord] = [w[i]];
-    }
-  }
+//     if (map.containsKey(sortedWord)) {
+//       map[sortedWord]!.add(w[i]);
 
- for (var e in map.entries) {
-   l.add(e.value);
- }
+//     }else{
+//       map[sortedWord] = [w[i]];
+//     }
+//   }
 
- print(l);
+//  for (var e in map.entries) {
+//    l.add(e.value);
+//  }
 
-}
+//  print(l);
+
+// }
+
+//?------------------------------------------------------------------------------------------------------
+
+//! Question 1: Leetcode(1790. Check if One String Swap Can Make Strings Equal) 05/02/25
+
+// void main() {
+//   String s1 = "bank";
+//   String s2 = "kanb";
+
+//   List<int> list = [];
+
+//   for (var i = 0; i < s1.length; i++) {
+//     if (s1[i] != s2[i]) {
+//       list.add(i);
+    
+//   }
+//   if (list.length == 2) {
+//     print(s1[list[0]] == s2[list[1]] && s1[list[1]] == s2[list[0]]);
+//   } else {
+//     print(false);
+//   }
+
+//   print(list);
+// }
+// }

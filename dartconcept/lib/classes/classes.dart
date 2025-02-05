@@ -305,7 +305,7 @@
 //?--------------------------------------------------------------------------------------------------------------
 
 //! Example 8: Factory Constructors
-// factory constructors create instances  of their sunclasses a lot of people are a little bit confused about factory constructors and what differences between those and normal constructors: a normal constructor of a class can only  create instance of that class. However, a factory constructor can create instance of subclasses which is its main power.
+// factory constructors create instances  of their subclasses a lot of people are a little bit confused about factory constructors and what differences between those and normal constructors: a normal constructor of a class can only  create instance of that class. However, a factory constructor can create instance of subclasses which is its main power.
 
 // void main(List<String> args) {
 //! Creating instance of the Car class using the constructor
