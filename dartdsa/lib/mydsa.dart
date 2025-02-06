@@ -720,9 +720,11 @@
 // }
 
 //?----------------------------------------------------------------------
-//!Question no 2: Leetcode(1002 Find Common Characters)
-// void main(List<String> args) {
+//! 06/02/25
+//! Question no 1: Check If Two Strings Are Isomorphic:  Two strings s and t are isomorphic if the characters in s can be replaced to get t.(Each character must map to exactly one other character.)
+void main(List<String> args) {
   
-// }
+}
 
 //?--------------------------------------------------------------------
+
