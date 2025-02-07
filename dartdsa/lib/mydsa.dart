@@ -723,33 +723,41 @@
 //! 06/02/25
 //! Question no 1: Check If Two Strings Are Isomorphic:  Two strings s and t are isomorphic if the characters in s can be replaced to get t.(Each character must map to exactly one other character.)
 void main(List<String> args) {
-  String s = "egg"; 
-  String t = "add";
+  String s = "foo";
+  String t = "bar";
+  // String s = "egg";
+  // String t = "add";
   if (s.length != t.length) print(false);
 
-  Map<String, String> sMap = {};
-  Map<String, String> tMap = {};
+  Map<String, String> map = {};
+  Set<String> set = {};
 
   for (var i = 0; i < s.length; i++) {
-   
-   if (sMap.containsKey(s[i]) && sMap[s[i]] != t[i]) {
-     print(false);
-     return;
-   }
-   if (tMap.containsKey(t[i]) && tMap[t[i]] != s[i]) {
-     print(false);
-     return;
-   }
+    String sChar = s[i]; //f
+    String tChar = t[i]; //b
 
+    if (map.containsKey(sChar)) {
+      if (map[sChar] != tChar) {
 
-   sMap[s[i]] = t[i];
-   tMap[t[i]] = s[i];
+        print("returning from second if : false");
+        return;
+      }
+    } else {
+      if (set.contains(tChar)) {
+        print(false);
+        return;
+      }
+      map[sChar] = tChar;
+      set.add(tChar);
+    }
+
+    print("Map==> $map");
+    print("set==> $set");
   }
+
   print(true);
-  print(sMap);
-  print(tMap);
 }
 
-
+ 
 //?--------------------------------------------------------------------
 
