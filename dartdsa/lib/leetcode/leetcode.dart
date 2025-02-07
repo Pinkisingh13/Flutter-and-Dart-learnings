@@ -299,7 +299,7 @@
 //   for (var i = 0; i < s1.length; i++) {
 //     if (s1[i] != s2[i]) {
 //       list.add(i);
-    
+
 //   }
 //   if (list.length == 2) {
 //     print(s1[list[0]] == s2[list[1]] && s1[list[1]] == s2[list[0]]);
@@ -336,5 +336,53 @@
 //       count+=(n*(n-1)~/2)*8;
 //     }
 //   }
-//   print(count); 
+//   print(count);
 // }
+
+//?----------------------------------------------------------------------------
+
+//! 07/02/25
+//! Question no 1: Leetcode today's question(3160)
+void main() {
+  int limit = 4;
+
+  List<List<int>> queries = [
+    [1, 4],
+    [2, 5],
+    [1, 3],
+    [3, 4]
+  ];
+  Set<int> set = {};
+  Map<int, int> map = {};
+  List<int> result = [];
+
+  for (var i = 0; i < queries.length; i++) {
+    int ball = queries[i][0];
+    int newColor = queries[i][1];
+
+    if (map.containsKey(ball)) {
+      int oldColor = map[ball]!;
+
+      // First, update the ball's color in the map
+      map[ball] = newColor;
+
+      if (!map.containsValue(oldColor)) {
+        set.remove(oldColor);
+      }
+    } else {
+      map[ball] = newColor;
+    }
+
+    set.add(newColor);
+
+    result.add(set.length);
+
+    // print("After Query $i: Ball $ball -> Color $newColor");
+    // print("Map: $map");
+    // print("Set: $set");
+    // print("----------------");
+  }
+  print("Final Map: $map");
+  print("Final Set (Unique Colors): $set");
+  print(result);
+}
