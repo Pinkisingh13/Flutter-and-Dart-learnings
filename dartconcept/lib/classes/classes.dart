@@ -71,14 +71,7 @@
 
 //!  Another named constructor
 // Here we are using the same constructor name but with different parameters and providing name = "Max" as default value.
-// const Person.bar(this.age) : name = 'Max';
-
-//! Constructor with optional parameters
-//    Person.other(String? name, int? age) : name = name ?? 'Baz', age = age ?? 30;
-
-// }
-
-//?--------------------------------------------------------------------------------------------------------------
+// const Perso
 
 //! Example 3: Inheritance
 //* Inheritance is a mechanism in which a new class is derived from an existing class. The derived class inherits all the features from the base class and can have additional features of its own.
@@ -307,31 +300,31 @@
 //! Example 8: Factory Constructors
 // factory constructors create instances  of their subclasses a lot of people are a little bit confused about factory constructors and what differences between those and normal constructors: a normal constructor of a class can only  create instance of that class. However, a factory constructor can create instance of subclasses which is its main power.
 
-// void main(List<String> args) {
+void main(List<String> args) {
 //! Creating instance of the Car class using the constructor
 // if you want to go ahead and ask a vehicle to create a car for you, you can do that with a factory constructor.  Here we are creating an instance of the Car class directly using the Car constructor
 // final car = Car();
 // print(car);
 
 //! Creating instance of the Vehicle class using the factory constructor
-//   final factoryCar = Vehicle.car();
-//   print(factoryCar);
+  final factoryCar = Vehicle.car();
+  print(factoryCar);
 
 // print('---------------------------------');
 
-//   final factoryTruck = Vehicle.create('truck');
-//   print(factoryTruck);
+  // final factoryTruck = Vehicle.create('truck');
+  // print(factoryTruck);
 
-// }
+}
 
-// class Vehicle {
-//   const Vehicle();
+class Vehicle {
+  const Vehicle();
 
 // Single factory constructor
-// factory Vehicle.car(){
-//   print('Car created from Vehicle');
-//   return Car();
-// }
+factory Vehicle.car(){
+  print('Car created from Vehicle');
+  return Car();
+}
 
 //Here, we have a factory constructor that creates instances of the Car and Truck classes. The factory constructor takes a type parameter that specifies the type of vehicle to create. If the type is 'car', it returns an instance of the Car class. If the type is 'truck', it returns an instance of the Truck class. Otherwise, it returns an instance of the Vehicle class.
 
@@ -345,11 +338,11 @@
 //         return Vehicle();
 //     }
 //   }
-// }
+}
 
-// class Car extends Vehicle {
-//   const Car();
-// }
+class Car extends Vehicle {
+  const Car();
+}
 
 // class Truck extends Vehicle {
 //   const Truck();
@@ -404,33 +397,33 @@
 // abstract classes are little bit special in that they are blueprint of a bluprint(class), they are not meant to be instantiated directly. They are meant to be used as a base class for other classes. They can contain abstract methods that must be implemented by subclasses.
 
 //It is helpful in the case where we have two classes with similar properties and methods,  we can call it a special pattern which is common in both class and then we can create an abstract class and then we can extend that abstract class in both of these classes, So that both class have to impliment all the common properties and methods of the abstract class. It is helpful or time saving in the case where we have to write the same code again and again, it save our time and make our code more readable and maintainable.
-void main(List<String> args) {
-  // Extending the Animal class
-  const dog = Dog();
-  dog.makeSound(); // Dog barks
-  print(dog.leg); // 4
+// void main(List<String> args) {
+//   // Extending the Animal class
+//   const dog = Dog();
+//   dog.makeSound(); // Dog barks
+//   print(dog.leg); // 4
 
-// Implementing the Animal class
-  const cat = Cat(name: 'Fluffy');
-  cat.makeSound(); // Cat meows
-  print(cat.leg); // 4
-  print(cat.name); // Fluffy
-}
+// // Implementing the Animal class
+//   const cat = Cat(name: 'Fluffy');
+//   cat.makeSound(); // Cat meows
+//   print(cat.leg); // 4
+//   print(cat.name); // Fluffy
+// }
 
-abstract class Animal {
-  final String leg;
+// abstract class Animal {
+//   final String leg;
 
-  const Animal({required this.leg});
-  void makeSound() {
-    print('$runtimeType makes a sound');
-  }
-}
+//   const Animal({required this.leg});
+//   void makeSound() {
+//     print('$runtimeType makes a sound');
+//   }
+// }
 
-class Dog extends Animal {
-  const Dog() : super(leg: '4');
-}
+// class Dog extends Animal {
+//   const Dog() : super(leg: '4');
+// }
 
-class Cat implements Animal {
+// class Cat implements Animal {
 
 
 //!Wrong way to implement an abstract class
@@ -438,15 +431,15 @@ class Cat implements Animal {
 //  Cat() : super(leg: '4');
 
 //!Correct way to implement an abstract class
-final String name;
-const Cat({required this.name});
+// final String name;
+// const Cat({required this.name});
   
-  @override
-  void makeSound() {
-    print('Cat meows');
-  }
+//   @override
+//   void makeSound() {
+//     print('Cat meows');
+//   }
   
-  @override
-  String get leg => '4';
+//   @override
+//   String get leg => '4';
 
-}
+// }

@@ -1,4 +1,5 @@
-📝 3. Find the First Unique Character in a String
+# 📝 3. Find the First Unique Character in a String
+
 Problem:
 Given a string, return the index of the first non-repeating character. If it doesn't exist, return -1.
 
