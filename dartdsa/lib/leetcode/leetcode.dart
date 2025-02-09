@@ -387,7 +387,6 @@
 //   print(result);
 // }
 
-
 //?--------------------------------------------------------------------------------------------------
 
 //! 08/03/25 Leetcode(Contains Duplicate)
@@ -401,7 +400,7 @@
 //       if (!s.add(l[i])) {
 //         print(true);
 //       }
-   
+
 //     }
 
 //     print(false);
@@ -410,25 +409,24 @@
 
 //?--------------------------------------------------------------------------------------------------------------------
 
-//!09/02/24 Leetcode(2364 Count Number of Bad Pairs)
-void main(){
-  List<int> l = [4,1,3,3];
+//!09/02/24 Leetcode(2364 Count Number of Bad Pairs) TLE
+// void main() {
+//   List<int> l = [4, 1, 3, 3];
 
-  int count = 0;
+//   int count = 0;
 
-   
-   for (var i = 0; i < l.length; i++) {
-     for (var j = i + 1; j < l.length; j++) {
-    int val = j - i;
-    // print(val);
-    int val2 = l[j] - l[i];
-    // print(val2);
-     if (val != val2) {
-       count++;
-      //  print(count);
-     }
-   }
-  
-  print(count);
+//   for (var i = 0; i < l.length; i++) {
+//     for (var j = i + 1; j < l.length; j++) {
+//       int val = j - i;
+//       // print(val);
+//       int val2 = l[j] - l[i];
+//       // print(val2);
+//       if (val != val2) {
+//         count++;
+//         //  print(count);
+//       }
+//     }
 
-}}
+    // print(count);
+//   }
+// }
