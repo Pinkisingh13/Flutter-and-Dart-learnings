@@ -778,3 +778,34 @@
 //   }
 //   print(String.fromCharCode(xorSum));
 // }
+
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//!11/02/25
+//!  Can Construct String from Another? (Ransom Note) Problem: Given two strings, check if you can construct the first string (ransomNote) using the characters from the second string (magazine). Each character in magazine can be used only once.
+
+// void main(List<String> args) {
+//   String s1 = "aa";
+//   String s2 = "aab";
+//  List<int> count = List.filled(26, 0);
+//  print(count);
+
+//   // Count frequencies in magazine
+//   for (int i = 0; i < s2.length; i++) {
+//     count[s2[i].codeUnitAt(0) - 'a'.codeUnitAt(0)]++;
+//   }
+//   print(count);
+
+//   // Check if ransomNote can be constructed
+//   for (int i = 0; i < s1.length; i++) {
+
+
+//     int index = s1[i].codeUnitAt(0) - 'a'.codeUnitAt(0);
+//     if (count[index] == 0) {
+//       print(false);
+//     }
+//     count[index]--;
+//     print(count);
+//   }
+// }
