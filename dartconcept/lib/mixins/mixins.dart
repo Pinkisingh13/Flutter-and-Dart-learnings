@@ -4,7 +4,7 @@
 //?--------------------------------------------------------------------------------------------------------------
 
 //! Example 1: Simple Mixin
-//Mixins are like seperate entities that caan bring functionality to a existing classes and enumeration so, whereas your usual function you either create them at top level of your application or inside a class or inside a enumeration. mixins allow you to create functionallity or function variable  properties inside mixin and then bring the mixing into various enumeration or classes. and in that way you can basically have a kind of like simulated multiple inheritance in dart.
+//Mixins are like seperate entities that can bring functionality to a existing classes and enumeration so, whereas your usual function you either create them at top level of your application or inside a class or inside a enumeration. mixins allow you to create functionallity or function variable  properties inside mixin and then bring the mixing into various enumeration or classes. and in that way you can basically have a kind of like simulated multiple inheritance in dart.
 //Lets say you have two classes A and B and  class C wants to inherit the functionalities that are inside A and B.  Since, dart doe not have multiple inheritance, you can use mixins to achieve this. With Mixin you can inherit the functionalities of A and B in C.
 
 // void main() {

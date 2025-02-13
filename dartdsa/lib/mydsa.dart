@@ -783,7 +783,7 @@
 //?--------------------------------------------------------------------------------------------------------------
 
 //!11/02/25
-//!  Can Construct String from Another? (Ransom Note) Problem: Given two strings, check if you can construct the first string (ransomNote) using the characters from the second string (magazine). Each character in magazine can be used only once.
+//!  Question no 7:  Can Construct String from Another? (Ransom Note) Problem: Given two strings, check if you can construct the first string (ransomNote) using the characters from the second string (magazine). Each character in magazine can be used only once.
 
 // void main(List<String> args) {
 //   String s1 = "aa";
@@ -808,4 +808,30 @@
 //     count[index]--;
 //     print(count);
 //   }
+// }
+
+//?--------------------------------------------------------------------------------------------------------------
+
+//! 13/02/2025
+//! Question no 8: (1002. Leetcode) ==> Find Common Characters. Given a string array words, return an array of all characters that show up in all strings within the words (including duplicates). You may return the answer in any order.
+
+// void main(){
+//   final words = ["bella","label","roller"]; 
+
+   
+// List<String> commonChar = words.first.split("");
+
+// for (var i = 0; i < words.length; i++) {
+//   final List<String> currentChar = words[i].split("");
+//   final List<String> newCommon = [];
+
+//   for (var char in commonChar) {
+//     if (currentChar.contains(char)) {
+//       newCommon.add(char);
+//       currentChar.remove(char);
+//     }
+//   }
+//   commonChar = newCommon;
+// }
+// print(commonChar);
 // }
