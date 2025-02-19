@@ -835,3 +835,18 @@
 // }
 // print(commonChar);
 // }
+
+//! Check if number is prime or not
+
+void main(){
+int n = 16;
+if(n < 2){
+print(false);
+}
+for(int i=2; i*i<=n; i++){
+if (n%i == 0) {
+  print(false);
+}
+}
+print(false);
+}
