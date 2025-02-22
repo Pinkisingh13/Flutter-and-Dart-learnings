@@ -430,3 +430,45 @@
     // print(count);
 //   }
 // }
+
+
+//?---------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 21/02/25
+//! Quesiton no 1: 1941. Check if All Characters Have Equal Number of Occurrences
+
+// void main(List<String> args) {
+//   String s = "aaabb";
+//   var m = <String,int>{};
+
+//   for (var i = 0; i < s.length; i++) {
+//     if (m.containsKey(s[i])) {
+//       m[s[i]] = m[s[i]]! + 1;
+//     }else{
+//       m[s[i]] = 1;
+//     }
+    
+//   }
+  
+//   final ans = m.values.every((value) => value == m.values.first,);
+
+//   print(m);
+//   print(ans);
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 22/02/25
+//! Question no 1: 125. Valid Palindrome 
+
+// void main(List<String> args) {
+//   final String s = "A man, a plan, a canal: Panama";
+ 
+//   String filterString = s.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]'), '');
+  
+//   // Check if cleaned string is equal to its reverse
+//   final ans = filterString == filterString.split('').reversed.join('');
+
+//   print(ans); // Output: true
+// }

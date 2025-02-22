@@ -779,7 +779,6 @@
 //   print(String.fromCharCode(xorSum));
 // }
 
-
 //?--------------------------------------------------------------------------------------------------------------
 
 //!11/02/25
@@ -800,7 +799,6 @@
 //   // Check if ransomNote can be constructed
 //   for (int i = 0; i < s1.length; i++) {
 
-
 //     int index = s1[i].codeUnitAt(0) - 'a'.codeUnitAt(0);
 //     if (count[index] == 0) {
 //       print(false);
@@ -816,9 +814,8 @@
 //! Question no 8: (1002. Leetcode) ==> Find Common Characters. Given a string array words, return an array of all characters that show up in all strings within the words (including duplicates). You may return the answer in any order.
 
 // void main(){
-//   final words = ["bella","label","roller"]; 
+//   final words = ["bella","label","roller"];
 
-   
 // List<String> commonChar = words.first.split("");
 
 // for (var i = 0; i < words.length; i++) {
@@ -836,17 +833,38 @@
 // print(commonChar);
 // }
 
+//?---------------------------------------------------------------------------------------------------------------------------------------------
 //! Check if number is prime or not
+// void main() {
+//   int n = 16;
+//   if (n < 2) {
+//     print(false);
+//   }
+//   for (int i = 2; i * i <= n; i++) {
+//     if (n % i == 0) {
+//       print(false);
+//     }
+//   }
+//   print(false);
+// }
 
-void main(){
-int n = 16;
-if(n < 2){
-print(false);
-}
-for(int i=2; i*i<=n; i++){
-if (n%i == 0) {
-  print(false);
-}
-}
-print(false);
-}
+//?---------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 22/02/25
+
+//! 📝 9. Check If a String Can Be Rearranged to Form a Palindrome. Given a string, check if its characters can be rearranged to form a palindrome.
+
+// void main(List<String> args) {
+//   final s = "hello";
+//   var m = <String, int>{};
+//   for (var i = 0; i < s.length; i++) {
+//      m[s[i]] = (m[s[i]] ?? 0) + 1;
+//   }
+  
+//  int count =  m.values.where((element) => element%2!=0,).length;
+
+//   print(count == 1);
+// }
+
+
+//?---------------------------------------------------------------------------------------------------------------------------------------------

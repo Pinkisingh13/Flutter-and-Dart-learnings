@@ -85,6 +85,7 @@ Use two HashMaps to count character occurrences, then take the minimum frequency
 📝 9. Check If a String Can Be Rearranged to Form a Palindrome
 Problem:
 Given a string, check if its characters can be rearranged to form a palindrome.
+*
 
 🔹 Example:
 print(canFormPalindrome("civic")); // ✅ Output: true
@@ -115,5 +116,3 @@ Use the Sliding Window technique with a HashMap to track character positions.
 ✔️ Sorting for Character Comparisons (List.sort())
 ✔️ Using Two-Pointer / Sliding Window Techniques
 ✔️ Efficient String Manipulation (O(n)) instead of Sorting (O(n log n))
-
-Would you like me to provide Dart solutions for any of these?

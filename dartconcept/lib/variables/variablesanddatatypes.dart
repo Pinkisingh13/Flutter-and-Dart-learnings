@@ -44,7 +44,7 @@
 
 // So, the conclusion is that we can modify the elements of the final variable(Type 2 Modification) but we can't reassign the value of the variable (Type 1 Modification).
 
-//! Example 3: 
+//! Example 3:
 //! var keyword: In Dart, the var keyword is used to declare a variable with type inference, meaning the type of the variable is determined by the assigned value. You cannot use var together with an explicit type declaration like int. Example: var int x = 10 is invalid.
 //*Here we are doing TYPE 1 modification
 // var address = "Zoo Road, AAlubari, Samakhusi";
@@ -62,8 +62,9 @@
 // void main() {
 //   String name = "foo";
 // var name2 =   name; //Output: foo : Here we are not declaring the variable with its datatype so dart will identify its datatype with respect to its value.
-// var name2 = 23; //Output: 23
-//   print(name);
+
+// var name2 = 23;
+// print(name); //Output: 23
 // const name2 = name; //Error: Const variables must be initialized with a constant value.
 // final name2 = name; //Output: foo
 // }
@@ -74,8 +75,8 @@
 // void main() {
 // const varible must be initialized with a constant value whether it is assigned directly or assigned another variable's value(final variable, var variable, or datatype variable the value of all of these can not be assign to a constant variable value).It must be a const value.
 
-// final name = "foo";
-// const name2 = name; //Error: Const variables must be initialized with a constant value.
+//  final name = "foo";
+//  const name2 = name; //Error: Const variables must be initialized with a constant value.
 
 // String name3 = "zoo";
 // const name4 = name3; //Error: Const variables must be initialized with a constant value.
@@ -89,22 +90,21 @@
 //* Assigning Variables to final keyword
 // void main() {
 //CONST With FINAL
-//   const name = "foo";
-//   final name2 = name; //Output: foo
-//   print(name2);
+// const name = "foo";
+// final name2 = name;
+// print(name2); //Output: foo
 
 // VAR With FINAL
-//   var name3 = "zoo";
-//   name3 = "doo";
-//   final name4 = name3; //Output: zoo
-//   print(name4);
+// var name3 = "zoo";
+// final name4 = name3;
+// print(name4); //Output: zoo
 
 //Data Type With FINAL
-//   String name5 = "moo";
-//   final name6 = name5; //Output: moo
-//   print(name6);
-//   name5 =
-//       "doo"; // reassigning the value of name5 = "doo" does not make any change in the value of name6.
+// String name5 = "moo";
+// final name6 = name5; //Output: moo
+// print(name6);
+// name5 =
+//     "doo"; // reassigning the value of name5 = "doo" does not make any change in the value of name6.
 //   print(name6);
 // }
 
@@ -144,8 +144,56 @@
 //* TYPE PROMOTION: Dart will automatically promote the datatype of the variable if it is required.
 //* Type Precision: Dart will automatically promote the datatype of the variable if it is required.
 // void main() {
-  // final double age = 30; //  here we are doing type promotion to set an int value to a double variable by defining its data type. It is possible becuase double has more precision than int.
-  // print(age);
+// final double age = 30; //  here we are doing type promotion to set an int value to a double variable by defining its data type. It is possible becuase double has more precision than int.
+// print(age);
 
-  // final int age2 = 30.0; // here dart shows error because type promotion is not possible in this case because int has less precision than double.
+// final int age2 = 30.0; // here dart shows error because type promotion is not possible in this case because int has less precision than double.
 // }
+
+//? --------------------------------------------------------
+
+//! Specifying data types
+// void main(List<String> args) {
+//   const String yourName = "Foo bar";
+//   final String hisName = yourName;
+//   print(yourName);
+//   print(hisName);
+// }
+
+//? --------------------------------------------------------
+
+//! Naming Convention:
+// //* we should use camelCase for varibale naming because it is a naming convention which is followed by almost everywhere.
+// void main(List<String> args) {
+//   final firstName = "foo";
+//   print(firstName);
+// }
+
+//? --------------------------------------------------------
+
+//! Various Data Types
+void main(List<String> args) {
+  const int someInt = 10;
+  print(someInt);
+
+  const double someDouble = 10.00;
+  print(someDouble);
+
+  const bool issomeDouble = true;
+  print(issomeDouble);
+
+  const List<int> someList = [1, 2, 3];
+  print(someList);
+
+  const Map<String, int> someMap = {"a": 1, "b": 2};
+  print(someMap);
+
+  const Set<String> someSet = {"a", "b", "c"};
+  print(someSet);
+
+  const dynamic someNull = null;
+  print(someNull);
+
+  const Symbol someSymbol = #someNull;
+  print(someSymbol);
+}
