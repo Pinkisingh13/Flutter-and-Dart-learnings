@@ -123,8 +123,7 @@
 //   }
 // }
 
-
-//?---------------------------------------------------------------------------------------------------------------------------------------------------------
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Question no 5: Static Members : Create a class MathUtils with a static method factorial(int n) that calculates the factorial of a number. Call this method without creating an instance of the class.
 
@@ -137,3 +136,140 @@
 //    print(n*n);
 //   }
 // }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! ## Intermediate Level Questions
+
+//! 23/01/25
+
+//! Question no 1: Inheritance : Create a class Animal with a method speak(). Create two subclasses Dog and Cat that override the speak() method to print "Woof" and "Meow" respectively. Create objects of these subclasses and call the speak() method.
+
+// void main(List<String> args) {
+//   final Animal cat = Cat();
+//   final Animal dog = Dog();
+//   final Animal animal = Animal();
+
+//   animal.speak();
+//   dog.speak();
+//   cat.speak();
+// }
+
+// class Animal {
+//   void speak() {
+//     print("Sound from Animal");
+//   }
+// }
+
+// class Cat extends Animal {
+//   @override
+//   void speak() {
+//     print("Meow");
+//   }
+// }
+
+// class Dog extends Animal {
+//   @override
+//   void speak() {
+//     print("Woof");
+//   }
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 2: Method Overriding: Create a class Shape with an abstract method draw(). Create two subclasses Circle and Square that override the draw() method to print "Drawing Circle" and "Drawing Square" respectively.
+
+
+// void main(List<String> args) {
+//  final Shape shapeCircle = Circle();
+//  shapeCircle.draw();
+
+// }
+// abstract class Shape {
+//    draw();  // abstract method
+// }
+
+// class Circle extends Shape{
+//   @override
+//   draw() {
+//    print("Drawing Circle");
+//   }
+// }
+// class Square extends Shape{
+//   @override
+//   draw() {
+//    print("Drawing Circle");
+//   }
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 3: Polymorphism: Create a list of Shape objects (from the above question) and call the draw() method on each object. Observe how polymorphism works.
+
+//! This is a classic example of Runtime Polymorphism (also called Dynamic Method Dispatch).
+
+// void main(List<String> args) {
+//     List<Shape> shapes = [
+//     Circle(),
+//     Square(),
+//   ];
+
+//   // Call the draw() method on each object
+//   for (var shape in shapes) {
+//     shape.draw();
+//   }
+// }
+// abstract class Shape {
+//    draw(); // abstract method
+// }
+
+// class Circle extends Shape{
+//   @override
+//   draw() {
+//    print("Drawing Circle");
+//   }
+// }
+// class Square extends Shape{
+//   @override
+//   draw() {
+//    print("Drawing Square");
+//   }
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 4: Mixins: Create a mixin Logger with a method log(String message). Use this mixin in a class App and call the log() method.
+
+// void main(List<String> args) {
+//   final App log = App();
+//   log.log("My message");
+// }
+
+// mixin Logger{
+//   log(String message){
+//     print(message);
+//   }
+// }
+
+// class App with Logger{}
+
+
+//! Question no 5: Interfaces : Create an interface Drivable with a method drive(). Implement this interface in a class Car and call the drive() method.
+
+void main(List<String> args) {
+ final car = Car();
+ car.drive();
+  
+}
+abstract class Drivable{
+  drive();
+}
+
+class Car implements Drivable{
+  @override
+  drive() {
+   print("Car is driving");
+  }
+
+  
+}
