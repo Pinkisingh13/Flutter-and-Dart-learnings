@@ -427,10 +427,9 @@
 //       }
 //     }
 
-    // print(count);
+// print(count);
 //   }
 // }
-
 
 //?---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -447,28 +446,100 @@
 //     }else{
 //       m[s[i]] = 1;
 //     }
-    
+
 //   }
-  
+
 //   final ans = m.values.every((value) => value == m.values.first,);
 
 //   print(m);
 //   print(ans);
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! 22/02/25
-//! Question no 1: 125. Valid Palindrome 
+//! Question no 1: 125. Valid Palindrome
 
 // void main(List<String> args) {
 //   final String s = "A man, a plan, a canal: Panama";
- 
+
 //   String filterString = s.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]'), '');
-  
+
 //   // Check if cleaned string is equal to its reverse
 //   final ans = filterString == filterString.split('').reversed.join('');
 
 //   print(ans); // Output: true
 // }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! MATH
+//! 23/02/25
+
+
+//! Question no 1: Three Divisor
+
+// void main() {
+//   int n = 12;
+//   int count = 0;
+//   for (int i = 1; i <= n; i++) {
+//     if (n % i == 0) {
+//       count++;
+//     }
+//   }
+//   print(count);
+//   if (count == 3) {
+//     print(true);
+//   } else {
+//     print(false);
+//   }
+// }
+
+//?--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 2: Smallest Even Number: Given a positive integer n, return the smallest positive integer that is a multiple of both 2 and n.
+
+
+//* Solution===============>
+//Problem Understanding: We need to find the smallest number that is divisible by both 2 and n.
+// Even Number Case: If n is already even (divisible by 2), then n itself is the smallest multiple of both 2 and n.
+// Odd Number Case: If n is odd, then we need to multiply it by 2 to make it even (and thus divisible by 2). So, the smallest multiple is n * 2.
+// Ternary Operator: The code uses a ternary operator (n % 2 == 0) ? n : n * 2 as a concise way to express this logic. It checks if n is even. If it is, it returns n; otherwise, it returns n * 2.
+// Efficiency: This solution is very efficient because it directly calculates the result without needing to iterate or search. It has a time complexity of O(1).
+
+// void main(List<String> args) {
+//   int n = 5;
+//   int smallestMultiple = (n & 1 == 0) ? n : n*2;
+
+//     print(smallestMultiple);
+// }
+
+
+//?--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 3: 1979. Find Greatest Common Divisor of Array
+
+//* 📌 Euclidean Algorithm: The Euclidean Algorithm is based on the principle:
+
+//* GCD of two numbers a and b (where a > b) is the same as GCD of b and a % b.
+//* Repeat the process until the remainder is 0. The last non-zero remainder is the GCD.
+
+//* Stop when b = 0. Then, GCD(a, 0) = a.
+void main(List<String> args) {
+  List<int> nums = [7,5,6,8,3];
+  nums.sort();
+  print(nums);
+  int smallestNumber = nums.first;
+  int largestNumber = nums.last;
+  
+  print( calculateGcd(smallestNumber, largestNumber));
+
+}
+
+int calculateGcd(int a, int b){
+  if (b == 0) {
+    return a;
+  }
+
+  return calculateGcd(b, a%b);
+}
