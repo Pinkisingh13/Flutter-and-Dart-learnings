@@ -84,6 +84,17 @@
 //?---------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Example 5: Finding and Mapping keys and values on map
-void main(List<String> args) {
-  
-}
+// void main(List<String> args) {
+//   final map = {
+//     'name': "Foo",
+//     "age": 42,
+//   };
+
+
+// }
+
+// extension Find<K,V, R> on Map<K,V>{
+// R? find<T> (K key, R? Function (T value) cast,){
+
+// }
+// }

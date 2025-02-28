@@ -252,24 +252,56 @@
 // }
 
 // class App with Logger{}
-
+  
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Question no 5: Interfaces : Create an interface Drivable with a method drive(). Implement this interface in a class Car and call the drive() method.
 
-void main(List<String> args) {
- final car = Car();
- car.drive();
+// void main(List<String> args) {
+//  final car = Car();
+//  car.drive();
   
-}
-abstract class Drivable{
-  drive();
+// }
+// abstract class Drivable{
+//   drive();
+// }
+
+// class Car implements Drivable{
+//   @override
+//   drive() {
+//    print("Car is driving");
+//   }
+
+  
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! ## Advance Level Questions
+
+//! 27/01/25
+
+//! Question no 1: Factory Constructors: Create a class DatabaseConnection with a factory constructor that ensures only one instance of the class is created (Singleton pattern).
+
+
+void main(List<String> args) {
+    var db1 = DatabaseConnection();
+  var db2 = DatabaseConnection();
+  print(db1);
+  print(db2);
+  print(db1 == db2);
 }
 
-class Car implements Drivable{
-  @override
-  drive() {
-   print("Car is driving");
+class DatabaseConnection {
+  static DatabaseConnection? _connection;
+
+    // Private named constructor
+  DatabaseConnection._internal() {
+    print('Instance created');
   }
 
-  
+  factory DatabaseConnection(){
+   _connection ??= DatabaseConnection._internal();
+   return _connection!;
+  }
 }

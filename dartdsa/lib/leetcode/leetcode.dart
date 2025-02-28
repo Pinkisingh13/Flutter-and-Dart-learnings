@@ -476,7 +476,6 @@
 //! MATH
 //! 23/02/25
 
-
 //! Question no 1: Three Divisor
 
 // void main() {
@@ -499,7 +498,6 @@
 
 //! Question no 2: Smallest Even Number: Given a positive integer n, return the smallest positive integer that is a multiple of both 2 and n.
 
-
 //* Solution===============>
 //Problem Understanding: We need to find the smallest number that is divisible by both 2 and n.
 // Even Number Case: If n is already even (divisible by 2), then n itself is the smallest multiple of both 2 and n.
@@ -514,7 +512,6 @@
 //     print(smallestMultiple);
 // }
 
-
 //?--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Question no 3: 1979. Find Greatest Common Divisor of Array
@@ -525,21 +522,62 @@
 //* Repeat the process until the remainder is 0. The last non-zero remainder is the GCD.
 
 //* Stop when b = 0. Then, GCD(a, 0) = a.
+
+// void main(List<String> args) {
+//   List<int> nums = [7,5,6,8,3];
+//   nums.sort();
+//   print(nums);
+//   int smallestNumber = nums.first;
+//   int largestNumber = nums.last;
+
+//   print( calculateGcd(smallestNumber, largestNumber));
+
+// }
+
+// int calculateGcd(int a, int b){
+//   if (b == 0) {
+//     return a;
+//   }
+
+//   return calculateGcd(b, a%b);
+// }
+
+//?--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Leetcode (283. Move Zeroes)
+// void main(List<String> args) {
+//   List<int> nums = [0,1,0,3,12];
+
+//   int i =0;
+
+//   for (var j = 0; j < nums.length; j++) {
+//     if (nums[j] != 0) {
+//       int temp = nums[i];
+//       nums[i] = nums[j];
+//       nums[j] = temp;
+//       i++;
+//     }
+//   }
+// print(nums);
+// }
+
+//?--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 28/02/25
+//! Add Digits
 void main(List<String> args) {
-  List<int> nums = [7,5,6,8,3];
-  nums.sort();
-  print(nums);
-  int smallestNumber = nums.first;
-  int largestNumber = nums.last;
-  
-  print( calculateGcd(smallestNumber, largestNumber));
+  int num = 38;
+  if (num == 0) print(0);
+  int sum = 0;
+  while (num > 0){
+    int number = num % 10;
+    num = num ~/ 10;
+    sum+=number;
 
-}
-
-int calculateGcd(int a, int b){
-  if (b == 0) {
-    return a;
+    if (sum > 9 && num == 0) {
+      num = sum;
+      sum =0;
+    }
+   print(sum);
   }
-
-  return calculateGcd(b, a%b);
 }
