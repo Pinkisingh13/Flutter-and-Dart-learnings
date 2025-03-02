@@ -565,19 +565,62 @@
 
 //! 28/02/25
 //! Add Digits
-void main(List<String> args) {
-  int num = 38;
-  if (num == 0) print(0);
-  int sum = 0;
-  while (num > 0){
-    int number = num % 10;
-    num = num ~/ 10;
-    sum+=number;
+// void main(List<String> args) {
+//   int num = 38;
+//   if (num == 0) print(0);
+//   int sum = 0;
+//   while (num > 0){
+//     int number = num % 10;
+//     num = num ~/ 10;
+//     sum+=number;
 
-    if (sum > 9 && num == 0) {
-      num = sum;
-      sum =0;
-    }
-   print(sum);
+//     if (sum > 9 && num == 0) {
+//       num = sum;
+//       sum =0;
+//     }
+//    print(sum);
+//   }
+// }
+
+//! 02/03/24
+//! 2570. Merge Two 2D Arrays by Summing Values
+
+import 'dart:core';
+
+void main(List<String> args) {
+  final List<List<int>> nums1 = [
+    [1, 2],
+    [2, 3],
+    [4, 5]
+  ];
+
+  final List<List<int>> nums2 = [
+    [1, 4],
+    [3, 2],
+    [4, 1]
+  ];
+
+   final map = <int, int>{};
+
+  // Store nums1 values in the map
+  for (var i = 0; i < nums1.length; i++) {
+    map[nums1[i][0]] = nums1[i][1];
   }
+
+  // Merge nums2 into the map
+  for (var i = 0; i < nums2.length; i++) {
+    if (map.containsKey(nums2[i][0])) {
+      // If ID exists, sum values
+      map[nums2[i][0]] = map[nums2[i][0]]! + nums2[i][1];
+    } else {
+      // If ID does not exist, add it
+      map[nums2[i][0]] = nums2[i][1];
+    }
+  }
+
+  // Convert map to a sorted list of lists
+  final result = map.entries.map((e) => [e.key, e.value]).toList();
+  result.sort((a, b) => a[0].compareTo(b[0])); // Ensure sorting by ID
+
+  print(result);
 }
