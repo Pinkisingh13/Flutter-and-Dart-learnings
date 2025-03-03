@@ -582,45 +582,80 @@
 //   }
 // }
 
+//*======================================================================================================================================================================================================================================================================================================*//
+
+//! March Month
+
 //! 02/03/24
 //! 2570. Merge Two 2D Arrays by Summing Values
 
-import 'dart:core';
+// import 'dart:core';
 
-void main(List<String> args) {
-  final List<List<int>> nums1 = [
-    [1, 2],
-    [2, 3],
-    [4, 5]
-  ];
+// void main(List<String> args) {
+//   final List<List<int>> nums1 = [
+//     [1, 2],
+//     [2, 3],
+//     [4, 5]
+//   ];
 
-  final List<List<int>> nums2 = [
-    [1, 4],
-    [3, 2],
-    [4, 1]
-  ];
+//   final List<List<int>> nums2 = [
+//     [1, 4],
+//     [3, 2],
+//     [4, 1]
+//   ];
 
-   final map = <int, int>{};
+//    final map = <int, int>{};
 
-  // Store nums1 values in the map
-  for (var i = 0; i < nums1.length; i++) {
-    map[nums1[i][0]] = nums1[i][1];
-  }
+//   // Store nums1 values in the map
+//   for (var i = 0; i < nums1.length; i++) {
+//     map[nums1[i][0]] = nums1[i][1];
+//   }
 
-  // Merge nums2 into the map
-  for (var i = 0; i < nums2.length; i++) {
-    if (map.containsKey(nums2[i][0])) {
-      // If ID exists, sum values
-      map[nums2[i][0]] = map[nums2[i][0]]! + nums2[i][1];
+//   // Merge nums2 into the map
+//   for (var i = 0; i < nums2.length; i++) {
+//     if (map.containsKey(nums2[i][0])) {
+//       // If ID exists, sum values
+//       map[nums2[i][0]] = map[nums2[i][0]]! + nums2[i][1];
+//     } else {
+//       // If ID does not exist, add it
+//       map[nums2[i][0]] = nums2[i][1];
+//     }
+//   }
+
+//   // Convert map to a sorted list of lists
+//   final result = map.entries.map((e) => [e.key, e.value]).toList();
+//   result.sort((a, b) => a[0].compareTo(b[0])); // Ensure sorting by ID
+
+//   print(result);
+// }
+
+//?----------------------------------------------------------------------------------------------------------------------
+
+//! 03/03/25
+//! Partition Array According to Given Pivot
+
+void main() {
+  List<int> nums = [9, 12, 5, 10, 14, 3, 10];
+  int pivot = 10;
+
+  List<int> lessThan = [];
+  List<int> equalTo = [];
+  List<int> greaterThan = [];
+
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] < pivot) {
+      lessThan.add(nums[i]);
+    } else if (nums[i] > pivot) {
+      greaterThan.add(nums[i]);
     } else {
-      // If ID does not exist, add it
-      map[nums2[i][0]] = nums2[i][1];
+      equalTo.add(nums[i]);
     }
   }
 
-  // Convert map to a sorted list of lists
-  final result = map.entries.map((e) => [e.key, e.value]).toList();
-  result.sort((a, b) => a[0].compareTo(b[0])); // Ensure sorting by ID
+  print(lessThan);
+  print(greaterThan);
 
-  print(result);
+  List<int> ans = [...lessThan, ...equalTo, ...greaterThan];
+
+  print(ans);
 }

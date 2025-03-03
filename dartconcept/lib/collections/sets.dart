@@ -75,7 +75,7 @@
 // print(names1 == names2); // false. // because it is comparing the reference of the object which is different. It is same as i have explained in List (Example no: 8).
 
 //!Sub-Example 2: Using SetEquality class
-//* The best way to do comparison is to use SerEquality class from collection package.
+//* The best way to do comparison is to use SetEquality class from collection package.
 // final setEquality = SetEquality();
 // print(setEquality.equals(names1, names2)); // true
 // }
