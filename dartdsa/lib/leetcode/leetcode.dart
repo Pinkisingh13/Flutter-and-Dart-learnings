@@ -634,28 +634,48 @@
 //! 03/03/25
 //! Partition Array According to Given Pivot
 
-void main() {
-  List<int> nums = [9, 12, 5, 10, 14, 3, 10];
-  int pivot = 10;
+// void main() {
+//   List<int> nums = [9, 12, 5, 10, 14, 3, 10];
+//   int pivot = 10;
 
-  List<int> lessThan = [];
-  List<int> equalTo = [];
-  List<int> greaterThan = [];
+//   List<int> lessThan = [];
+//   List<int> equalTo = [];
+//   List<int> greaterThan = [];
 
-  for (var i = 0; i < nums.length; i++) {
-    if (nums[i] < pivot) {
-      lessThan.add(nums[i]);
-    } else if (nums[i] > pivot) {
-      greaterThan.add(nums[i]);
-    } else {
-      equalTo.add(nums[i]);
-    }
+//   for (var i = 0; i < nums.length; i++) {
+//     if (nums[i] < pivot) {
+//       lessThan.add(nums[i]);
+//     } else if (nums[i] > pivot) {
+//       greaterThan.add(nums[i]);
+//     } else {
+//       equalTo.add(nums[i]);
+//     }
+//   }
+
+//   print(lessThan);
+//   print(greaterThan);
+
+//   List<int> ans = [...lessThan, ...equalTo, ...greaterThan];
+
+//   print(ans);
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 04/03/25
+//! Leetcode(1780. Check if Number is a Sum of Powers of Three)
+
+void main(List<String> args) {
+  int n = 12;
+  // int base = -1;
+  final List<int> base = [];
+  print(n);
+  while (n != 0) {
+    int r = n % 3;
+    base.add(r);
+
+    n = n ~/ 3;
   }
+ print(base.every((element) => element < 2,));
 
-  print(lessThan);
-  print(greaterThan);
-
-  List<int> ans = [...lessThan, ...equalTo, ...greaterThan];
-
-  print(ans);
 }
