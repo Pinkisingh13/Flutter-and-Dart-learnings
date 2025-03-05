@@ -665,17 +665,33 @@
 //! 04/03/25
 //! Leetcode(1780. Check if Number is a Sum of Powers of Three)
 
+// void main(List<String> args) {
+//   int n = 12;
+//   // int base = -1;
+//   final List<int> base = [];
+//   print(n);
+//   while (n != 0) {
+//     int r = n % 3;
+//     base.add(r);
+
+//     n = n ~/ 3;
+//   }
+//  print(base.every((element) => element < 2,));
+
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 05/03/25
+//! Leetcode ( 1480. Running Sum of 1d Array)
+
 void main(List<String> args) {
-  int n = 12;
-  // int base = -1;
-  final List<int> base = [];
-  print(n);
-  while (n != 0) {
-    int r = n % 3;
-    base.add(r);
+ final  List<int> nums = [3,1,2,10,1];
 
-    n = n ~/ 3;
-  }
- print(base.every((element) => element < 2,));
 
+for (var i = 1; i < nums.length; i++) {
+  nums[i] += nums[i-1];
+}
+print(nums);
 }
