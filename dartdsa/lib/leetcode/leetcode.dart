@@ -681,17 +681,82 @@
 // }
 
 
-//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//?----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! 05/03/25
 //! Leetcode ( 1480. Running Sum of 1d Array)
 
+// void main(List<String> args) {
+//  final  List<int> nums = [3,1,2,10,1];
+
+
+// for (var i = 1; i < nums.length; i++) {
+//   nums[i] += nums[i-1];
+// }
+// print(nums);
+
+// }
+//?----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 06/03/25
+//! 2965. Find Missing and Repeated Values //!Pending
+
+// void main(){
+// List<List<int>> grid = [[1,3],[2,2]];
+
+
+
+// final List<int> l = [
+//     for (var row in grid)
+//     for (var i in row)
+//         i
+// ];
+// print(l);
+
+// }
+
+//! 07/03/25
+//! Leetcode (2523. Closest Prime Numbers in Range)
+
 void main(List<String> args) {
- final  List<int> nums = [3,1,2,10,1];
 
+    int left = 10, right = 19;
+     // Step 1: Compute primes up to 'right' using Sieve of Eratosthenes
+    List<bool> isPrime = List.filled(right + 1, true);
+    isPrime[0] = isPrime[1] = false;
 
-for (var i = 1; i < nums.length; i++) {
-  nums[i] += nums[i-1];
-}
-print(nums);
+    for (int i = 2; i * i <= right; i++) {
+      if (isPrime[i]) {
+        for (int j = i * i; j <= right; j += i) {
+          isPrime[j] = false;
+        }
+      }
+    }
+
+    // Step 2: Extract prime numbers in the given range [left, right]
+    List<int> primes = [];
+    for (int i = left; i <= right; i++) {
+      if (isPrime[i]) {
+        primes.add(i);
+      }
+    }
+
+    // Step 3: Find the closest prime pair
+    if (primes.length < 2){
+        print([-1,-1]);
+        return;
+    } // No valid pair
+
+    int minDiff = right - left + 1; // Maximum possible difference
+    List<int> closestPair = [-1, -1];
+
+    for (int i = 1; i < primes.length; i++) {
+      int diff = primes[i] - primes[i - 1];
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestPair = [primes[i - 1], primes[i]];
+      }
+    }
+
+print(closestPair);
 }
