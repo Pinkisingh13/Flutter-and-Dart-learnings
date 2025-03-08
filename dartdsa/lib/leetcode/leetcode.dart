@@ -717,46 +717,58 @@
 
 //! 07/03/25
 //! Leetcode (2523. Closest Prime Numbers in Range)
+// void main(List<String> args) {
+
+//     int left = 10, right = 19;
+//      // Step 1: Compute primes up to 'right' using Sieve of Eratosthenes
+//     List<bool> isPrime = List.filled(right + 1, true);
+//     isPrime[0] = isPrime[1] = false;
+
+//     for (int i = 2; i * i <= right; i++) {
+//       if (isPrime[i]) {
+//         for (int j = i * i; j <= right; j += i) {
+//           isPrime[j] = false;
+//         }
+//       }
+//     }
+
+//     // Step 2: Extract prime numbers in the given range [left, right]
+//     List<int> primes = [];
+//     for (int i = left; i <= right; i++) {
+//       if (isPrime[i]) {
+//         primes.add(i);
+//       }
+//     }
+
+//     // Step 3: Find the closest prime pair
+//     if (primes.length < 2){
+//         print([-1,-1]);
+//         return;
+//     } // No valid pair
+
+//     int minDiff = right - left + 1; // Maximum possible difference
+//     List<int> closestPair = [-1, -1];
+
+//     for (int i = 1; i < primes.length; i++) {
+//       int diff = primes[i] - primes[i - 1];
+//       if (diff < minDiff) {
+//         minDiff = diff;
+//         closestPair = [primes[i - 1], primes[i]];
+//       }
+//     }
+
+// print(closestPair);
+// }
+
+
+//! 08/03/25
+//? LEEtcode (1920. Build Array from Permutation)
 
 void main(List<String> args) {
-
-    int left = 10, right = 19;
-     // Step 1: Compute primes up to 'right' using Sieve of Eratosthenes
-    List<bool> isPrime = List.filled(right + 1, true);
-    isPrime[0] = isPrime[1] = false;
-
-    for (int i = 2; i * i <= right; i++) {
-      if (isPrime[i]) {
-        for (int j = i * i; j <= right; j += i) {
-          isPrime[j] = false;
-        }
-      }
-    }
-
-    // Step 2: Extract prime numbers in the given range [left, right]
-    List<int> primes = [];
-    for (int i = left; i <= right; i++) {
-      if (isPrime[i]) {
-        primes.add(i);
-      }
-    }
-
-    // Step 3: Find the closest prime pair
-    if (primes.length < 2){
-        print([-1,-1]);
-        return;
-    } // No valid pair
-
-    int minDiff = right - left + 1; // Maximum possible difference
-    List<int> closestPair = [-1, -1];
-
-    for (int i = 1; i < primes.length; i++) {
-      int diff = primes[i] - primes[i - 1];
-      if (diff < minDiff) {
-        minDiff = diff;
-        closestPair = [primes[i - 1], primes[i]];
-      }
-    }
-
-print(closestPair);
+  List<int> nums = [0,2,1,5,3,4];
+  List<int> ans = [];
+  for (var i = 0; i < nums.length; i++) {
+    ans.add(nums[nums[i]]);
+  }
+  print(ans);
 }
