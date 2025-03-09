@@ -764,11 +764,57 @@
 //! 08/03/25
 //? LEEtcode (1920. Build Array from Permutation)
 
-void main(List<String> args) {
-  List<int> nums = [0,2,1,5,3,4];
-  List<int> ans = [];
-  for (var i = 0; i < nums.length; i++) {
-    ans.add(nums[nums[i]]);
-  }
-  print(ans);
-}
+// void main(List<String> args) {
+//   List<int> nums = [0,2,1,5,3,4];
+//   List<int> ans = [];
+//   for (var i = 0; i < nums.length; i++) {
+//     ans.add(nums[nums[i]]);
+//   }
+//   print(ans);
+// }
+
+
+//! 09/10/25
+//! Leetcode 709
+// void main(){
+// String s = "Heloo";
+// print(s.toLowerCase());
+// }
+
+// //! Second Question : Leetcode 412
+// void main(List<String> args) {
+//   List<String> ans = [];
+
+//   int n = 15;
+//   for (var i = 1; i <= n; i++) {
+//     if (i%3 == 0 && i%5 == 0) {
+//       ans.add("FizzBuzz");
+//     }else if(i%3 == 0){
+//          ans.add("Fizz");
+//     }else if(i%5 == 0){
+//        ans.add("Buzz");
+//     }else{
+//       ans.add("$i");
+//     }
+//   }
+//   print(ans);
+// }
+
+
+//! Third Queestion
+//! Leetcode 2525
+// void main(List<String> args) {
+//   int l = 1000, w = 35, h = 700, mass = 300;
+
+//   bool isBulky =  l*w*h >= 1000000000 || l >= 10000 || w >= 10000 || h >= 10000;
+
+//   bool isHeavy = mass>= 100;
+
+//        if (isBulky && isHeavy) print("Both");
+
+//     if (isBulky) print("Bulky");
+
+//     if (isHeavy) print("Heavy");
+
+//     return print("Neither");
+// }
