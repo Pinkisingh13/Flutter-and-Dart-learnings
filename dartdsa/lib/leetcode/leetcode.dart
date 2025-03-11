@@ -680,7 +680,6 @@
 
 // }
 
-
 //?----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! 05/03/25
@@ -688,7 +687,6 @@
 
 // void main(List<String> args) {
 //  final  List<int> nums = [3,1,2,10,1];
-
 
 // for (var i = 1; i < nums.length; i++) {
 //   nums[i] += nums[i-1];
@@ -703,8 +701,6 @@
 
 // void main(){
 // List<List<int>> grid = [[1,3],[2,2]];
-
-
 
 // final List<int> l = [
 //     for (var row in grid)
@@ -760,7 +756,6 @@
 // print(closestPair);
 // }
 
-
 //! 08/03/25
 //? LEEtcode (1920. Build Array from Permutation)
 
@@ -772,7 +767,6 @@
 //   }
 //   print(ans);
 // }
-
 
 //! 09/10/25
 //! Leetcode 709
@@ -800,7 +794,6 @@
 //   print(ans);
 // }
 
-
 //! Third Queestion
 //! Leetcode 2525
 // void main(List<String> args) {
@@ -818,3 +811,51 @@
 
 //     return print("Neither");
 // }
+
+//! 11/03/2025
+//! Leetcode (1358. Number of Substrings Containing All Three Characters)
+
+// void main(List<String> args) {
+// String s = "abcabc";
+// Map<String,int> map = {};
+// for (var i = 0; i < s.length; i++) {
+//  for (var j = i+1; j <= s.length; j++) {
+//     print(s.substring(i,j));
+//    final String substringS = s.substring(i,j);
+//     if (substringS.contains('a') && substringS.contains('b') && substringS.contains('c')) {
+
+//       map[substringS] = (map[substringS] ?? 0) + 1;
+//     }
+//  }
+// }
+// int count = 0;
+// for (var e in map.entries) {
+//   count+=e.value;
+// }
+
+// print(count);
+// print(map);
+
+// }
+
+void main(List<String> args) {
+  String s = "abcabc";
+  int left = 0;
+  int count = 0;
+
+  // Map to track character frequency
+  Map<String, int> map = {'a': 0, 'b': 0, 'c': 0};
+
+  for (var right = 0; right < s.length; right++) {
+    map[s[right]] = (map[s[right]] ?? 0) + 1;
+     print(map);
+
+    while (map['a']! > 0 && map['b']! > 0 && map['c']! > 0) {
+      count += s.length - right; 
+      map[s[left]] = map[s[left]]! - 1; 
+      left++; 
+    }
+  }
+  print(map);
+  print(count);
+}
