@@ -838,24 +838,82 @@
 
 // }
 
+//!OPTIMIZED
+// void main(List<String> args) {
+//   String s = "abcabc";
+//   int left = 0;
+//   int count = 0;
+
+//   // Map to track character frequency
+//   Map<String, int> map = {'a': 0, 'b': 0, 'c': 0};
+
+//   for (var right = 0; right < s.length; right++) {
+//     map[s[right]] = (map[s[right]] ?? 0) + 1;
+//      print(map);
+
+//     while (map['a']! > 0 && map['b']! > 0 && map['c']! > 0) {
+//       count += s.length - right;
+//       map[s[left]] = map[s[left]]! - 1;
+//       left++;
+//     }
+//   }
+//   print(map);
+//   print(count);
+// }
+
+//! 12/03/25
+//! Leetcode (2529. Maximum Count of Positive Integer and Negative Integer)
+
+//! Binary Search
+// void main(List<String> args) {
+//   List<int> nums = [-2,-1,-1,1,2,3];
+//   int start = 0;
+//   int end = nums.length-1;
+//  final result =  binarySearch(nums, start, end);
+
+// int negativeCount = result;
+// int positiveCount = nums.length - result;
+
+// print(positiveCount > negativeCount ? positiveCount : negativeCount);
+// }
+
+// int binarySearch(List<int> nums, int start, int end){
+
+// while (start <= end) {
+
+//   int mid = start + (end- start) ~/2;
+//   print(mid);
+//   if (nums[mid] < 0) {
+//     start = mid+1;
+//   }else if(nums[mid] > 0){
+//    end = mid-1;
+//   }else{
+//     start = mid+1;
+//   }
+// }
+// return start;
+// }
+
+//! Two pointer
 void main(List<String> args) {
-  String s = "abcabc";
+  List<int> nums = [-2, -1, -1, 1, 2, 3];
+  int negativeCount = 0;
+  int positiveCount = 0;
+
   int left = 0;
-  int count = 0;
+  int right = nums.length - 1;
 
-  // Map to track character frequency
-  Map<String, int> map = {'a': 0, 'b': 0, 'c': 0};
+  print(right);
+  print(nums.length);
 
-  for (var right = 0; right < s.length; right++) {
-    map[s[right]] = (map[s[right]] ?? 0) + 1;
-     print(map);
-
-    while (map['a']! > 0 && map['b']! > 0 && map['c']! > 0) {
-      count += s.length - right; 
-      map[s[left]] = map[s[left]]! - 1; 
-      left++; 
-    }
+  while (left < nums.length && nums[left] < 0) {
+    negativeCount++;
+    left++;
   }
-  print(map);
-  print(count);
+  while (right >= 0 && nums[right] > 0) {
+   positiveCount++;
+    right--;
+  }
+
+  print(positiveCount > negativeCount ? positiveCount : negativeCount);
 }
