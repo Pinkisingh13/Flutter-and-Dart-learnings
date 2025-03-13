@@ -895,25 +895,39 @@
 // }
 
 //! Two pointer
-void main(List<String> args) {
-  List<int> nums = [-2, -1, -1, 1, 2, 3];
-  int negativeCount = 0;
-  int positiveCount = 0;
+// void main(List<String> args) {
+//   List<int> nums = [-2, -1, -1, 1, 2, 3];
+//   int negativeCount = 0;
+//   int positiveCount = 0;
 
-  int left = 0;
-  int right = nums.length - 1;
+//   int left = 0;
+//   int right = nums.length - 1;
 
-  print(right);
-  print(nums.length);
+//   print(right);
+//   print(nums.length);
 
-  while (left < nums.length && nums[left] < 0) {
-    negativeCount++;
-    left++;
-  }
-  while (right >= 0 && nums[right] > 0) {
-   positiveCount++;
-    right--;
-  }
+//   while (left < nums.length && nums[left] < 0) {
+//     negativeCount++;
+//     left++;
+//   }
+//   while (right >= 0 && nums[right] > 0) {
+//    positiveCount++;
+//     right--;
+//   }
 
-  print(positiveCount > negativeCount ? positiveCount : negativeCount);
+//   print(positiveCount > negativeCount ? positiveCount : negativeCount);
+// }
+
+
+
+//! 13/02/25
+//! Leetcode => 989. Add to Array-Form of Integer
+
+void main(){
+List<int> num = [1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3];
+int k = 516; 
+    String numString = num.join();
+    int ans = int.parse(numString) + k;
+    List<int> result = ans.toString().split('').map(int.parse).toList();
+    print(result);
 }
