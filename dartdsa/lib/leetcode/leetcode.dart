@@ -918,16 +918,36 @@
 //   print(positiveCount > negativeCount ? positiveCount : negativeCount);
 // }
 
-
-
 //! 13/02/25
 //! Leetcode => 989. Add to Array-Form of Integer
 
-void main(){
-List<int> num = [1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3];
-int k = 516; 
-    String numString = num.join();
-    int ans = int.parse(numString) + k;
-    List<int> result = ans.toString().split('').map(int.parse).toList();
-    print(result);
+// void main(){
+// List<int> num = [1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3];
+// int k = 516;
+//     String numString = num.join();
+//     int ans = int.parse(numString) + k;
+//     List<int> result = ans.toString().split('').map(int.parse).toList();
+//     print(result);
+// }
+
+//! 16/03/25
+//! Leetcode 1929. Concatenation of Array
+// ! Not Completed
+
+//! 17/03/25
+//! 2206. Divide Array Into Equal Pairs
+
+void main(List<String> args) {
+  List<int> nums = [3,2,3,2,2,2];
+
+  var map = <int, int>{};
+
+  for (var e in nums) {
+    map[e] = (map[e] ?? 0) + 1;
+  }
+
+final bool isOdd = map.values.any((element) => element % 2 == 0,);
+
+print(isOdd);
+  print(map);
 }
