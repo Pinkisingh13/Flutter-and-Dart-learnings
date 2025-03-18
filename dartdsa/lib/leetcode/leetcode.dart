@@ -934,20 +934,52 @@
 //! Leetcode 1929. Concatenation of Array
 // ! Not Completed
 
+
+
 //! 17/03/25
 //! 2206. Divide Array Into Equal Pairs
 
-void main(List<String> args) {
-  List<int> nums = [3,2,3,2,2,2];
+// void main(List<String> args) {
+//   List<int> nums = [3,2,3,2,2,2];
 
-  var map = <int, int>{};
+//   var map = <int, int>{};
 
-  for (var e in nums) {
-    map[e] = (map[e] ?? 0) + 1;
-  }
+//   for (var e in nums) {
+//     map[e] = (map[e] ?? 0) + 1;
+//   }
 
-final bool isOdd = map.values.any((element) => element % 2 == 0,);
+// final bool isOdd = map.values.any((element) => element % 2 == 0,);
 
-print(isOdd);
-  print(map);
+// print(isOdd);
+//   print(map);
+// }
+
+
+
+//! 18/03/24
+//! sqrt(x)
+
+void main(){
+int x = 4;
+int left = 0;
+int right = x;
+
+while(left <= right){
+int mid = (left+right) ~/ 2;
+
+int checkMid = mid*mid;
+if (checkMid  == x) {
+  print(mid);
+}else if(checkMid >= x){
+ right = mid -1;
+}else if(checkMid <= x){
+  left = mid +1;
+}else{
+  print(right);
+}
+
+
+
+}
+
 }
