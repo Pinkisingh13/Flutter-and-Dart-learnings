@@ -959,27 +959,50 @@
 //! 18/03/24
 //! sqrt(x)
 
+// void main(){
+// int x = 4;
+// int left = 0;
+// int right = x;
+
+// while(left <= right){
+// int mid = (left+right) ~/ 2;
+
+// int checkMid = mid*mid;
+// if (checkMid  == x) {
+//   print(mid);
+// }else if(checkMid >= x){
+//  right = mid -1;
+// }else if(checkMid <= x){
+//   left = mid +1;
+// }else{
+//   print(right);
+// }
+// }
+// }
+
+
+//! 19/03/25
+//! 2401. Longest Nice Subarray
+
+import 'dart:math';
+
 void main(){
-int x = 4;
-int left = 0;
-int right = x;
+  List<int> nums = [1,3,8,48,10];
 
-while(left <= right){
-int mid = (left+right) ~/ 2;
-
-int checkMid = mid*mid;
-if (checkMid  == x) {
-  print(mid);
-}else if(checkMid >= x){
- right = mid -1;
-}else if(checkMid <= x){
-  left = mid +1;
-}else{
-  print(right);
-}
+  int left = 0;
 
 
+  int currAnd = 0;
+  int maxLen = 0;
 
-}
+  for (var right = 0; right < nums.length; right++) {
+   if (currAnd & nums[right] != 0) {
+    currAnd^=nums[left];
+     left++;
+   }
+   currAnd |= nums[right];
 
+   maxLen = max(maxLen, right-left +1);
+  }
+  print(maxLen);
 }
