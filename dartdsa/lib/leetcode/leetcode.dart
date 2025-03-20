@@ -934,8 +934,6 @@
 //! Leetcode 1929. Concatenation of Array
 // ! Not Completed
 
-
-
 //! 17/03/25
 //! 2206. Divide Array Into Equal Pairs
 
@@ -953,8 +951,6 @@
 // print(isOdd);
 //   print(map);
 // }
-
-
 
 //! 18/03/24
 //! sqrt(x)
@@ -980,29 +976,58 @@
 // }
 // }
 
-
 //! 19/03/25
 //! 2401. Longest Nice Subarray
 
-import 'dart:math';
+// import 'dart:math';
 
-void main(){
-  List<int> nums = [1,3,8,48,10];
+// void main(){
+//   List<int> nums = [1,3,8,48,10];
 
-  int left = 0;
+//   int left = 0;
 
+//   int currAnd = 0;
+//   int maxLen = 0;
 
-  int currAnd = 0;
-  int maxLen = 0;
+//   for (var right = 0; right < nums.length; right++) {
+//    if (currAnd & nums[right] != 0) {
+//     currAnd^=nums[left];
+//      left++;
+//    }
+//    currAnd |= nums[right];
 
-  for (var right = 0; right < nums.length; right++) {
-   if (currAnd & nums[right] != 0) {
-    currAnd^=nums[left];
-     left++;
-   }
-   currAnd |= nums[right];
+//    maxLen = max(maxLen, right-left +1);
+//   }
+//   print(maxLen);
+// }
 
-   maxLen = max(maxLen, right-left +1);
-  }
-  print(maxLen);
+//!20/03/24
+//! Leetcode (Fruits Into Baskets II)
+
+void main() {
+  final List<int> fruits = [3, 6, 1];
+  final List<int> baskets = [6, 4, 7];
+  print(fruitsIntoBaskets(fruits, baskets));
 }
+
+int fruitsIntoBaskets(List<int> fruits, List<int> baskets) {
+  List<bool> used = List.filled(baskets.length, false);
+  int unplaced = 0;
+
+  for (int fruit in fruits) {
+    bool placed = false;
+    for (int i = 0; i < baskets.length; i++) {
+      if (!used[i] && baskets[i] >= fruit) {
+        used[i] = true;
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      unplaced++;
+    }
+  }
+
+  return unplaced;
+}
+
