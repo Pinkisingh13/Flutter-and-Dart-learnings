@@ -1004,30 +1004,84 @@
 //!20/03/24
 //! Leetcode (Fruits Into Baskets II)
 
-void main() {
-  final List<int> fruits = [3, 6, 1];
-  final List<int> baskets = [6, 4, 7];
-  print(fruitsIntoBaskets(fruits, baskets));
+// void main() {
+//   final List<int> fruits = [3, 6, 1];
+//   final List<int> baskets = [6, 4, 7];
+//   print(fruitsIntoBaskets(fruits, baskets));
+// }
+
+// int fruitsIntoBaskets(List<int> fruits, List<int> baskets) {
+//   List<bool> used = List.filled(baskets.length, false);
+//   int unplaced = 0;
+
+//   for (int fruit in fruits) {
+//     bool placed = false;
+//     for (int i = 0; i < baskets.length; i++) {
+//       if (!used[i] && baskets[i] >= fruit) {
+//         used[i] = true;
+//         placed = true;
+//         break;
+//       }
+//     }
+//     if (!placed) {
+//       unplaced++;
+//     }
+//   }
+
+//   return unplaced;
+// }
+
+
+//! 23/03/25
+//!2559. Count Vowel Strings in Ranges
+
+// import 'package:collection/collection.dart';
+
+// void main(List<String> args) {
+//   List<String> words = ["aba","bcb","ece","aa","e"];
+
+//   List<List<int>> queries = [[0,2],[1,4],[1,1]];
+
+//   List<String> vowels = [];
+//   List<int> ans = [];
+
+//   for (var e in words) {
+//     if ('aeiou'.contains(e[0]) && 'aeiou'.contains(e[e.length-1]) ) {
+//       vowels.add(e);
+//     }
+//   }
+
+//    for (var query in queries) {
+//     int count = 0;
+//     for (int i = query[0]; i <= query[1]; i++) {
+//       if (vowels.contains(words[i])) {
+//         count++;
+//       }
+//     }
+//     ans.add(count);
+//   }
+
+// print(ans);
+
+// }
+
+
+//!24/03/25
+//! Leetcode (Reverse string - in place)
+
+void main(List<String> args) {
+List<String> s =["h","e","l","l","o"];
+print(s.reversed.toList());
+
+int l = 0;
+int r = s.length-1;
+
+while (l<= r) {
+  String temp = s[r];
+  s[r] = s[l];
+  s[l] = temp;
+  l++;
+  r--; 
 }
-
-int fruitsIntoBaskets(List<int> fruits, List<int> baskets) {
-  List<bool> used = List.filled(baskets.length, false);
-  int unplaced = 0;
-
-  for (int fruit in fruits) {
-    bool placed = false;
-    for (int i = 0; i < baskets.length; i++) {
-      if (!used[i] && baskets[i] >= fruit) {
-        used[i] = true;
-        placed = true;
-        break;
-      }
-    }
-    if (!placed) {
-      unplaced++;
-    }
-  }
-
-  return unplaced;
+print(s);
 }
-
