@@ -14,8 +14,20 @@ import 'dart:collection';
 //UnmodifiableListView is a class that creates an unmodifiable view of a list.
 void main(List<String> args) {
   List<String> names = ['Jack', 'Jill', 'John', 'Jake'];
+
+  //! UnmodifiableListView()
   var unmodifiableNames = UnmodifiableListView(names);
   print(unmodifiableNames);
+
+  //! List.unmodifiable()
+  final namesUnmodifiable = List.unmodifiable(names); 
+  print(namesUnmodifiable);
+
+// ! modify original list
+  names[3] = "priya";
+  print(unmodifiableNames);
+  print(namesUnmodifiable);
+  //!Cheking error
   try {
     unmodifiableNames.add('Jen'); // Can not add item to unmodifiable list
   } catch (e) {

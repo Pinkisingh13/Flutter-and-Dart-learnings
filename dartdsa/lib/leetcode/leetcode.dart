@@ -1069,19 +1069,53 @@
 //!24/03/25
 //! Leetcode (Reverse string - in place)
 
-void main(List<String> args) {
-List<String> s =["h","e","l","l","o"];
-print(s.reversed.toList());
+// void main(List<String> args) {
+// List<String> s =["h","e","l","l","o"];
+// print(s.reversed.toList());
 
-int l = 0;
-int r = s.length-1;
+// int l = 0;
+// int r = s.length-1;
 
-while (l<= r) {
-  String temp = s[r];
-  s[r] = s[l];
-  s[l] = temp;
-  l++;
-  r--; 
-}
-print(s);
+// while (l<= r) {
+//   String temp = s[r];
+//   s[r] = s[l];
+//   s[l] = temp;
+//   l++;
+//   r--; 
+// }
+// print(s);
+// }
+
+//!26/03/25
+//! Leetcode(1422. Maximum Score After Splitting a String)
+
+import 'dart:math';
+
+void main(){
+  String s = "011101"; 
+  int maxCount = 0;
+
+  
+
+  for (var i = 1; i < s.length; i++) {
+
+    //LEFT SUBSTRING
+    String left = s.substring(0,i);
+    print("left substring: $left");
+    print(left.split("0"));
+    int zeroCount = left.split("0").length-1;
+    print("zeroCount: $zeroCount");
+
+
+    //RIGHT SUBSTRING
+    String right = s.substring(i);
+    print("right substring: $right");
+    print(right.split("1"));
+    int onesCount = right.split("1").length-1;
+    print("onesCount : $onesCount");
+
+     maxCount = max(maxCount, zeroCount+onesCount);
+    }
+
+    print(maxCount);
 }

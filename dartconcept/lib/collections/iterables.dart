@@ -36,23 +36,23 @@
 
 //* In this example i am using iterables of String. So happend that names is a list <String>.
 
-// void main(List<String> args) {
-//   List<String> names = ['Jack', 'Jill', 'John', 'Jake'];
+void main(List<String> args) {
+  List<String> names = ['Jack', 'Jill', 'John', 'Jake'];
 
   // This is an iterable of String
   //why this is iterable<String> not list<String>?  The reason behind  this that dart says you may be doing some heavy calculation in this map function, so do i really call this map for every element in the list? The answer is no. Dart will call this map function only when you access the value.
   // iterable saves memory and time. and it does not perform necessary calculations until you access the value.
   
-  // Iterable<String> namesIterable = names.map((name) {
-  //  return name.toUpperCase();
-  // });
-  // print(namesIterable);
+  Iterable<String> namesIterable = names.map((name) {
+   return name.toUpperCase();
+  });
+  print(namesIterable);
 
   //*here it will print only first two elements of the iterable. and it will not call the map function for the rest of the elements. because iterables are lazily evaluated. we are accessing only first two elements. hence, it doen not perform operation for the rest of the elements.
-//   for (var name in namesIterable.take(2)) {
-//     print(name);
-//   }
-// }
+  for (var name in namesIterable.take(2)) {
+    print(name);
+  }
+}
 
 
 //?------------------------------------------------------
