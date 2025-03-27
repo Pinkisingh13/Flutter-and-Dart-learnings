@@ -1031,7 +1031,6 @@
 //   return unplaced;
 // }
 
-
 //! 23/03/25
 //!2559. Count Vowel Strings in Ranges
 
@@ -1065,7 +1064,6 @@
 
 // }
 
-
 //!24/03/25
 //! Leetcode (Reverse string - in place)
 
@@ -1081,7 +1079,7 @@
 //   s[r] = s[l];
 //   s[l] = temp;
 //   l++;
-//   r--; 
+//   r--;
 // }
 // print(s);
 // }
@@ -1089,33 +1087,91 @@
 //!26/03/25
 //! Leetcode(1422. Maximum Score After Splitting a String)
 
-import 'dart:math';
+// import 'dart:math';
 
-void main(){
-  String s = "011101"; 
-  int maxCount = 0;
+// void main(){
+//   String s = "011101";
+//   int maxCount = 0;
 
-  
+//   for (var i = 1; i < s.length; i++) {
 
-  for (var i = 1; i < s.length; i++) {
+//     //LEFT SUBSTRING
+//     String left = s.substring(0,i);
+//     print("left substring: $left");
+//     print(left.split("0"));
+//     int zeroCount = left.split("0").length-1;
+//     print("zeroCount: $zeroCount");
 
-    //LEFT SUBSTRING
-    String left = s.substring(0,i);
-    print("left substring: $left");
-    print(left.split("0"));
-    int zeroCount = left.split("0").length-1;
-    print("zeroCount: $zeroCount");
+//     //RIGHT SUBSTRING
+//     String right = s.substring(i);
+//     print("right substring: $right");
+//     print(right.split("1"));
+//     int onesCount = right.split("1").length-1;
+//     print("onesCount : $onesCount");
 
+//      maxCount = max(maxCount, zeroCount+onesCount);
+//     }
 
-    //RIGHT SUBSTRING
-    String right = s.substring(i);
-    print("right substring: $right");
-    print(right.split("1"));
-    int onesCount = right.split("1").length-1;
-    print("onesCount : $onesCount");
+//     print(maxCount);
+// }
 
-     maxCount = max(maxCount, zeroCount+onesCount);
-    }
+//!  27/03/25
+//! Leetcode(2270. Number of Ways to Split Array)
 
-    print(maxCount);
-}
+import 'package:collection/collection.dart';
+
+//! Bad Approch: sublist() Usage, fold() Usage--> Not suitable for large Input
+
+//! Time Complexity Analysis
+//!Since both .sublist() and .fold() are called inside the loop, your approach results in:
+
+//!Outer loop: O(n)
+
+//!Each iteration (sublist + fold): O(n)
+//! Total Complexity: O(n²)
+// void main(){
+//   List<int> nums = [10,4,-8,7];
+
+//   int count  = 0;
+//   for (var i = 1; i < nums.length; i++) {
+//     List<int> left = nums.sublist(0,i);
+//     List<int> right = nums.sublist(i);
+//     print(left);
+//     print(right);
+
+//     int leftSum = left.fold(0, (previousValue, element) => previousValue + element,);
+//     print("LeftSum: $leftSum");
+
+//     int rightSum = right.fold(0, (previousValue, element) => previousValue + element,);
+//     print("RightSum: $rightSum");
+
+//     if (leftSum >= rightSum) {
+//       count++;
+//     }
+
+//   }
+
+//   print(count);
+// }
+
+//! Optimized Approach
+// void main(List<String> args) {
+//   List<int> nums = [10, 4, -8, 7];
+
+//   int totalSum = nums.reduce(
+//     (v, e) => v + e,
+//   );
+//   print(totalSum);
+
+//   int leftSum = 0;
+//   int count = 0;
+
+//   for (var n in nums.take(nums.length-1)) {
+//     leftSum += n;
+//     int rightSum = totalSum - leftSum;
+//     if (leftSum >= rightSum) {
+//       count++;
+//     }
+//   }
+//   print(count);
+// }
