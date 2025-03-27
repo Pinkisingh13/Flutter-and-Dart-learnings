@@ -1175,3 +1175,26 @@ import 'package:collection/collection.dart';
 //   }
 //   print(count);
 // }
+
+//! 28/03/25
+//! Leetcode (9. Palindrome Number)
+
+void main(List<String> args) {
+  int x = -121;
+  int answer = 0;
+
+  int sign = x < 0 ? -1 : 1;
+  x = x.abs();
+  while (x > 0) {
+    int rem = x % 10;
+    x ~/= 10;
+    answer = answer * 10 + rem;
+  }
+
+  if (answer == x) {
+    print(true);
+  }else{
+    print(false);
+  }
+  print(answer * sign);
+}
