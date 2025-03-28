@@ -1179,22 +1179,60 @@ import 'package:collection/collection.dart';
 //! 28/03/25
 //! Leetcode (9. Palindrome Number)
 
-void main(List<String> args) {
-  int x = -121;
-  int answer = 0;
+// void main(List<String> args) {
+//   int x = 121;
+//   int answer = 0;
+   
+//    int copy= x;
+//   while (copy > 0) {
+//     int rem = copy % 10;
+//     copy ~/= 10;
+//     answer = answer * 10 + rem;
+//   }
 
-  int sign = x < 0 ? -1 : 1;
-  x = x.abs();
-  while (x > 0) {
-    int rem = x % 10;
-    x ~/= 10;
-    answer = answer * 10 + rem;
-  }
+//   if (answer == x) {
+//     print(true);
+//   }else{
+//     print(false);
+//   }
+//   print(answer);
+// }
 
-  if (answer == x) {
-    print(true);
-  }else{
-    print(false);
+
+//!Leetcode (14. Longest Common Prefix)
+// void main(List<String> args) {
+//   List<String> s = ["flower","flow","flight"];
+//   // 
+  
+//   String first= s[0];
+
+
+// for (var i = 1; i < s.length; i++) {
+//     print(s[i].indexOf(first));
+//    while (s[i].indexOf(first) != 0) {
+//      first = first.substring(0, first.length-1);
+//      print(first);
+//      if (first.isEmpty) {
+//        print("''");
+//      }
+//    }
+// }
+// print("first: $first");
+
+// }
+
+//! Direct Method
+void main() {
+  List<String> s = ["flower", "flow", "flight"];
+  
+  String first = s[0];
+  for (var i = 1; i < s.length; i++) {
+    for (int j = 0; j < first.length; j++) {
+      if (j >= s[i].length || first[j] != s[i][j]) {
+        first = first.substring(0, j);
+        break;
+      }
+    }
   }
-  print(answer * sign);
+  print("first: $first");
 }
