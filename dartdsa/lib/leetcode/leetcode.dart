@@ -1182,7 +1182,7 @@ import 'package:collection/collection.dart';
 // void main(List<String> args) {
 //   int x = 121;
 //   int answer = 0;
-   
+
 //    int copy= x;
 //   while (copy > 0) {
 //     int rem = copy % 10;
@@ -1198,14 +1198,12 @@ import 'package:collection/collection.dart';
 //   print(answer);
 // }
 
-
 //!Leetcode (14. Longest Common Prefix)
 // void main(List<String> args) {
 //   List<String> s = ["flower","flow","flight"];
-//   // 
-  
-//   String first= s[0];
+//   //
 
+//   String first= s[0];
 
 // for (var i = 1; i < s.length; i++) {
 //     print(s[i].indexOf(first));
@@ -1222,17 +1220,54 @@ import 'package:collection/collection.dart';
 // }
 
 //! Direct Method
-void main() {
-  List<String> s = ["flower", "flow", "flight"];
-  
-  String first = s[0];
-  for (var i = 1; i < s.length; i++) {
-    for (int j = 0; j < first.length; j++) {
-      if (j >= s[i].length || first[j] != s[i][j]) {
-        first = first.substring(0, j);
+// void main() {
+//   List<String> s = ["flower", "flow", "flight"];
+
+//   String first = s[0];
+//   for (var i = 1; i < s.length; i++) {
+//     for (int j = 0; j < first.length; j++) {
+//       if (j >= s[i].length || first[j] != s[i][j]) {
+//         first = first.substring(0, j);
+//         break;
+//       }
+//     }
+//   }
+//   print("first: $first");
+// }
+
+//! 29/03/25
+//! Leetcode(1769. Minimum Number of Operations to Move All Balls to Each Box)
+
+// void main(){
+//   String boxes = "110";
+//       List<int> answer = [];
+//     for(int i = 0; i < boxes.length; i++){
+//         int count = 0;
+//         for(int j = 0; j < boxes.length; j++){
+//             if( boxes[j] == "1") count += (i-j).abs();
+//         }
+//         answer.add(count);
+//     }
+//     print(answer);
+// }
+
+//!Leetcode(1408. String Matching in an Array)
+
+void main(List<String> args) {
+  List<String> words = ["mass", "as", "hero", "superhero"];
+  words.sort();
+
+  List<String> ans = [];
+
+  for (var i = 0; i < words.length; i++) {
+    for (var j = i+1; j < words.length; j++) {
+      if ( words[j].contains(words[i])) {
+        ans.add(words[i]);
+        print(ans);
         break;
       }
     }
   }
-  print("first: $first");
+
+  print(ans.toSet().toList());
 }
