@@ -1118,7 +1118,7 @@
 //!  27/03/25
 //! Leetcode(2270. Number of Ways to Split Array)
 
-import 'package:collection/collection.dart';
+// import 'package:collection/collection.dart';
 
 //! Bad Approch: sublist() Usage, fold() Usage--> Not suitable for large Input
 
@@ -1251,23 +1251,56 @@ import 'package:collection/collection.dart';
 //     print(answer);
 // }
 
+//? ------------------------------------------------------------------------------------------------------------------------------------------
 //!Leetcode(1408. String Matching in an Array)
+// void main(List<String> args) {
+//   List<String> words = ["mass", "as", "hero", "superhero"];
+//   words.sort();
 
-void main(List<String> args) {
-  List<String> words = ["mass", "as", "hero", "superhero"];
-  words.sort();
+//   List<String> ans = [];
 
-  List<String> ans = [];
+//   for (var i = 0; i < words.length; i++) {
+//     for (var j = i+1; j < words.length; j++) {
+//       if ( words[j].contains(words[i])) {
+//         ans.add(words[i]);
+//         print(ans);
+//         break;
+//       }
+//     }
+//   }
 
-  for (var i = 0; i < words.length; i++) {
-    for (var j = i+1; j < words.length; j++) {
-      if ( words[j].contains(words[i])) {
-        ans.add(words[i]);
-        print(ans);
-        break;
-      }
-    }
-  }
+//   print(ans.toSet().toList());
+// }
 
-  print(ans.toSet().toList());
-}
+
+//?----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 30/03/25
+//! Leetcode(2185. Counting Words With a Given Prefix)
+
+// void main(){
+// List<String> words = ["leetcode","win","loops","success"];
+// String pref = "code";
+//  int count = 0;
+
+//! First Way
+//  for (var e in words) {
+  // if(e.startsWith(pref)) count++ ;
+//  }
+
+//! Second Way
+// int prefLength = pref.length;
+
+// for (var i = 0; i < words.length; i++) {
+
+//      if (words[i].length < prefLength) {
+//        continue;
+//      }
+  
+//   String sub = words[i].substring(0,prefLength);
+//   if (  sub.contains(pref)) {
+//     count++;
+//   }
+// }
+//  print(count);
+// }
