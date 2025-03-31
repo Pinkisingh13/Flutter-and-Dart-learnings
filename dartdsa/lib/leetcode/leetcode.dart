@@ -1304,3 +1304,30 @@
 // }
 //  print(count);
 // }
+
+
+//!31/03/25
+//! Leetcode(2942. Find Words Containing Character)
+
+// void main(List<String> args) {
+//   List<String> words = ["leet", "code"];
+//   String x = 'e';
+//   List<int> index = [];
+  
+// for (var i = 0; i < words.length; i++) {
+//   if (words[i].contains(x)) {
+//     index.add(i);
+//   }
+// }
+// print(index);
+// }
+
+//! Leetcode(1929. Concatenation of Array)
+
+void main(List<String> args) {
+  List<int> nums = [1,2,1];
+  List<int> ans = [...nums, ...nums];
+  print(ans);
+
+
+}

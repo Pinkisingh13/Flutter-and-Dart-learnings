@@ -4,7 +4,7 @@
 //! Unmodifiable List view
 
 // Dart provides a way to create an unmodifiable view of a list. This is useful when you want to prevent the list from being modified. Dart provides an UnmodifiableListView class that creates an unmodifiable view of a list.
-//?--------------------------------------------------------------------------------------------------------------------
+//?------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Example 1:  Unmodifiable list example
 import 'dart:collection';

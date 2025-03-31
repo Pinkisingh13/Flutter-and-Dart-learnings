@@ -84,26 +84,25 @@
 
 //! Example 7:  HashCode and Equality in Set
 
-void main(List<String> args) {
-  final Person p1 = Person(name: 'Jack', age: 25);
-  final Person p2 = Person(name: 'Jack', age: 25);
+// void main(List<String> args) {
+//   final Person p1 = Person(name: 'Jack', age: 25);
+//   final Person p2 = Person(name: 'Jack', age: 25);
 
-  print('Hash code of p1: ${p1.hashCode}');
-  print('Hash code of p2: ${p2.hashCode}');
+//   print('Hash code of p1: ${p1.hashCode}');
+//   print('Hash code of p2: ${p2.hashCode}');
 
-  final persons = {p1, p2}; // Using a set to store Person objects
-  print('Are p1 and p2 identical? ${identical(p1, p2)}');
-  print('Contents of the persons set: $persons');
+//   final persons = {p1, p2}; // Using a set to store Person objects
+//   print('Are p1 and p2 identical? ${identical(p1, p2)}');
+//   print('Contents of the persons set: $persons');
 
-  final Dog d1 = Dog(name: 'Doggy', age: 25);
-  print('Hash code of d1: ${d1.hashCode}');
-  print('Hash code of p1: ${p1.hashCode}');
-  print('Are p1 and d1 identical? ${identical(p1, d1)}');
+//   final Dog d1 = Dog(name: 'Doggy', age: 25);
+//   print('Hash code of d1: ${d1.hashCode}');
+//   print('Hash code of p1: ${p1.hashCode}');
+//   print('Are p1 and d1 identical? ${identical(p1, d1)}');
 
-  final beings = {p1, d1}; // Using a set to store Person and Dog objects
-  print('Contents of the beings set: $beings');
-}
-
+//   final beings = {p1, d1}; // Using a set to store Person and Dog objects
+//   print('Contents of the beings set: $beings');
+// }
 
 // void main(List<String> args) {
 //   final person = Person(
@@ -120,50 +119,71 @@ void main(List<String> args) {
 //   print(beings);
 // }
 
-class Person {
-  final String name;
-  final int age;
+// class Person {
+//   final String name;
+//   final int age;
 
-  Person({
-    required this.name,
-    required this.age,
-  });
+//   Person({
+//     required this.name,
+//     required this.age,
+//   });
 
-  @override
-  String toString() => 'Person: $name, $age';
+//   @override
+//   String toString() => 'Person: $name, $age';
 
-  @override
-  int get hashCode => Object.hash(
-        name,
-        age,
-      );
+//   @override
+//   int get hashCode => Object.hash(
+//         name,
+//         age,
+//       );
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Person && name == other.name && age == other.age;
-}
+//   @override
+//   bool operator ==(Object other) =>
+//       identical(this, other) ||
+//       other is Person && name == other.name && age == other.age;
+// }
 
-class Dog {
-  final String name;
-  final int age;
+// class Dog {
+//   final String name;
+//   final int age;
 
-  Dog({
-    required this.name,
-    required this.age,
-  });
+//   Dog({
+//     required this.name,
+//     required this.age,
+//   });
 
-  @override
-  String toString() => 'Dog: $name, $age';
+//   @override
+//   String toString() => 'Dog: $name, $age';
 
-  @override
-  int get hashCode => Object.hash(
-        name,
-        age,
-      );
+//   @override
+//   int get hashCode => Object.hash(
+//         name,
+//         age,
+//       );
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Dog && name == other.name && age == other.age;
+//   @override
+//   bool operator ==(Object other) =>
+//       identical(this, other) ||
+//       other is Dog && name == other.name && age == other.age;
+// }
+
+//! Medium Article Demo
+void main() {
+  var num1 = {1, 2, 3};
+  var num2 = {1, 2, 3};
+  print(num1.hashCode == num2.hashCode); //false
+
+  if (num1 == num2) {
+    print(true);
+  } else {
+    print(false); //Output: false
+  }
+
+  List<int> num3 = [1, 2, 3];
+  List<int> num4 = [3, 2, 1];
+  if (num3 == num4) {
+    print(true);
+  } else {
+    print(false);
+  }
 }
