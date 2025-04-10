@@ -5,8 +5,18 @@
 
 //! Example1:
 //* Late Variables are initialized when they are first used.
+
+//?not do like this
+// late String name1;
 // void main() {
-// we should not try to code like this because it is not a good practice to print late variable without initializing it.
+//? we should not try to code like this because it is not a good practice to print late variable without initializing it.
+// try {
+//   print(name1);
+// } catch (e) {
+//   print(e);
+// }
+
+//? We should do it like this: 
 // late String? name;
 // print(name); // null
 // }
@@ -262,3 +272,5 @@
 
 
 //! Finished Date: 18/01/25
+
+
