@@ -6,23 +6,32 @@
 
 //!Example 1: Intro of Extension/Extending String
 
-// void main(List<String> args) {
-//   final value = 4;
-//   final timesFour = value.timesFour;
-//   print(timesFour);
+void main(List<String> args) {
+  final value = 4;
+  final timesFour = value.timesFour;
+  print(timesFour);
 
-//   // Extension on String
-//   print('Hello'.reversed);
+// 
+try {
+  dynamic d = 2;
+  print(d.timesFour);
+  
+} catch (e) {
+  print(e);
+}
 
-// }
+  // Extension on String
+  print('Hello'.reversed);
 
-// extension on int{
-// int get timesFour => this*4;
-// }
+}
 
-// extension on String{
-//   String get reversed => split("").reversed.join();
-// }
+extension on int{
+int get timesFour => this*4;
+}
+
+extension on String{
+  String get reversed => split("").reversed.join();
+}
 
 //?-------------------------------------------------------------------------------------------------------------------
 
