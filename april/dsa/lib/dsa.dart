@@ -3,7 +3,7 @@
 
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//!   12/04/25
+//! 12/04/25
 //! Question no 1: Leetcode(1400. Construct K Palindrome Strings)
 
 // void main(List<String> args) {
@@ -111,3 +111,108 @@
 //   print(l); // Output: [4, 5, 1, 2, 3]
 
 // }
+
+
+//! ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 15/04/25
+//! Leetcode(136. Single Number)
+
+// void main(){
+
+//   List<int> nums = [4, 1, 2, 1, 2];
+//   int ans = nums.reduce((a, b) => a ^ b);
+//   print(ans); // Output: 4
+
+// }
+
+
+
+//! 🔥 Day 2: Remove duplicates
+//! 15/04/25
+
+//! 🧩 Question 1: Remove duplicates
+// void main(List<String> args) {
+//   List<int> nums = [1, 2, 2, 3, 4, 4, 5];
+
+  //! ✅ Method 1: 
+  // print(nums.toSet().toList());
+
+  //! ✅ Method 2:
+//  List<int> uniqueNums = [];
+
+//   for (int num in nums) {
+//     if (!uniqueNums.contains(num)) {
+//       uniqueNums.add(num);
+//     }
+//   }
+//   print(uniqueNums);
+
+//! ✅ Method 3:
+//   final nums1 = [1, 2, 2, 3, 4, 4, 5].toSet().toList();
+
+//  print(nums1);
+// }
+
+//? ------------------------------------------------
+
+//! 🧩 Question 2: Count Elements That Appear Only Once
+
+// void main(List<String> args) {
+//   List<int> nums = [1, 2, 2, 3, 4, 4, 5, 1, 6];
+//   Map<int,int> m = {};
+
+//   for (var i = 0; i < nums.length; i++) {
+
+//     m[nums[i]] = (m[nums[i]] ?? 0 ) + 1;
+//   }
+
+//   print(m.entries.where((element) => element.value == 1,).toList().length);
+// }
+
+//? ------------------------------------------------------------------------------
+
+//! 🧩 Question 3: Count Unique/Distinct Element
+
+// void main(List<String> args) {
+//   List<int> nums = [1, 2, 2, 3, 4, 4, 5, 1, 6];
+  
+  //! ✅Method 1:
+  // print(nums.toSet().toList().length);
+
+  //! ✅ Method 2: 
+  // var set = <int>{};
+  // for (var e in nums) {
+  //   set.add(e ?? 0);
+  // }
+  // print(set.length);
+// }
+
+//? ------------------------------------------------------------------------------------------------------------------------
+
+//! 🧩 Question 4: Check if List is Palindrome
+// void main(List<String> args) {
+//   List<int> nums = [1, 2, 3, 2, 1];
+
+
+  //! ✅ Method 1: Reverse and Compare
+  // if (nums.reversed.toList().toString() == nums.toString()) {
+  //   print(true);
+  //   return;
+  // }
+  // print(false);
+
+
+  //! ✅ Method 2: 
+  // for (int i = 0; i < nums.length ~/ 2; i++) {
+  //   if (nums[i] != nums[nums.length - 1 - i]) {
+  //     print(false);
+  //     return;
+  //   }
+  // }
+
+  // print(true); 
+// }
+
+//! -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
