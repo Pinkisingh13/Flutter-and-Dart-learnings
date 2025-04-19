@@ -275,7 +275,6 @@
 //   print(commonEle);
 // }
 
-
 //? ------------------------------------------------------------------------------
 
 //! 🧩 Question 3: Difference – Elements in One Set but Not in the Other
@@ -290,3 +289,111 @@
 // print(diffA);
 // print(diffB);
 // }
+
+//! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 19/04/25
+
+//! 🧩 LeetCode Question (2563. Count the Number of Fair Pairs)
+//! Getting TLE on 47th test case
+
+// void main() {
+//   List<int> nums = [1,7,9,2,5];
+//   int lower = 11;
+//   int upper = 11;
+//   int count = 0;
+//   int n = nums.length;
+//   for (int i = 0; i < n; i++) {
+//     for (var j = i + 1; j < n; j++) {
+//         if (lower <= (nums[i] + nums[j])  && (nums[i] + nums[j]) <= upper) {
+
+//           count++;
+
+//         }
+//     }
+//   }
+//   print(count);
+// }
+
+//! Leetcode (58. Length of Last Word)
+
+// void main(List<String> args) {
+// String  s = "   fly me   to   the moon  ";
+
+// print(s.trim().split(" ").last.length);
+// }
+
+//! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 🧩 Question 1: Find the Most Frequent Element in a List
+
+// void main(List<String> args) {
+//   List<int> nums = [1, 3, 2, 1, 4, 1, 3, 3, 3];
+
+  //! ✅ Method 1:
+  //   final map = <int, int>{};
+
+  //   for (var i = 0; i < nums.length; i++) {
+  //     map[nums[i]] =  (map[nums[i]] ?? 0) + 1;
+  //   }
+  //    int mostFrequent = map.entries.reduce((a, b) => a.value > b.value ? a : b).key;
+
+  //   print("Most Frequent Element: $mostFrequent");
+
+  //! ✅ Method 2:
+//   int maxFreq = 0;
+//   int mostFreqElement = nums[0];
+
+//   final map = <int, int>{};
+//   for (var i = 0; i < nums.length; i++) {
+//   map[nums[i]] = (map[nums[i]] ?? 0) + 1;
+// }
+
+//   map.forEach((key, value) {
+//     if (value > maxFreq) {
+//       maxFreq = value;
+//       mostFreqElement = key;
+//     }
+//   });
+
+//   print("Most Frequent: $mostFreqElement ($maxFreq times)");
+// }
+
+//? --------------------------------------------------------------------------------------------------------------------
+//! 🧩 Question 2: Print All Elements with Frequency > 1
+
+// void main(List<String> args) {
+// List<int> nums = [5, 1, 2, 1, 3, 2, 4, 5, 2];
+
+//   final map = <int, int>{};
+
+//   for (var i = 0; i < nums.length; i++) {
+//     map[nums[i]] =  (map[nums[i]] ?? 0) + 1;
+//   }
+
+//! ✅ Method 1: 
+//  print(map.entries.where((element) => element.value > 1,));
+
+//!  ✅ Method 2:
+// for (var entry in map.entries) {
+//   if (entry.value > 1) {
+//     print("${entry.key} → ${entry.value} times");
+//   }
+// }
+// }
+
+//? --------------------------------------------------------------------------------------------------------------------
+//! 🧩 Question 3: Count All Characters in a String
+
+// void main(List<String> args) {
+//   String s = "flutter";
+//   final map = <String, int>{};
+
+// for (var i = 0; i < s.length; i++) {
+ 
+//     map[s[i]] = (map[s[i]] ?? 0) + 1;
+  
+// }
+// print(map);
+// }
+
