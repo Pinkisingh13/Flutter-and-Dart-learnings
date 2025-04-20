@@ -397,3 +397,98 @@
 // print(map);
 // }
 
+//! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 20/04/25
+
+//! 🧩 Question 1: Sort Elements by Frequency (High → Low)
+
+// import 'package:fast_immutable_collections/fast_immutable_collections.dart';
+
+// void main(List<String> args) {
+//   List<int> nums = [1, 3, 1, 3, 2, 1, 4, 4, 4, 4];
+
+//   print(nums.sortedReversed());
+
+  // nums.sort((b, a) =>  a.compareTo(b),);
+  // print(nums);
+
+
+
+
+// Approach get the highest fruency of a number and add the number with the same frequency in the ans list.
+ 
+ // Step 1: Frequency Map
+//   final map = <int, int>{};
+//   for (var i = 0; i < nums.length; i++) {
+//     map[nums[i]] = (map[nums[i]] ?? 0) +1;
+//   }
+  
+//   // Step 2: Sort Map Entries by value (frequency) descending
+//    List<int> ans = [];
+//     final sortedEntries = map.entries.toList()
+//     ..sort((a, b) => b.value.compareTo(a.value));
+//   print(sortedEntries);
+
+
+//     // Step 3: Print nicely
+//   for (var entry in sortedEntries) {
+//     for (var i = 0; i < entry.value; i++) {
+//       ans.add(entry.key);
+//     }
+//     print(ans);
+//     print("${entry.key} → ${entry.value} times");
+//   }
+// }
+
+
+
+//! 🧩 Question 2:  Top K Frequent Elements
+
+// import 'package:fast_immutable_collections/fast_immutable_collections.dart';
+
+// void main(List<String> args) {
+//   List<String> words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+//   int k = 2;
+  
+//   // Step 1: Frequency Map
+//   final map = <String, int>{};
+//   for (var word in words) {
+//     map[word] = (map[word] ?? 0) + 1;
+//   }
+
+
+//   // Step 2: Sort by frequency
+//   final sortedEntries = map.entries.toList()
+//     ..sort((a, b) => b.value.compareTo(a.value));
+//   print(sortedEntries.take(k));
+
+  
+//   // Step 3: Extract only the keys
+//   List<String> topK = sortedEntries.take(k).map((e) => e.key).toList();
+//   print(topK); // ✅ Output: [apple, banana]
+
+// }
+
+//! Using Generic Function
+void main(List<String> args) {
+    List<String> words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+  int k = 2;
+ print(topKElement(words, k));
+}
+  List<T> topKElement<T>(List<T> items, int k){
+  final map = <T, int>{};
+
+   for (var item in items) {
+     map[item] = (map[item] ?? 0) +1;
+   }
+  final sortedEntries =  map.entries
+   .toList()
+   ..sort((a, b) => b.value.compareTo(a.value));
+
+   return sortedEntries
+   .take(2)
+   .map((e) => e.key,)
+   .toList();
+
+  }
