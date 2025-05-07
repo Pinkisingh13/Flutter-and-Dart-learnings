@@ -29,7 +29,7 @@
 //     maxNumberOfChild -= 1;
 //   }
 
-// } 
+// }
 
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -40,8 +40,8 @@
 //! Questtion no 2: Leetcode (1185. Day of the Week)
 
 // void main(){
-// int day = 6; 
-// int month = 5; 
+// int day = 6;
+// int month = 5;
 // int year = 2025;
 // String ans = "";
 // DateTime dateTime = DateTime.utc(year,month,day);
@@ -64,5 +64,50 @@
 // print(ans);
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Question no 1:
+class ListNode {
+  int val;
+  ListNode? next;
+  ListNode([this.val = 0, this.next]);
+}
+
+class Solution {
+  ListNode? deleteDuplicates(ListNode? head) {
+    List<int> ans = [];
+
+    while (head != null) {
+      ans.add(head.val);
+      head = head.next;
+    }
+    print(ans);
+
+    ans = ans.toSet().toList()..sort();
+    print(ans);
+
+    ListNode dummy = ListNode(0);
+
+    ListNode current = dummy;
+
+    for (var e in ans) {
+      current.next = ListNode(e);
+      current = current.next!;
+    }
+
+    return dummy.next;
+  }
+}
+
+void main() {
+  ListNode head = ListNode(1, ListNode(1, ListNode(2)));
+  Solution solution = Solution();
+  print(solution.deleteDuplicates(head)!.val);
+
+  ListNode? store = solution.deleteDuplicates(head);
+
+  while (store != null) {
+    print(store.val);
+    store = store.next;
+  }
+}
