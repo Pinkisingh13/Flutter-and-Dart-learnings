@@ -65,8 +65,58 @@
 // }
 
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 07/05/25
+//! Question no 1: Leetcode
+// class ListNode {
+//   int val;
+//   ListNode? next;
+//   ListNode([this.val = 0, this.next]);
+// }
 
-// Question no 1:
+// class Solution {
+//   ListNode? deleteDuplicates(ListNode? head) {
+//     List<int> ans = [];
+
+//     while (head != null) {
+//       ans.add(head.val);
+//       head = head.next;
+//     }
+//     print(ans);
+
+//     ans = ans.toSet().toList()..sort();
+//     print(ans);
+
+//     ListNode dummy = ListNode(0);
+
+//     ListNode current = dummy;
+
+//     for (var e in ans) {
+//       current.next = ListNode(e);
+//       current = current.next!;
+//     }
+
+//     return dummy.next;
+//   }
+// }
+
+// void main() {
+//   ListNode head = ListNode(1, ListNode(1, ListNode(2)));
+//   Solution solution = Solution();
+//   print(solution.deleteDuplicates(head)!.val);
+
+//   ListNode? store = solution.deleteDuplicates(head);
+
+//   while (store != null) {
+//     print(store.val);
+//     store = store.next;
+//   }
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 08/05/25
+//! Question no 1: Leetcode (21. Merge Two Sorted Lists)
+
 class ListNode {
   int val;
   ListNode? next;
@@ -74,40 +124,39 @@ class ListNode {
 }
 
 class Solution {
-  ListNode? deleteDuplicates(ListNode? head) {
-    List<int> ans = [];
-
-    while (head != null) {
-      ans.add(head.val);
-      head = head.next;
-    }
-    print(ans);
-
-    ans = ans.toSet().toList()..sort();
-    print(ans);
-
+  ListNode? mergeTwoLists(ListNode? list1, ListNode? list2) {
     ListNode dummy = ListNode(0);
-
     ListNode current = dummy;
 
-    for (var e in ans) {
-      current.next = ListNode(e);
+    while (list1 != null && list2 != null) {
+      if (list1.val < list2.val) {
+        current.next = list1;
+        list1 = list1.next;
+      } else {
+        current.next = list2;
+        list2 = list2.next;
+      }
       current = current.next!;
     }
 
+    current.next = list1 ?? list2;
+    
+    // print(dummy.next?.val);
     return dummy.next;
   }
 }
 
 void main() {
-  ListNode head = ListNode(1, ListNode(1, ListNode(2)));
+  ListNode list1 = ListNode(1, ListNode(2, ListNode(4)));
+  ListNode list2 = ListNode(1, ListNode(3, ListNode(4)));
   Solution solution = Solution();
-  print(solution.deleteDuplicates(head)!.val);
+  // print(solution.mergeTwoLists(list1, list2)!);
 
-  ListNode? store = solution.deleteDuplicates(head);
+  ListNode? result = solution.mergeTwoLists(list1, list2);
 
-  while (store != null) {
-    print(store.val);
-    store = store.next;
+    // Print the merged list
+  while (result != null) {
+    print(result.val);
+    result = result.next;
   }
 }
