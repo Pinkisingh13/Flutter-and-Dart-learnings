@@ -117,49 +117,88 @@
 //! 08/05/25
 //! Question no 1: Leetcode (21. Merge Two Sorted Lists)
 
-class ListNode {
-  int val;
-  ListNode? next;
-  ListNode([this.val = 0, this.next]);
-}
+// class ListNode {
+//   int val;
+//   ListNode? next;
+//   ListNode([this.val = 0, this.next]);
+// }
 
-class Solution {
-  ListNode? mergeTwoLists(ListNode? list1, ListNode? list2) {
-    if (list1 == null && list2 != null) return list2;
-    if (list2 == null && list1 != null) return list1;
+// class Solution {
+//   ListNode? mergeTwoLists(ListNode? list1, ListNode? list2) {
+//     if (list1 == null && list2 != null) return list2;
+//     if (list2 == null && list1 != null) return list1;
 
-    ListNode dummy = ListNode(0);
-    ListNode current = dummy;
+//     ListNode dummy = ListNode(0);
+//     ListNode current = dummy;
 
-    while (list1 != null && list2 != null) {
-      if (list1.val <= list2.val) {
-        current.next = list1;
-        list1 = list1.next;
-      } else {
-        current.next = list2;
-        list2 = list2.next;
-      }
-      current = current.next!;
-    }
+//     while (list1 != null && list2 != null) {
+//       if (list1.val <= list2.val) {
+//         current.next = list1;
+//         list1 = list1.next;
+//       } else {
+//         current.next = list2;
+//         list2 = list2.next;
+//       }
+//       current = current.next!;
+//     }
 
-    current.next = list1 ?? list2;
-    
-    // print(dummy.next?.val);
-    return dummy.next;
-  }
-}
+//     current.next = list1 ?? list2;
+
+//     // print(dummy.next?.val);
+//     return dummy.next;
+//   }
+// }
+
+// void main() {
+//   ListNode list1 = ListNode(1, ListNode(2, ListNode(4)));
+//   ListNode list2 = ListNode(1, ListNode(3, ListNode(4)));
+//   Solution solution = Solution();
+//   // print(solution.mergeTwoLists(list1, list2)!);
+
+//   ListNode? result = solution.mergeTwoLists(list1, list2);
+
+//     // Print the merged list
+//   while (result != null) {
+//     print(result.val);
+//     result = result.next;
+//   }
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 11/05/25
+//! Question no 1: Leetcode (1550. three-consecutive-odds)
+
+// void main(){
+//   List<int> arr = [2,6,4,1];
+
+//   int count = 0;
+
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 16/05/25
+//! Question no 1: Leetcode (3335. Total Characters in String After Transformations I)
 
 void main() {
-  ListNode list1 = ListNode(1, ListNode(2, ListNode(4)));
-  ListNode list2 = ListNode(1, ListNode(3, ListNode(4)));
-  Solution solution = Solution();
-  // print(solution.mergeTwoLists(list1, list2)!);
+  String s = "abcyy";
 
-  ListNode? result = solution.mergeTwoLists(list1, list2);
+  int t = 2;
 
-    // Print the merged list
-  while (result != null) {
-    print(result.val);
-    result = result.next;
+  for (var i = 0; i < t; i++) {
+  final ans = StringBuffer();
+
+    for (var j = 0; j < s.length; j++) {
+      if (s[j] == 'z') {
+        ans.write("ab");
+      } else {
+        int code = s.codeUnitAt(j);
+        String char = String.fromCharCode(code + 1);
+        ans.write(char);
+      }
+    }
+    s = ans.toString();
   }
+
+  print(s.length);
 }
