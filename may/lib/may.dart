@@ -180,25 +180,62 @@
 //! 16/05/25
 //! Question no 1: Leetcode (3335. Total Characters in String After Transformations I)
 
+// void main() {
+//   String s = "abcyy";
+
+//   int t = 2;
+
+//   for (var i = 0; i < t; i++) {
+//   final ans = StringBuffer();
+
+//     for (var j = 0; j < s.length; j++) {
+//       if (s[j] == 'z') {
+//         ans.write("ab");
+//       } else {
+//         int code = s.codeUnitAt(j);
+//         String char = String.fromCharCode(code + 1);
+//         ans.write(char);
+//       }
+//     }
+//     s = ans.toString();
+//   }
+
+//   print(s.length);
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 17/05/25
+//! Question no 1: Leetcode(75. Sort Colors)
+
 void main() {
-  String s = "abcyy";
+  List<int> nums = [2, 0, 2, 1, 1, 0];
 
-  int t = 2;
-
-  for (var i = 0; i < t; i++) {
-  final ans = StringBuffer();
-
-    for (var j = 0; j < s.length; j++) {
-      if (s[j] == 'z') {
-        ans.write("ab");
-      } else {
-        int code = s.codeUnitAt(j);
-        String char = String.fromCharCode(code + 1);
-        ans.write(char);
-      }
+  int zero = 0;
+  int one = 0;
+  int two = 0;
+  for (int e in nums) {
+    if (e == 0) {
+      zero++;
+    } else if (e == 1) {
+      one++;
+    } else {
+      two++;
     }
-    s = ans.toString();
   }
 
-  print(s.length);
+  for (int i = 0; i < nums.length; i++) {
+    if (zero > 0) {
+      nums[i] = 0;
+      zero--;
+    } else if (one > 0) {
+      nums[i] = 1;
+      one--;
+    } else if (two > 0) {
+      nums[i] = 2;
+      two--;
+    }
+  }
+
+  print(nums);
 }
