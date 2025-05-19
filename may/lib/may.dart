@@ -208,34 +208,60 @@
 //! 17/05/25
 //! Question no 1: Leetcode(75. Sort Colors)
 
-void main() {
-  List<int> nums = [2, 0, 2, 1, 1, 0];
+// void main() {
+//   List<int> nums = [2, 0, 2, 1, 1, 0];
 
-  int zero = 0;
-  int one = 0;
-  int two = 0;
-  for (int e in nums) {
-    if (e == 0) {
-      zero++;
-    } else if (e == 1) {
-      one++;
-    } else {
-      two++;
-    }
+//   int zero = 0;
+//   int one = 0;
+//   int two = 0;
+//   for (int e in nums) {
+//     if (e == 0) {
+//       zero++;
+//     } else if (e == 1) {
+//       one++;
+//     } else {
+//       two++;
+//     }
+//   }
+
+//   for (int i = 0; i < nums.length; i++) {
+//     if (zero > 0) {
+//       nums[i] = 0;
+//       zero--;
+//     } else if (one > 0) {
+//       nums[i] = 1;
+//       one--;
+//     } else if (two > 0) {
+//       nums[i] = 2;
+//       two--;
+//     }
+//   }
+
+//   print(nums);
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 19/05/25
+//! Question no 1: Leetcode(3024. Type of Triangle)
+
+void main(List<String> args) {
+  List<int> nums = [8, 4, 2];
+ print(checkTriangle(nums));
+}
+
+
+String checkTriangle(List<int> nums){
+  int a = nums[0];
+  int b = nums[1];
+  int c = nums[2];
+
+  if ((a+b) <= c || (a+c) <= b || (b+c) <= a) {
+    return "none";
+  }else if(a == b && b == c){
+   return "equilateral";
+  }else if(a == b || b == c || a == c){
+   return "isosceles";
   }
-
-  for (int i = 0; i < nums.length; i++) {
-    if (zero > 0) {
-      nums[i] = 0;
-      zero--;
-    } else if (one > 0) {
-      nums[i] = 1;
-      one--;
-    } else if (two > 0) {
-      nums[i] = 2;
-      two--;
-    }
-  }
-
-  print(nums);
+  return "scalene";
 }
