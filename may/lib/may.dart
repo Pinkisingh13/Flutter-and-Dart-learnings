@@ -245,23 +245,92 @@
 //! 19/05/25
 //! Question no 1: Leetcode(3024. Type of Triangle)
 
+// void main(List<String> args) {
+//   List<int> nums = [8, 4, 2];
+//  print(checkTriangle(nums));
+// }
+
+// String checkTriangle(List<int> nums){
+//   int a = nums[0];
+//   int b = nums[1];
+//   int c = nums[2];
+
+//   if ((a+b) <= c || (a+c) <= b || (b+c) <= a) {
+//     return "none";
+//   }else if(a == b && b == c){
+//    return "equilateral";
+//   }else if(a == b || b == c || a == c){
+//    return "isosceles";
+//   }
+//   return "scalene";
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! 20/05/25
+//! Question no 1: Leetcode (3355. Zero Array Transformation I)
+
+// void main(){
+//   List<int> nums = [1,0,1];
+//   List<List<int>> queries = [[0,2]];
+
+// print(canTransformToZeroArray(nums, queries));
+// }
+
+// bool canTransformToZeroArray(List<int> nums, List<List<int>> queries) {
+//   int n = nums.length;
+//   List<int> coverage = List.filled(n + 1, 0);
+
+//   // Step 1: Mark the coverage using prefix sum technique
+//   for (var query in queries) {
+//     int li = query[0];
+//     int ri = query[1];
+
+//     coverage[li] += 1;
+//     if (ri + 1 < n) {
+//       coverage[ri + 1] -= 1;
+//     }
+//   }
+
+//   // Step 2: Build the actual coverage count
+//   for (int i = 1; i < n; i++) {
+//     coverage[i] += coverage[i - 1];
+//   }
+
+//   // Step 3: Check if each element in nums can become zero
+//   for (int i = 0; i < n; i++) {
+//     if (nums[i] > coverage[i]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+//! Question no 2: Leetcode(205. Isomorphic Strings)
+
 void main(List<String> args) {
-  List<int> nums = [8, 4, 2];
- print(checkTriangle(nums));
+  String s = "foo";
+  String t = "bar";
+
+  print(isIsomorphic(s, t));
 }
 
+bool isIsomorphic(String s, String t) {
+  final map = <String, String>{};
 
-String checkTriangle(List<int> nums){
-  int a = nums[0];
-  int b = nums[1];
-  int c = nums[2];
-
-  if ((a+b) <= c || (a+c) <= b || (b+c) <= a) {
-    return "none";
-  }else if(a == b && b == c){
-   return "equilateral";
-  }else if(a == b || b == c || a == c){
-   return "isosceles";
+  for (var i = 0; i < s.length; i++) {
+    if (map.containsKey(s[i])) {
+      if (map[s[i]] != t[i]) {
+        return false;
+      }
+    } else {
+      if (map.containsValue(t[i])) {
+        return false;
+      }
+      map[s[i]] = t[i];
+    }
+  print(map);
   }
-  return "scalene";
+  return true;
 }
