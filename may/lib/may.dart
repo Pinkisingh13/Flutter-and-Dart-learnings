@@ -281,7 +281,7 @@
 //   int n = nums.length;
 //   List<int> coverage = List.filled(n + 1, 0);
 
-//   // Step 1: Mark the coverage using prefix sum technique
+//  Step 1: Mark the coverage using prefix sum technique
 //   for (var query in queries) {
 //     int li = query[0];
 //     int ri = query[1];
@@ -292,12 +292,12 @@
 //     }
 //   }
 
-//   // Step 2: Build the actual coverage count
+// Step 2: Build the actual coverage count
 //   for (int i = 1; i < n; i++) {
 //     coverage[i] += coverage[i - 1];
 //   }
 
-//   // Step 3: Check if each element in nums can become zero
+// Step 3: Check if each element in nums can become zero
 //   for (int i = 0; i < n; i++) {
 //     if (nums[i] > coverage[i]) {
 //       return false;
@@ -309,28 +309,64 @@
 
 //! Question no 2: Leetcode(205. Isomorphic Strings)
 
-void main(List<String> args) {
-  String s = "foo";
-  String t = "bar";
+// void main(List<String> args) {
+//   String s = "foo";
+//   String t = "bar";
 
-  print(isIsomorphic(s, t));
-}
+//   print(isIsomorphic(s, t));
+// }
 
-bool isIsomorphic(String s, String t) {
-  final map = <String, String>{};
+// bool isIsomorphic(String s, String t) {
+//   final map = <String, String>{};
 
-  for (var i = 0; i < s.length; i++) {
-    if (map.containsKey(s[i])) {
-      if (map[s[i]] != t[i]) {
-        return false;
+//   for (var i = 0; i < s.length; i++) {
+//     if (map.containsKey(s[i])) {
+//       if (map[s[i]] != t[i]) {
+//         return false;
+//       }
+//     } else {
+//       if (map.containsValue(t[i])) {
+//         return false;
+//       }
+//       map[s[i]] = t[i];
+//     }
+//   print(map);
+//   }
+//   return true;
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 21/05/25
+//! Question no 1: Leetcode (73. Set Matrix Zeroes)
+
+void main(){
+  List<List<int>> m =  [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
+    Set<int> rows = {};
+    Set<int> cols = {};
+    for (int i = 0; i < m.length; i++) {
+      for (int j = 0; j < m[i].length; j++) {
+        if (m[i][j] == 0) {
+          rows.add(i);
+          cols.add(j);
+        }
       }
-    } else {
-      if (map.containsValue(t[i])) {
-        return false;
-      }
-      map[s[i]] = t[i];
     }
-  print(map);
+
+    print("rows: $rows");
+    print("cols: $cols");
+
+ for (int i in rows) {
+    for (int j = 0; j < m[0].length; j++) {
+      m[i][j] = 0;
+    }
   }
-  return true;
+
+  for (int j in cols) {
+    for (int i = 0; i < m.length; i++) {
+      m[i][j] = 0;
+    }
+  }
+
+  print(m);
 }
