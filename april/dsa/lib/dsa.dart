@@ -486,22 +486,77 @@
 //   }
 
 //! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//! 30/04/25
+//! 21/04/25
 
 //! Question 1: 1295. Find Numbers with Even Number of Digits
 
+// void main() {
+//   List<int> nums = [12, 345, 2, 6, 7896];
+
+//   print(nums[0].toString().split("").length);
+//   int count = 0;
+
+//   for (var e in nums) {
+//     int l = e.toString().length;
+
+//     if (l % 2 == 0) {
+//       count++;
+//     }
+//   }
+//   print(count);
+// }
+
+//! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 22/04/25
+//! Question no 1: Leetcode (771. Jewels and Stones)
+
+// void main(){
+//   String jewels = "aA";
+//   String stones = "aAAbbbb";
+
+//? ONE WAY
+// int count = 0;
+// for (var i = 0; i < stones.length; i++) {
+//   if (jewels.contains(stones[i])) {
+//     count++;
+//   }
+// }
+// print(count);
+
+// }
+
+//! -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 23/04/25
+
+//! Question no 1: Leetcode (977. Squares of a Sorted Array)
+// nums[0] = 30;
+// nums.add(70);
+
 void main() {
-  List<int> nums = [12, 345, 2, 6, 7896];
+  List<int> nums = [-4, -1, 0, 3, 10];
 
-  print(nums[0].toString().split("").length);
-  int count = 0;
+  // Time Complexity O )  || Space Complexity : O(N)
+  // for (var i = 0; i < nums.length; i++) {
+  //   nums[i] = nums[i] * nums[i];
+  // }
+  // nums.sort();
+  // print(nums);
 
-  for (var e in nums) {
-    int l = e.toString().length;
+  //! Second Way:
+  for (var i = 0; i < nums.length; i++) {
+    nums[i] = nums[i] * nums[i];
+  }
+  print(nums);
 
-    if (l % 2 == 0) {
-      count++;
+  for (var i = 1; i < nums.length; i++) {
+    for (var j = 1; j < nums.length-i; j++) {
+    if (nums[j] < nums[j - 1]) {
+      int temp = nums[j];
+      nums[j] = nums[j - 1];
+      nums[j-1] = temp;
+    }
     }
   }
-  print(count);
+
+  // print(nums);
 }
