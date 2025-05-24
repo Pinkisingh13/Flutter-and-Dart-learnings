@@ -340,33 +340,121 @@
 //! 21/05/25
 //! Question no 1: Leetcode (73. Set Matrix Zeroes)
 
-void main(){
-  List<List<int>> m =  [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
-    Set<int> rows = {};
-    Set<int> cols = {};
-    for (int i = 0; i < m.length; i++) {
-      for (int j = 0; j < m[i].length; j++) {
-        if (m[i][j] == 0) {
-          rows.add(i);
-          cols.add(j);
-        }
-      }
-    }
+// void main(){
+//   List<List<int>> m =  [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
+//     Set<int> rows = {};
+//     Set<int> cols = {};
+//     for (int i = 0; i < m.length; i++) {
+//       for (int j = 0; j < m[i].length; j++) {
+//         if (m[i][j] == 0) {
+//           rows.add(i);
+//           cols.add(j);
+//         }
+//       }
+//     }
 
-    print("rows: $rows");
-    print("cols: $cols");
+//     print("rows: $rows");
+//     print("cols: $cols");
 
- for (int i in rows) {
-    for (int j = 0; j < m[0].length; j++) {
-      m[i][j] = 0;
+//  for (int i in rows) {
+//     for (int j = 0; j < m[0].length; j++) {
+//       m[i][j] = 0;
+//     }
+//   }
+
+//   for (int j in cols) {
+//     for (int i = 0; i < m.length; i++) {
+//       m[i][j] = 0;
+//     }
+//   }
+
+//   print(m);
+// }
+
+//?-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 22/04/25
+//! Question no 1: Leetcode (771. Jewels and Stones)
+
+// void main(){
+//   String jewels = "aA";
+//   String stones = "aAAbbbb";
+
+//? ONE WAY
+// int count = 0;
+// for (var i = 0; i < stones.length; i++) {
+//   if (jewels.contains(stones[i])) {
+//     count++;
+//   }
+// }
+// print(count);
+
+// }
+
+//?--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 23/04/25
+//! Question no 1: Leetcode (977. Squares of a Sorted Array)
+// void main() {
+  // List<int> nums = [-4, -1, 0, 3, 10];
+
+  // Time Complexity O )  || Space Complexity : O(N)
+  // for (var i = 0; i < nums.length; i++) {
+  //   nums[i] = nums[i] * nums[i];
+  // }
+  // nums.sort();
+  // print(nums);
+
+  //! Second Way:
+  // for (var i = 0; i < nums.length; i++) {
+  //   nums[i] = nums[i] * nums[i];
+  // }
+  // print(nums);
+
+  // for (var i = 1; i < nums.length; i++) {
+  //   for (var j = 1; j < nums.length-i; j++) {
+  //   if (nums[j] < nums[j - 1]) {
+  //     int temp = nums[j];
+  //     nums[j] = nums[j - 1];
+  //     nums[j-1] = temp;
+  //   }
+  //   }
+  // }
+
+  // print(nums);
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 24/05/25
+//! Question no 1 : Leetcode (28. Find the Index of the First Occurrence in a String)
+
+// void main(){
+//   String haystack = "sadbutsad";
+//   String needle = "leeto";
+
+//   print(haystack.indexOf(needle));
+// }
+
+//?--------------------------------------------------------------
+
+//! Question no 2:  Leetcode(392. Is Subsequence)
+
+void main(List<String> args) {
+  String s = "acb";
+  String t = "ahbgdc";
+
+  int i =0;
+  int j = 0;
+
+  while ((i < s.length) && (j < t.length)) {
+    if (s[i] == t[j]) {
+      i++; 
+      j++;
+    }else{
+      j++;
     }
   }
 
-  for (int j in cols) {
-    for (int i = 0; i < m.length; i++) {
-      m[i][j] = 0;
-    }
-  }
+ print(i == s.length);
+  
 
-  print(m);
 }
