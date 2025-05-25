@@ -438,23 +438,35 @@
 
 //! Question no 2:  Leetcode(392. Is Subsequence)
 
-void main(List<String> args) {
-  String s = "acb";
-  String t = "ahbgdc";
+// void main(List<String> args) {
+//   String s = "acb";
+//   String t = "ahbgdc";
 
-  int i =0;
-  int j = 0;
+//   int i =0;
+//   int j = 0;
 
-  while ((i < s.length) && (j < t.length)) {
-    if (s[i] == t[j]) {
-      i++; 
-      j++;
-    }else{
-      j++;
-    }
-  }
+//   while ((i < s.length) && (j < t.length)) {
+//     if (s[i] == t[j]) {
+//       i++; 
+//       j++;
+//     }else{
+//       j++;
+//     }
+//   }
 
- print(i == s.length);
-  
+//  print(i == s.length);
 
-}
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 25/05/25
+//! Question no 1: Leetcode (Find The Original Array of Prefix Xor)
+
+// void main(List<String> args) {
+//   List<int> pref = [5,2,0,3,1];
+//     for(int i = pref.length-1;i>=1;i--){
+//      pref[i] ^= pref[i-1];
+//     } 
+//    print(pref); 
+// }
