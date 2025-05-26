@@ -470,3 +470,8 @@
 //     } 
 //    print(pref); 
 // }
+
+
+//! 26/05/25
+//! Question no 1:  Leetcode(387. First Unique Character in a String)
+//! Submit the previous solved dsa
