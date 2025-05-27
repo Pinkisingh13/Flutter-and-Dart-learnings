@@ -471,7 +471,65 @@
 //    print(pref); 
 // }
 
-
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //! 26/05/25
 //! Question no 1:  Leetcode(387. First Unique Character in a String)
 //! Submit the previous solved dsa
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//!27/05/25
+
+//! Question no 1: Leetcode (2894. Divisible and Non-divisible Sums Difference) Todays problem
+
+//! BRUTE FORCE
+// void main(){
+//   int n = 10;
+//   int m = 3;
+
+//   List<int> nonDivList = [];
+//   List<int> divisibleList = [];
+//   int sumOfDivisible = 0;
+//   int sumOfNonDivisible = 0;
+
+//   for (var i = 1; i <=n; i++) {
+//      if (i % m !=  0) {
+//       nonDivList.add(i);
+//      }else{
+//       divisibleList.add(i); 
+//      }
+//   }
+//   for (var e in nonDivList) {
+//     sumOfNonDivisible+=e;
+//   }
+//   for (var e in divisibleList) {
+//     sumOfDivisible+=e;
+//   }
+
+//  print(sumOfNonDivisible - sumOfDivisible);
+
+
+//   print("nList is $nonDivList and mlist is $divisibleList");
+
+
+// }
+
+
+//! Optimized way
+void main(){
+  int n = 10;
+  int m = 3;
+
+  int sumOfDivisible = 0;
+  int sumOfNonDivisible = 0;
+ 
+ for (var i = 1; i <= n; i++) {
+   if (i % m ==  0) {
+     sumOfDivisible+=i;
+   }else{
+    sumOfNonDivisible+=i;
+   }
+ }
+
+ print(sumOfNonDivisible - sumOfDivisible);
+
+}
