@@ -515,21 +515,42 @@
 
 
 //! Optimized way
-void main(){
-  int n = 10;
-  int m = 3;
+// void main(){
+//   int n = 10;
+//   int m = 3;
 
-  int sumOfDivisible = 0;
-  int sumOfNonDivisible = 0;
+//   int sumOfDivisible = 0;
+//   int sumOfNonDivisible = 0;
  
- for (var i = 1; i <= n; i++) {
-   if (i % m ==  0) {
-     sumOfDivisible+=i;
-   }else{
-    sumOfNonDivisible+=i;
-   }
- }
+//  for (var i = 1; i <= n; i++) {
+//    if (i % m ==  0) {
+//      sumOfDivisible+=i;
+//    }else{
+//     sumOfNonDivisible+=i;
+//    }
+//  }
 
- print(sumOfNonDivisible - sumOfDivisible);
+//  print(sumOfNonDivisible - sumOfDivisible);
+
+// }
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//!28/05/25
+//! Question no 1: Leetcode =>  442. Find All Duplicates in an Array
+
+void main(){
+ List<int> nums = [4,3,2,7,8,2,3,1];
+
+ //! First Way: Time Limit Exceeded
+//  List<int> ans = []; 
+//  for (var i = 0; i < nums.length-1; i++) {
+//   for (var j = i+1; j < nums.length; j++) {
+//     if (nums[i] == nums[j]) {
+//       ans.add(nums[i]);
+//     }
+//   }
+//  }
+//  print(ans);
 
 }
