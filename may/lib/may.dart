@@ -539,8 +539,8 @@
 //!28/05/25
 //! Question no 1: Leetcode =>  442. Find All Duplicates in an Array
 
-void main(){
- List<int> nums = [4,3,2,7,8,2,3,1];
+// void main(){
+//  List<int> nums = [4,3,2,7,8,2,3,1];
 
  //! First Way: Time Limit Exceeded
 //  List<int> ans = []; 
@@ -553,4 +553,4 @@ void main(){
 //  }
 //  print(ans);
 
-}
+// }
