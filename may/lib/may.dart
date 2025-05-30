@@ -335,7 +335,6 @@
 //   return true;
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //! 21/05/25
 //! Question no 1: Leetcode (73. Set Matrix Zeroes)
@@ -394,34 +393,33 @@
 //! 23/04/25
 //! Question no 1: Leetcode (977. Squares of a Sorted Array)
 // void main() {
-  // List<int> nums = [-4, -1, 0, 3, 10];
+// List<int> nums = [-4, -1, 0, 3, 10];
 
-  // Time Complexity O )  || Space Complexity : O(N)
-  // for (var i = 0; i < nums.length; i++) {
-  //   nums[i] = nums[i] * nums[i];
-  // }
-  // nums.sort();
-  // print(nums);
+// Time Complexity O )  || Space Complexity : O(N)
+// for (var i = 0; i < nums.length; i++) {
+//   nums[i] = nums[i] * nums[i];
+// }
+// nums.sort();
+// print(nums);
 
-  //! Second Way:
-  // for (var i = 0; i < nums.length; i++) {
-  //   nums[i] = nums[i] * nums[i];
-  // }
-  // print(nums);
+//! Second Way:
+// for (var i = 0; i < nums.length; i++) {
+//   nums[i] = nums[i] * nums[i];
+// }
+// print(nums);
 
-  // for (var i = 1; i < nums.length; i++) {
-  //   for (var j = 1; j < nums.length-i; j++) {
-  //   if (nums[j] < nums[j - 1]) {
-  //     int temp = nums[j];
-  //     nums[j] = nums[j - 1];
-  //     nums[j-1] = temp;
-  //   }
-  //   }
-  // }
-
-  // print(nums);
+// for (var i = 1; i < nums.length; i++) {
+//   for (var j = 1; j < nums.length-i; j++) {
+//   if (nums[j] < nums[j - 1]) {
+//     int temp = nums[j];
+//     nums[j] = nums[j - 1];
+//     nums[j-1] = temp;
+//   }
+//   }
 // }
 
+// print(nums);
+// }
 
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //! 24/05/25
@@ -447,7 +445,7 @@
 
 //   while ((i < s.length) && (j < t.length)) {
 //     if (s[i] == t[j]) {
-//       i++; 
+//       i++;
 //       j++;
 //     }else{
 //       j++;
@@ -458,7 +456,6 @@
 
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //! 25/05/25
 //! Question no 1: Leetcode (Find The Original Array of Prefix Xor)
@@ -467,8 +464,8 @@
 //   List<int> pref = [5,2,0,3,1];
 //     for(int i = pref.length-1;i>=1;i--){
 //      pref[i] ^= pref[i-1];
-//     } 
-//    print(pref); 
+//     }
+//    print(pref);
 // }
 
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -495,7 +492,7 @@
 //      if (i % m !=  0) {
 //       nonDivList.add(i);
 //      }else{
-//       divisibleList.add(i); 
+//       divisibleList.add(i);
 //      }
 //   }
 //   for (var e in nonDivList) {
@@ -507,12 +504,9 @@
 
 //  print(sumOfNonDivisible - sumOfDivisible);
 
-
 //   print("nList is $nonDivList and mlist is $divisibleList");
 
-
 // }
-
 
 //! Optimized way
 // void main(){
@@ -521,7 +515,7 @@
 
 //   int sumOfDivisible = 0;
 //   int sumOfNonDivisible = 0;
- 
+
 //  for (var i = 1; i <= n; i++) {
 //    if (i % m ==  0) {
 //      sumOfDivisible+=i;
@@ -534,7 +528,6 @@
 
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //!28/05/25
 //! Question no 1: Leetcode =>  442. Find All Duplicates in an Array
@@ -542,8 +535,8 @@
 // void main(){
 //  List<int> nums = [4,3,2,7,8,2,3,1];
 
- //! First Way: Time Limit Exceeded
-//  List<int> ans = []; 
+//! First Way: Time Limit Exceeded
+//  List<int> ans = [];
 //  for (var i = 0; i < nums.length-1; i++) {
 //   for (var j = i+1; j < nums.length; j++) {
 //     if (nums[i] == nums[j]) {
@@ -555,7 +548,6 @@
 
 // }
 
-
 //?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //!29/05/25
 //! Question no 1: Leetcode =>  Contains Duplicate 2
@@ -565,16 +557,61 @@
 
 //! Question no 2: Leetcode: 441. Arranging Coins
 
-void main(){
-  int n = 5;
-  int sum = 0;
-  for (var i = 1; i <= n; i++) {
-    sum+=i;
-    if (sum > n) {
-      print(i-1);
-    }else if(sum == n){
-      print(i);
+// void main(){
+//   int n = 5;
+//   int sum = 0;
+//   for (var i = 1; i <= n; i++) {
+//     sum+=i;
+//     if (sum > n) {
+//       print(i-1);
+//     }else if(sum == n){
+//       print(i);
+//     }
+//   }
+//   print(0);
+// }
+
+//?------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Question no 1: Leetcode(3227. Vowels Game in a String) 
+
+//! First Way 
+// void main(List<String> args) {
+//   String s = "leetcoder";
+//   int count = 0;
+
+//   for (var i = 0; i < s.length; i++) {
+//     if (s[i] == 'a' ||
+//         s[i] == 'e' ||
+//         s[i] == "i" ||
+//         s[i] == "o" ||
+//         s[i] == "u") {
+//       count++;
+//       if (count > 0) {
+//         print(true);
+//         return;
+//       }
+//     }
+//   }
+//   print(false);
+// }
+
+//! Second way
+void main(List<String> args) {
+  String s = "leetcoder";
+  Set<String> set = s.split('').toSet();
+  print(set);
+
+  int count = 0;
+
+  for (var e in set) {
+    if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') {
+      count++;
+      if (count > 0) {
+        print(true);
+        return;
+      }
     }
   }
-  print(0);
+  print(false);
 }
