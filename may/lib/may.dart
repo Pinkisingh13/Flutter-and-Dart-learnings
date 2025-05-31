@@ -571,7 +571,9 @@
 //   print(0);
 // }
 
-//?------------------------------------------------------------------------------------------------------------------------------------------
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 30/05/25
 
 //! Question no 1: Leetcode(3227. Vowels Game in a String) 
 
@@ -597,21 +599,58 @@
 // }
 
 //! Second way
-void main(List<String> args) {
-  String s = "leetcoder";
-  Set<String> set = s.split('').toSet();
-  print(set);
+// void main(List<String> args) {
+//   String s = "leetcoder";
+//   Set<String> set = s.split('').toSet();
+//   print(set);
 
-  int count = 0;
+//   int count = 0;
 
-  for (var e in set) {
-    if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') {
-      count++;
-      if (count > 0) {
-        print(true);
-        return;
-      }
-    }
-  }
-  print(false);
-}
+//   for (var e in set) {
+//     if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') {
+//       count++;
+//       if (count > 0) {
+//         print(true);
+//         return;
+//       }
+//     }
+//   }
+//   print(false);
+// }
+
+
+
+//?------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//! 31/05/25
+//! Question no 1 : Leetcode (3467. Transform Array by Parity)
+
+// void main(){
+// List<int> nums = [4,3,2,1];
+// int  i =0;
+// for (var e in nums) {
+
+//   if (e % 2 == 0) {
+//   nums[i] = 0;
+
+//   }else{
+//    nums[i] = 1;
+//   }
+// i++;
+// }
+// nums.sort();
+// print(nums);
+// }
+
+//! Question no 2: Leetcode(1720. Decode XORed Array)
+// void main(List<String> args) {
+//   List<int> encoded = [1,2,3]; 
+//   int  first = 1;
+//   List<int> decoded = [first];
+
+//   for (var i = 0; i < encoded.length; i++) {
+//     decoded.add(decoded[i] ^ encoded[i]);
+//   }
+
+//   print(decoded);
+
+// }
