@@ -48,17 +48,52 @@
 //! 07/06/25
 //! Question no 1: Plus one
 
+// void main() {
+//   List<int> digits = [99];
+
+//   BigInt number = BigInt.parse(digits.join(''));
+
+//   number += BigInt.one;
+
+//  digits = number.toString().split('').map(int.parse).toList();
+
+//  print(digits);
+
+// }
+
+//? ----------------------------------------------------------------------------------------------------------------------
+
+//! 07/06/25
+//! Question no 1: Leetcode (2425. Bitwise XOR of All Pairings)
+
+// ! NOTE: Remember the effect of odd vs even counts in XOR:
+
+//!* If a number is XORed even number of times → it disappears (result is 0).
+
+//* If a number is XORed odd number of times → it remains.
+
 void main() {
-  List<int> digits = [99];
+  List<int> nums1 = [2,1,3];
+  List<int> nums2 = [10,2,5,0];
+  int sum = 0;
 
-  BigInt number = BigInt.parse(digits.join(''));
-  
-  number += BigInt.one;
-  
- digits = number.toString().split('').map(int.parse).toList();
+  int xor1 = 0;
+  for (var a in nums1) {
+    xor1 ^= a;
+  }
 
- print(digits);
+  int xor2 = 0;
+  for (var b in nums2) {
+    xor2 ^= b;
+  }
 
+  if (nums2.length % 2 == 1) {
+    sum ^= xor1;
+  }
 
-  
+  if (nums1.length % 2 == 1) {
+    sum ^= xor2;
+  }
+
+  print(sum);
 }
