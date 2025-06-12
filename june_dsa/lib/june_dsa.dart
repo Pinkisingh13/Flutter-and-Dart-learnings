@@ -72,28 +72,53 @@
 
 //* If a number is XORed odd number of times → it remains.
 
-void main() {
-  List<int> nums1 = [2,1,3];
-  List<int> nums2 = [10,2,5,0];
-  int sum = 0;
+// void main() {
+//   List<int> nums1 = [2,1,3];
+//   List<int> nums2 = [10,2,5,0];
+//   int sum = 0;
 
-  int xor1 = 0;
-  for (var a in nums1) {
-    xor1 ^= a;
-  }
+//   int xor1 = 0;
+//   for (var a in nums1) {
+//     xor1 ^= a;
+//   }
 
-  int xor2 = 0;
-  for (var b in nums2) {
-    xor2 ^= b;
-  }
+//   int xor2 = 0;
+//   for (var b in nums2) {
+//     xor2 ^= b;
+//   }
 
-  if (nums2.length % 2 == 1) {
-    sum ^= xor1;
-  }
+//   if (nums2.length % 2 == 1) {
+//     sum ^= xor1;
+//   }
 
-  if (nums1.length % 2 == 1) {
-    sum ^= xor2;
-  }
+//   if (nums1.length % 2 == 1) {
+//     sum ^= xor2;
+//   }
 
-  print(sum);
+//   print(sum);
+// }
+
+
+//? ----------------------------------------------------------------------------------------------------------------------
+
+//! 012/06/25
+//! Question no 1: Leetcode (3423. Maximum Difference Between Adjacent Elements in a Circular Array)
+
+import 'dart:math' as math;
+
+void main(){
+List<int> nums = [1,2,4];
+
+int ans = 0;
+
+for (var i = 0; i < nums.length-1; i++) {
+  int diff = nums[i] - nums[i+1];
+
+  ans = math.max(ans, diff.abs());
+}
+
+int firstLastCheck = nums.first - nums.last;
+ans = math.max(ans,firstLastCheck.abs());
+
+print(ans);
 }
