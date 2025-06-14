@@ -126,16 +126,17 @@
 //? ----------------------------------------------------------------------------------------------------------------------
 
 //! 14/06/25
-//! Question no 1: Leetcode (2566. Maximum Difference by Remapping a Digit)
+//! Question no 1: Leetcode (448. Find All Numbers Disappeared in an Array)
 
 void main(){
-  int num = 11891;
-  List<String> splitArr = num.toString().split("");
+  List<int> nums = [1,1];
+    List<int> ans= [];
+    Set<int> set = nums.toSet();
 
-  for (var e in splitArr) {
-    int n = int.parse(e);
-    if (n < 9) {
-      
+    for (var i = 1; i <= nums.length; i++) {
+      if (!set.contains(i)) {
+        ans.add(i);
+      }
     }
-  }
+    print(ans);
 }
