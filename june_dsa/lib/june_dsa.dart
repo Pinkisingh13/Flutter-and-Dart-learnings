@@ -101,24 +101,41 @@
 
 //? ----------------------------------------------------------------------------------------------------------------------
 
-//! 012/06/25
+//! 12/06/25
 //! Question no 1: Leetcode (3423. Maximum Difference Between Adjacent Elements in a Circular Array)
 
-import 'dart:math' as math;
+// import 'dart:math' as math;
+
+// void main(){
+// List<int> nums = [1,2,4];
+
+// int ans = 0;
+
+// for (var i = 0; i < nums.length-1; i++) {
+//   int diff = nums[i] - nums[i+1];
+
+//   ans = math.max(ans, diff.abs());
+// }
+
+// int firstLastCheck = nums.first - nums.last;
+// ans = math.max(ans,firstLastCheck.abs());
+
+// print(ans);
+// }
+
+//? ----------------------------------------------------------------------------------------------------------------------
+
+//! 14/06/25
+//! Question no 1: Leetcode (2566. Maximum Difference by Remapping a Digit)
 
 void main(){
-List<int> nums = [1,2,4];
+  int num = 11891;
+  List<String> splitArr = num.toString().split("");
 
-int ans = 0;
-
-for (var i = 0; i < nums.length-1; i++) {
-  int diff = nums[i] - nums[i+1];
-
-  ans = math.max(ans, diff.abs());
-}
-
-int firstLastCheck = nums.first - nums.last;
-ans = math.max(ans,firstLastCheck.abs());
-
-print(ans);
+  for (var e in splitArr) {
+    int n = int.parse(e);
+    if (n < 9) {
+      
+    }
+  }
 }
