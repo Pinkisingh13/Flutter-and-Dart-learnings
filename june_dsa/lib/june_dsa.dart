@@ -98,7 +98,6 @@
 //   print(sum);
 // }
 
-
 //? ----------------------------------------------------------------------------------------------------------------------
 
 //! 12/06/25
@@ -128,15 +127,41 @@
 //! 14/06/25
 //! Question no 1: Leetcode (448. Find All Numbers Disappeared in an Array)
 
-void main(){
-  List<int> nums = [1,1];
-    List<int> ans= [];
-    Set<int> set = nums.toSet();
+// void main(){
+//   List<int> nums = [1,1];
+//     List<int> ans= [];
+//     Set<int> set = nums.toSet();
 
-    for (var i = 1; i <= nums.length; i++) {
-      if (!set.contains(i)) {
-        ans.add(i);
-      }
+//     for (var i = 1; i <= nums.length; i++) {
+//       if (!set.contains(i)) {
+//         ans.add(i);
+//       }
+//     }
+//     print(ans);
+// }
+
+//? ----------------------------------------------------------------------------------------------------------------------
+
+//! 15/06/25
+//! Question no 1: Leetcode (53. Maximum Subarray)
+
+import 'dart:math' as math;
+
+void main() {
+  List<int> nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+  int sum = 0;
+  int max = 1 << 63;
+
+  for (var i = 0; i < nums.length; i++) {
+    sum += nums[i];
+
+    max = math.max(max, sum);
+
+    if (sum < 0) {
+      sum = 0;
     }
-    print(ans);
+  }
+
+  print(max);
 }
