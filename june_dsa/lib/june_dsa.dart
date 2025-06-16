@@ -140,26 +140,65 @@
 //     print(ans);
 // }
 
-//? ----------------------------------------------------------------------------------------------------------------------
+//! ----------------------------------------------------------------------------------------------------------------------
 
 //! 15/06/25
 //! Question no 1: Leetcode (53. Maximum Subarray)
 
-import 'dart:math' as math;
+// import 'dart:math' as math;
+// void main() {
+//   List<int> nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+//   int sum = 0;
+//   int max = 1 << 63;
+
+//   for (var i = 0; i < nums.length; i++) {
+//     sum += nums[i];
+
+//     max = math.max(max, sum);
+
+//     if (sum < 0) {
+//       sum = 0;
+//     }
+//   }
+
+//   print(max);
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+//! 16/06/25
+//! Question no 1: Leetcode (2016. Maximum Difference Between Increasing Elements)
 
 void main() {
-  List<int> nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+  List<int> nums = [7, 1, 5, 4];
 
-  int sum = 0;
-  int max = 1 << 63;
+  //! BRUTE FORCE
+  // int max = -1;
+  // for (var i = 0; i < nums.length - 1; i++) {
+  //   for (var j = i + 1; j < nums.length; j++) {
+  //     if (nums[j] > nums[i]) {
+  //       if (nums[j] - nums[i] > max) {
+  //         max = nums[j] - nums[i];
+  //       }
+  //     }
+  //   }
+  // }
 
-  for (var i = 0; i < nums.length; i++) {
-    sum += nums[i];
+  // print(max);
 
-    max = math.max(max, sum);
+  //! OPTIMIZED  WAY
 
-    if (sum < 0) {
-      sum = 0;
+  int minVal = nums[0];
+  int max = -1;
+
+  for (int i = 1; i < nums.length; i++) {
+    if (nums[i] > minVal) {
+      if (nums[i] - minVal > max) {
+        max = nums[i] - minVal;
+      }
+    } else {
+      minVal = nums[i];
     }
   }
 
