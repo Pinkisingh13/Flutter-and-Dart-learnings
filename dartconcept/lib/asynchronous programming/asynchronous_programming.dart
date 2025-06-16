@@ -33,7 +33,7 @@
 // Future<String> getName() async => "Foo Bar";
 // Future<String> getAddress() => Future.value("123 Main St");
 
-// Future<String> getPhoneNumber() => 
+// Future<String> getPhoneNumber() =>
 
 // Future<String>.delayed(
 //       Duration(seconds: 2),
@@ -47,20 +47,60 @@
 //   return "New York";
 // }
 
-
 //? ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //! Example 2: Future Error Handling
 
-void main()async{
-print( await getFullName(firstName: "Joe", lastName: "Foo"));
+// void main() async {
+//   try {
+//     await Future.delayed(
+//       Duration(seconds: 1),
+//       () async {
+//         print(
+//           await getFullName(firstName: "Joe", lastName: "Foo"),
+//         );
+//       },
+//     );
+//     print("pinki after");
+//     print(await getFullName(firstName: "", lastName: "Foo"));
+//   } on FirstOrLastNameException {
+//     print("First or Last name is missing");
+//   } catch (e) {
+//     print("Catch ==> $e");
+//   }
+// }
+
+// Future<String> getFullName(
+//     {required String firstName, required String lastName}) {
+//   if (firstName.isEmpty || lastName.isEmpty) {
+//     throw FirstOrLastNameException();
+//   } else {
+//     return Future.value('$firstName $lastName');
+//   }
+// }
+
+// class FirstOrLastNameException implements Exception {
+//   const FirstOrLastNameException();
+// }
+
+//? -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//! Example 3: FUTURE Chaning
+
+void main(List<String> args) async {
+  String fullName = await getFullName();
+  print(fullName);
+
+  print(await calculateLen(fullName));
 }
 
-
-Future<String> getFullName({required String firstName, required String lastName}) {
-if (firstName.isEmpty || lastName.isEmpty) {
-  throw Exception("empty fields");
-}else{
-  return Future.value('$firstName $lastName');
+Future<String> getFullName() {
+  return Future.delayed(const Duration(seconds: 1), () => "John Doe");
 }
+
+Future<int> calculateLen(String value) {
+  return Future.delayed(
+    const Duration(seconds: 1),
+    () => value.length,
+  );
 }
