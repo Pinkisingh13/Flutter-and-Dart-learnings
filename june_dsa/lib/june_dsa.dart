@@ -209,11 +209,33 @@
 
 //! 16/06/25
 //! Question no 1: Leetcode (349. Intersection of Two Arrays)
+// void main(List<String> args) {
+//   List<int> nums1 = [1, 2, 2, 1];
+//   List<int> nums2 = [2, 2];
 
-void main(List<String> args) {
-  List<int> nums1 = [1, 2, 2, 1];
-  List<int> nums2 = [2, 2];
-  Set<int> newNums1 = nums1.toSet();
-  Set<int> newNum2 = nums2.toSet();
-  print(newNums1.intersection(newNum2).toList());
-}
+  //! Using set
+  // Set<int> newNums1 = nums1.toSet();
+  // Set<int> newNum2 = nums2.toSet();
+  // print(newNums1.intersection(newNum2).toList());
+
+  // ! Second way
+//   List<int> largeList = [];
+//   List<int> smallList = [];
+//   List<int> ans = [];
+
+//   if (nums1.length >= nums2.length) {
+//     largeList = nums1;
+//     smallList = nums2;
+//   } else {
+//     largeList = nums2;
+//     smallList = nums1;
+//   }
+
+//   for (var i = 0; i < largeList.length; i++) {
+//     if (smallList.contains(largeList[i]) && !ans.contains(largeList[i])) {
+//       ans.add(largeList[i]);
+//     }
+//   }
+
+//   print(ans);
+// }
