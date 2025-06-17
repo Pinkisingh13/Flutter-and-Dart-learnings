@@ -213,12 +213,12 @@
 //   List<int> nums1 = [1, 2, 2, 1];
 //   List<int> nums2 = [2, 2];
 
-  //! Using set
-  // Set<int> newNums1 = nums1.toSet();
-  // Set<int> newNum2 = nums2.toSet();
-  // print(newNums1.intersection(newNum2).toList());
+//! Using set
+// Set<int> newNums1 = nums1.toSet();
+// Set<int> newNum2 = nums2.toSet();
+// print(newNums1.intersection(newNum2).toList());
 
-  // ! Second way
+// ! Second way
 //   List<int> largeList = [];
 //   List<int> smallList = [];
 //   List<int> ans = [];
@@ -239,3 +239,27 @@
 
 //   print(ans);
 // }
+
+//? --------------------------------------------------------------------------------------------
+
+//! Question no 2: Leetcode(169. Majority Element)
+
+void main() {
+  List<int> nums = [3, 2, 3];
+
+  Map<int, int> m = {};
+
+  for (int i = 0; i < nums.length; i++) {
+    m[nums[i]] = (m[nums[i]] ?? 0) + 1;
+  }
+
+  for (var e in m.entries) {
+    if (e.value > (nums.length / 2)) {
+      print(e.key);
+      return;
+    }
+    print(-1);
+  }
+
+  print(m);
+}
