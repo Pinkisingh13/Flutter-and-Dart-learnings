@@ -170,37 +170,50 @@
 //! 16/06/25
 //! Question no 1: Leetcode (2016. Maximum Difference Between Increasing Elements)
 
-void main() {
-  List<int> nums = [7, 1, 5, 4];
+// void main() {
+//   List<int> nums = [7, 1, 5, 4];
 
-  //! BRUTE FORCE
-  // int max = -1;
-  // for (var i = 0; i < nums.length - 1; i++) {
-  //   for (var j = i + 1; j < nums.length; j++) {
-  //     if (nums[j] > nums[i]) {
-  //       if (nums[j] - nums[i] > max) {
-  //         max = nums[j] - nums[i];
-  //       }
-  //     }
-  //   }
-  // }
+//! BRUTE FORCE
+// int max = -1;
+// for (var i = 0; i < nums.length - 1; i++) {
+//   for (var j = i + 1; j < nums.length; j++) {
+//     if (nums[j] > nums[i]) {
+//       if (nums[j] - nums[i] > max) {
+//         max = nums[j] - nums[i];
+//       }
+//     }
+//   }
+// }
 
-  // print(max);
+// print(max);
 
-  //! OPTIMIZED  WAY
+//! OPTIMIZED  WAY
 
-  int minVal = nums[0];
-  int max = -1;
+//   int minVal = nums[0];
+//   int max = -1;
 
-  for (int i = 1; i < nums.length; i++) {
-    if (nums[i] > minVal) {
-      if (nums[i] - minVal > max) {
-        max = nums[i] - minVal;
-      }
-    } else {
-      minVal = nums[i];
-    }
-  }
+//   for (int i = 1; i < nums.length; i++) {
+//     if (nums[i] > minVal) {
+//       if (nums[i] - minVal > max) {
+//         max = nums[i] - minVal;
+//       }
+//     } else {
+//       minVal = nums[i];
+//     }
+//   }
 
-  print(max);
+//   print(max);
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+//! 16/06/25
+//! Question no 1: Leetcode (349. Intersection of Two Arrays)
+
+void main(List<String> args) {
+  List<int> nums1 = [1, 2, 2, 1];
+  List<int> nums2 = [2, 2];
+  Set<int> newNums1 = nums1.toSet();
+  Set<int> newNum2 = nums2.toSet();
+  print(newNums1.intersection(newNum2).toList());
 }
