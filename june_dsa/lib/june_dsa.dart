@@ -243,23 +243,53 @@
 //? --------------------------------------------------------------------------------------------
 
 //! Question no 2: Leetcode(169. Majority Element)
+// void main() {
+//   List<int> nums = [3, 2, 3];
+
+//   Map<int, int> m = {};
+
+//   for (int i = 0; i < nums.length; i++) {
+//     m[nums[i]] = (m[nums[i]] ?? 0) + 1;
+//   }
+
+//   for (var e in m.entries) {
+//     if (e.value > (nums.length / 2)) {
+//       print(e.key);
+//       return;
+//     }
+//     print(-1);
+//   }
+
+//   print(m);
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+//! Question no 1: Leetcode (2966. Divide Array Into Arrays With Max Difference)
+
+import 'dart:math';
 
 void main() {
-  List<int> nums = [3, 2, 3];
+  List<int> nums = [2, 4, 2, 2, 5, 2];
+  int k = 2;
 
-  Map<int, int> m = {};
+  nums.sort();
 
-  for (int i = 0; i < nums.length; i++) {
-    m[nums[i]] = (m[nums[i]] ?? 0) + 1;
-  }
+  print(nums);
 
-  for (var e in m.entries) {
-    if (e.value > (nums.length / 2)) {
-      print(e.key);
+  List<List<int>> result = [];
+
+  for (var i = 0; i < nums.length; i += 3) {
+    if (i + 2 >= nums.length || nums[i + 2] - nums[i] > k) {
+      print([]);
       return;
     }
-    print(-1);
+    int a = nums[i];
+    int b = nums[i + 1];
+    int c = nums[i + 2];
+
+    result.add([a, b, c]);
   }
 
-  print(m);
+  print(result);
 }
