@@ -267,29 +267,73 @@
 
 //! Question no 1: Leetcode (2966. Divide Array Into Arrays With Max Difference)
 
+// import 'dart:math';
+
+// void main() {
+//   List<int> nums = [2, 4, 2, 2, 5, 2];
+//   int k = 2;
+
+//   nums.sort();
+
+//   print(nums);
+
+//   List<List<int>> result = [];
+
+//   for (var i = 0; i < nums.length; i += 3) {
+//     if (i + 2 >= nums.length || nums[i + 2] - nums[i] > k) {
+//       print([]);
+//       return;
+//     }
+//     int a = nums[i];
+//     int b = nums[i + 1];
+//     int c = nums[i + 2];
+
+//     result.add([a, b, c]);
+//   }
+
+//   print(result);
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+//! Question no 1: Leetcode (2294. Partition Array Such That Maximum Difference Is K)
+
+// void main() {
+//   List<int> nums = [3, 6, 1, 2, 5];
+//   int k = 2;
+//   int count = 0;
+//   nums.sort();
+//   print(nums);
+
+//   for (var i = 0; i < nums.length; i += k) {
+//     if (nums[i] - nums[i + 1] <= k) {
+//       count++;
+//     }
+//   }
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+//! Question no 1: Leetcode(2138. Divide a String Into Groups of Size k)
+
 import 'dart:math';
 
 void main() {
-  List<int> nums = [2, 4, 2, 2, 5, 2];
-  int k = 2;
+  String s = "abcdefghij";
+  int k = 3;
+  String fill = 'x';
 
-  nums.sort();
+  List<String> ans = [];
 
-  print(nums);
-
-  List<List<int>> result = [];
-
-  for (var i = 0; i < nums.length; i += 3) {
-    if (i + 2 >= nums.length || nums[i + 2] - nums[i] > k) {
-      print([]);
-      return;
+  for (var i = 0; i < s.length; i += 3) {
+    String t = s.substring(i, min(i + k, s.length));
+    print(t);
+    if (t.length < k) {
+      t = t + fill * (k - t.length);
     }
-    int a = nums[i];
-    int b = nums[i + 1];
-    int c = nums[i + 2];
 
-    result.add([a, b, c]);
+    ans.add(t);
   }
 
-  print(result);
+  print("ans==> $ans");
 }
