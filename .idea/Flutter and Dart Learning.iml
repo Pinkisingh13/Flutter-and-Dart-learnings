@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/april/dsa/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/april/dsa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/april/dsa/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dartconcept/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dartconcept/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dartconcept/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dartdsa/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dartdsa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dartdsa/build" />
+      <excludeFolder url="file://$MODULE_DIR$/june_dsa/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/june_dsa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/june_dsa/build" />
+      <excludeFolder url="file://$MODULE_DIR$/may/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/may/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/may/build" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

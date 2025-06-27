@@ -316,24 +316,75 @@
 
 //! Question no 1: Leetcode(2138. Divide a String Into Groups of Size k)
 
-import 'dart:math';
+// import 'dart:math';
 
-void main() {
-  String s = "abcdefghij";
-  int k = 3;
-  String fill = 'x';
+// void main() {
+//   String s = "abcdefghij";
+//   int k = 3;
+//   String fill = 'x';
 
-  List<String> ans = [];
+//   List<String> ans = [];
 
-  for (var i = 0; i < s.length; i += 3) {
-    String t = s.substring(i, min(i + k, s.length));
-    print(t);
-    if (t.length < k) {
-      t = t + fill * (k - t.length);
-    }
+//   for (var i = 0; i < s.length; i += 3) {
+//     String t = s.substring(i, min(i + k, s.length));
+//     print(t);
+//     if (t.length < k) {
+//       t = t + fill * (k - t.length);
+//     }
 
-    ans.add(t);
+//     ans.add(t);
+//   }
+
+//   print("ans==> $ans");
+// }
+
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+// ! Question no 1: Leetcode(74. Search a 2D Matrix)
+
+// matrix.length;         // Number of rows
+//matrix[0].length;      // Number of columns in the first row
+
+void main(){
+List<List<int>> matrix =  [[1,3,5,7],[10,11,16,20],[23,30,34,60]];
+
+
+int target = 3;
+
+int low = 0;
+int high = matrix.length * matrix[0].length - 1;
+
+
+
+  while (low <= high) {
+  int mid = (low+high) ~/2;
+  print(mid);
+
+  int row = mid ~/ matrix[0].length;
+
+  print("row: $row");
+  int col = mid % matrix[0].length;
+
+  print("col: $col");
+
+  if (matrix[row][col] == target) {
+    print(true);
+    return;
   }
 
-  print("ans==> $ans");
+  if (matrix[row][col] > target) {
+    high = mid -1;
+  }else{
+    low = mid + 1;
+  }
+
+
+    
+  }
+   
+
+   
+
+
 }
