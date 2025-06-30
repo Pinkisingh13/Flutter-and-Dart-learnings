@@ -338,7 +338,6 @@
 //   print("ans==> $ans");
 // }
 
-
 //! ----------------------------------------------------------------------------------------------------------------------
 
 // ! Question no 1: Leetcode(74. Search a 2D Matrix)
@@ -346,45 +345,98 @@
 // matrix.length;         // Number of rows
 //matrix[0].length;      // Number of columns in the first row
 
+// void main() {
+//   List<List<int>> matrix = [
+//     [1, 3, 5, 7],
+//     [10, 11, 16, 20],
+//     [23, 30, 34, 60],
+//   ];
+
+//   int target = 3;
+
+//   int low = 0;
+//   int high = matrix.length * matrix[0].length - 1;
+
+//   while (low <= high) {
+//     int mid = (low + high) ~/ 2;
+//     print(mid);
+
+//     int row = mid ~/ matrix[0].length;
+
+//     print("row: $row");
+//     int col = mid % matrix[0].length;
+
+//     print("col: $col");
+
+//     if (matrix[row][col] == target) {
+//       print(true);
+//       return;
+//     }
+
+//     if (matrix[row][col] > target) {
+//       high = mid - 1;
+//     } else {
+//       low = mid + 1;
+//     }
+//   }
+// }
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+// ! Question no 1: Leetcode(2099. Find Subsequence of Length K With the Largest Sum)
+
+// void main() {
+//   List<int> nums = [2, 1, 3, 3];
+
+//   int k = 2;
+
+//   List<List<int>> indexedNums = [];
+//   for (int i = 0; i < nums.length; i++) {
+//     indexedNums.add([nums[i], i]); // [value, index]
+//   }
+
+//   print("indexedNums Before Sorting: $indexedNums" );
+
+//   indexedNums.sort((a, b) => b[0].compareTo(a[0]));
+//   print("indexedNums After Sorting: $indexedNums" );
+
+//   List<List<int>> topK = indexedNums.sublist(0, k);
+
+//   print("TopK element Before Sorting: $topK");
+
+//   topK.sort((a, b) => a[1].compareTo(b[1]));
+//   print("TopK element After Sorting: $topK");
+
+//   List<int> result = [];
+//   for (var pair in topK) {
+//     result.add(pair[0]);
+//   }
+
+//   print(result);
+// }
+
+
+//! ----------------------------------------------------------------------------------------------------------------------
+
+// ! Question no 1: Leetcode(594. Longest Harmonious Subsequence)
+
 void main(){
-List<List<int>> matrix =  [[1,3,5,7],[10,11,16,20],[23,30,34,60]];
+  List<int> nums = [1,3,2,2,5,2,3,7];
 
-
-int target = 3;
-
-int low = 0;
-int high = matrix.length * matrix[0].length - 1;
-
-
-
-  while (low <= high) {
-  int mid = (low+high) ~/2;
-  print(mid);
-
-  int row = mid ~/ matrix[0].length;
-
-  print("row: $row");
-  int col = mid % matrix[0].length;
-
-  print("col: $col");
-
-  if (matrix[row][col] == target) {
-    print(true);
-    return;
+  var map = <int,int>{};
+ 
+  for(int i =0; i<nums.length;i++){
+  map[nums[i]] = (map[nums[i]] ?? 0) + 1;
   }
+  
+final maxLen = map.keys.fold(0, (maxSoFar, key){
+if (map.containsKey(key+1)) {
+  return (map[key]! + map[key + 1]!) > maxSoFar
+        ? (map[key]! + map[key + 1]!)
+        : maxSoFar;
+}
+return maxSoFar;
+});
 
-  if (matrix[row][col] > target) {
-    high = mid -1;
-  }else{
-    low = mid + 1;
-  }
-
-
-    
-  }
-   
-
-   
-
-
+  print(maxLen);
 }
