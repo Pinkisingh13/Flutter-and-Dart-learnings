@@ -420,23 +420,23 @@
 
 // ! Question no 1: Leetcode(594. Longest Harmonious Subsequence)
 
-void main(){
-  List<int> nums = [1,3,2,2,5,2,3,7];
+// void main(){
+//   List<int> nums = [1,3,2,2,5,2,3,7];
 
-  var map = <int,int>{};
+//   var map = <int,int>{};
  
-  for(int i =0; i<nums.length;i++){
-  map[nums[i]] = (map[nums[i]] ?? 0) + 1;
-  }
+//   for(int i =0; i<nums.length;i++){
+//   map[nums[i]] = (map[nums[i]] ?? 0) + 1;
+//   }
   
-final maxLen = map.keys.fold(0, (maxSoFar, key){
-if (map.containsKey(key+1)) {
-  return (map[key]! + map[key + 1]!) > maxSoFar
-        ? (map[key]! + map[key + 1]!)
-        : maxSoFar;
-}
-return maxSoFar;
-});
+// final maxLen = map.keys.fold(0, (maxSoFar, key){
+// if (map.containsKey(key+1)) {
+//   return (map[key]! + map[key + 1]!) > maxSoFar
+//         ? (map[key]! + map[key + 1]!)
+//         : maxSoFar;
+// }
+// return maxSoFar;
+// });
 
-  print(maxLen);
-}
+//   print(maxLen);
+// }
